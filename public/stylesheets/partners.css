@@ -34,7 +34,7 @@
     align-items: center;
     justify-content: center;
     padding: 5%;
-    border: 2px solid #000;
+    font-size: 1.2rem;
 }
 
 .right-partner-div {
@@ -104,7 +104,18 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    background: #1e1;
+    background: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") center/cover no-repeat;
+    border-radius: 20px;
+}
+
+.slide-main::after
+{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
 }
 
 .slide-div {
@@ -114,6 +125,7 @@
     transition: all 0.5s ease-in-out;
     padding: 1% 5%;
     font-size: 1.2rem;
+    z-index: 5;
 }
 
 .slide-div h1 {
@@ -129,22 +141,75 @@
     align-items: center;
 }
 
+.slide-div p
+{
+    color: #000000;
+}
+
 .slide-div1.slide-div-active1 {
-    height: 50%;
+    height: 35%;
 }
 
 .slide-div2.slide-div-active2 {
-    height: 50%;
+    height: 30%;
 }
 
 .slide-div3.slide-div-active3 {
-    height: 50%;
+    height: 30%;
 }
 
 .slide-div4.slide-div-active4 {
-    height: 50%;
+    height: 45%;
 }
 
 .slide-div5.slide-div-active5 {
-    height: 50%;
+    height: 35%;
+}
+
+
+@media (max-width: 400px) {
+    .partners-main-section
+    {
+        height: fit-content;
+    }
+    .main-div
+    {
+        flex-direction: column;
+    }
+    .left-partner-div
+    {
+        width: 90%;
+    }
+    .right-partner-div
+    {
+        width: 100%;
+        height: 15rem;
+    }
+    .slide-main
+    {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+    .slide-div
+    {
+        height: 4rem;
+    }
+    .slide-div p
+    {
+        overflow: scroll;
+    }
+    /* .slide-main
+    {
+        justify-content: flex-start;
+    } */
+    .slide-div1.slide-div-active1,
+    .slide-div2.slide-div-active2,
+    .slide-div3.slide-div-active3,
+    .slide-div4.slide-div-active4,
+    .slide-div5.slide-div-active5
+    {
+        height: 100%;
+    }
 }
