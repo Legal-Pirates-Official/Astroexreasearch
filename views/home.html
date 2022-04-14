@@ -1,39 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
-        integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous" />
-    <link rel="stylesheet" href="../public/stylesheets/home.css">
-    <title>Home</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
+    integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../public/stylesheets/home.css">
+  <title>Home</title>
 </head>
+
 <body>
-    <header class="nav-links" id="nav-links">
-        <div class="box" id="box">
-            <div class="size">
-                <div class="icon">
-                    <i class="fa fa-times" onclick="HideMenu()"></i>
-                </div>
-                <div class="links">
-                    <ul>
-                        <li><a href="/template.html">Home</a></li>
-                        <li><a href="/index.html">About</a></li>
-                        <li><a href="/index.html">About</a></li>
-                        <li><a href="/index.html">About</a></li>
-                        <li><a href="/Home.html">Contact</a></li>
-                    </ul>
-                </div>
+  <!-- Swiper -->
+
+  <section class="slider">
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+      <div class="parallax-bg" style="
+          background-image: url(../public/images/Img1.jpg);
+        " data-swiper-parallax="-23%"></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="content">
+            <div class="title" data-swiper-parallax="-300">Welcome to Our Community Site</div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+          <div class="text" data-swiper-parallax="-100">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            </p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="subtitle" data-swiper-parallax="-200">Subtitle</div>
+          <div class="text" data-swiper-parallax="-100">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+              dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
+              laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
+              Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
+              Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
+              ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
+              tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </section>
+  <section class="topics">
+    <div class="wraptopics">
+      <div class="quote">
+        <p>Alone we can do so little; together we can do so much</p>
+        <h3>-Helen Keller</h3>
+      </div>
+      <!-- grid-item grid1 -->
+      <div class="container">
+        <div class="grid">
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="event">
+    <div class="wrapevent">
+      <div class="upcomingevent">
+        <h3>Upcoming Event</h3>
+      </div>
+      <div class="wholeevent">
+        <div class="eventcontent">
+          <div class="eventrow">
+            <div class="datemon">
+              <h1>24</h1>
+              <h2>APR</h2>
             </div>
+            <div class="vline"></div>
+            <div class="eventname">
+              <h2>STUDENT/ GRADUATE RESEARCH TRAINEE (SRT/GRT)</h2>
+            </div>
+          </div>
+          <div class="hline"></div>
         </div>
-    </header>
-    <nav class="navbar-con">
-        <div class="navbar">
-            <a href="/template.html" class="logo">Logo</a>
-            <i class="fa fa-bars" onclick="ShowMenu()"></i>
+        <div class="button">
+          <button class="btn" type="button"><a href="">Register Now</a></button>
         </div>
-    </nav>
-    <script src="../public/javascripts/home.js"></script>
+      </div>
+    </div>
+  </section>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="../public/javascripts/home.js"></script>
+
 </body>
+
 </html>
