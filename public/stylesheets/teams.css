@@ -173,3 +173,14 @@
     justify-content: space-around;
     align-items: center;
 }
+
+@media (max-width: 400px) {
+    .our-teams
+    {
+        flex-direction: column;
+    }
+    .team-div
+    {
+        width: 90%;
+    }
+}
