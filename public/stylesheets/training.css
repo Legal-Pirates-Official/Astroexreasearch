@@ -83,3 +83,26 @@
 .box-div3 .standard-content {
     font-size: 1.3rem;
 }
+
+@media (max-width: 768px) {
+    .heading-section
+    {
+        height: fit-content;
+        width: 60%;
+    }
+    .box-div
+    {
+        height: fit-content;
+        width: 90%;
+    }
+    .floating-content
+    {
+        height: 7rem;
+        position: relative;
+        width: 100%;
+    }
+    .standard-content ul
+    {
+        padding: 5% 0%;
+    }
+}
