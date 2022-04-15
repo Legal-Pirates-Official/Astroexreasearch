@@ -5,14 +5,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css"
-    integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous" />
   <!-- Link Swiper's CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="../public/stylesheets/home.css">
-  <link rel="stylesheet" href="../public/stylesheets/navbar.css">
-  <link rel="stylesheet" href="../public/stylesheets/footer.css">
-  <link rel="stylesheet" href="../public/stylesheets/navbar.css">
+  <link rel="stylesheet" href="./public/stylesheets/home.css">
+  <link rel="stylesheet" href="./public/stylesheets/navbar.css">
+  <link rel="stylesheet" href="./public/stylesheets/footer.css">
+  <link rel="stylesheet" href="./public/stylesheets/swiper_home.css">
+
+
   <title>Home</title>
 </head>
 
@@ -34,13 +34,13 @@
         </div>
         <div class="nav-links">
             <a href="./index.html">Home</a>
-            <a href="./about.html">About</a>
-            <a href="./teams.html">Our Team</a>
-            <a href="./research_areas.html">Research</a>
+            <a href="./views/about.html">About</a>
+            <a href="./views/teams.html">Our Team</a>
+            <a href="./views/research_areas.html">Research</a>
             <a>
                 <p class="dropdown-atag">More...</p>
                 <div class="dropdown-navbar">
-                    <a href="./training.html">Training & Research</a>
+                    <a href="./views/training.html">Training & Research</a>
                     <a href="#">Partners</a>
                     <a href="#">Write Us</a>
                 </div>
@@ -71,7 +71,7 @@
         <div class="swiper-slide">
           <div class="wrapslide2">
             <div class="subtitle" data-swiper-parallax="-200">We Are Organizing Lots of Events For You,Join With Us</div>
-          <button class="btnforslider"><a href="">Register Now</a></button>
+          <button class="btnforslider"><a href="./views/events.html">Register Now</a></button>
           </div>
         </div>
       </div>
@@ -91,6 +91,50 @@
       <!-- grid-item grid1 -->
       <div class="container">
         <div class="grid">
+          <div class="grid-item1 gridall">
+            <div class="grid1">
+              <div class="bgimg">
+                <img src="./public/images/bgimg.png" alt="">
+              </div>
+              <div class="contentimage">
+                <img src="./public/images/goals.png" alt="">
+                <h3>Mission</h3>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item2 gridall">
+            <div class="grid1">
+              <div class="bgimg">
+                <img src="./public/images/bgimg.png" alt="">
+              </div>
+              <div class="contentimage">
+                <img src="./public/images/events.png" alt="">
+                <h3>Events</h3>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item3 gridall">
+            <div class="grid1">
+              <div class="bgimg">
+                <img src="./public/images/bgimg.png" alt="">
+              </div>
+              <div class="contentimage">
+                <img src="./public/images/meeting.png" alt="">
+                <h3>Meet Us</h3>
+              </div>
+            </div>
+          </div>
+          <div class="grid-item4 gridall">
+            <div class="grid1">
+              <div class="bgimg">
+                <img src="./public/images/bgimg.png" alt="">
+              </div>
+              <div class="contentimage">
+                <img src="./public/images/research.png" alt="">
+                <h3>Research</h3>
+              </div>
+            </div>
+          </div>
 
         </div>
       </div>
@@ -182,8 +226,8 @@
   </footer>
   <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script src="../public/javascripts/home.js"></script>
-  <script src="../public/javascripts/navbar.js"></script>
+  <script src="./public/javascripts/home.js"></script>
+  <script src="./public/javascripts/navbar.js"></script>
 </body>
 
 </html>
