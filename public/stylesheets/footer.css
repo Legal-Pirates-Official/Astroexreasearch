@@ -1,6 +1,6 @@
 .footer-main-div {
     width: 100%;
-    height: 70vh;
+    height: 50vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -20,9 +20,9 @@
 
 .first-footer-div h1 {
     font-size: 1.5rem;
-    text-align: left;
-    margin: 12% 0%;
-    padding-left: 10%;
+    text-align: center;
+    margin: 5% 0%;
+    width: 60%;
 }
 
 .label-footer {
@@ -50,8 +50,7 @@
     align-items: center;
 }
 
-.form-footer
-{
+.form-footer {
     width: 100%;
     height: 100%;
     display: flex;
@@ -62,19 +61,16 @@
 
 .second-footer-div h1 {
     width: 100%;
-    text-align: left;
-    padding-left: 15%;
+    text-align: center;
 }
 .second-footer-div label {
     width: 100%;
-    text-align: left;
-    padding-left: 15%;
     font-size: 22px;
+    text-align: center;
     margin: 2% 0%;
 }
 .second-footer-div input {
     width: 80%;
-    margin-left: 10%;
     font-size: 18px;
     /* margin: 2% 0%; */
     padding: 5px;
@@ -84,7 +80,6 @@
     width: 30%;
     font-size: 18px;
     margin: 2% 0%;
-    margin-left: 10%;
     padding: 2%;
     border: none;
     background-color: #00bcd4;
@@ -146,58 +141,46 @@
     background: rgb(0, 0, 0);
 }
 
-
 @media (max-width: 400px) {
-    .footer-main-div
-    {
+    .footer-main-div {
         height: fit-content;
         flex-direction: column;
     }
-    .first-footer-div
-    {
+    .first-footer-div {
         width: 100%;
     }
-    .first-footer-div h1
-    {
+    .first-footer-div h1 {
         margin: 6% 0%;
         text-align: center;
     }
-    .label-footer a
-    {
+    .label-footer a {
         padding-left: 0%;
     }
-    .second-footer-div
-    {
+    .second-footer-div {
         width: 100%;
         align-items: center;
         justify-content: center;
     }
-    .second-footer-div h1
-    {
+    .second-footer-div h1 {
         width: 70%;
         text-align: center;
         padding: 0;
         margin: 5%;
     }
-    .second-footer-div label
-    {
+    .second-footer-div label {
         padding: 0;
         text-align: center;
     }
-    .second-footer-div input
-    {
+    .second-footer-div input {
         margin: 0;
     }
-    .footer-button
-    {
+    .footer-button {
         margin-left: 0;
     }
-    .third-footer-div
-    {
+    .third-footer-div {
         display: none;
     }
-    .footer-second-div
-    {
+    .footer-second-div {
         text-align: center;
     }
 }
