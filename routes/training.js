@@ -48,6 +48,7 @@ router.post('/admin/training/insert', async (req, res) => {
 			req.body.title_training,
 			req.body.paragraph_training,
 			req.body.batch_training
+			
 		],
 		async (err, rows) => {
 			if (!err) {
