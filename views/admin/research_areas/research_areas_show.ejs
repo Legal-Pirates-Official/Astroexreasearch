@@ -11,22 +11,24 @@
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous"
         />
-        <title>Footer Contact</title>
+        <link rel="stylesheet" href="../../stylesheets/admin-show.css" />
+        <title>Research Areas Show</title>
     </head>
+
     <body>
         <%- include("../../partials/admin_nav.ejs") %>
 
         <div class="container">
             <div class="row">
                 <div class="row">
-                    <h1>Footer Show</h1>
+                    <h1>Research Areas Show</h1>
                 </div>
                 <div class="row">
                     <a
                         class="btn btn-primary"
                         style="margin: 2% 0%; width: 10%"
-                        href="/admin/footer_contact/message"
-                        >Add footer</a
+                        href="/admin/research_areas/insert"
+                        >Add Research Areas</a
                     >
                 </div>
             </div>
@@ -35,33 +37,44 @@
                     <table class="table table-striped table-dark table-hover">
                         <thead>
                             <tr>
-                                <th class="col-name">Emails</th>
+                                <th class="col-name">Name</th>
+                                <th class="col-name">Images</th>
                                 <th class="col-name">Operations</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <% footer_contactArry.forEach(footer_contact => { %>
+                            <% research_areasArray.forEach(research_areas => {
+                            %>
                             <tr>
-                                <td><%- footer_contact.email_footer %></td>
+                                <td>
+                                    <%- research_areas.text_research_areas %>
+                                </td>
+                                <td>
+                                    <img
+                                        class="img-fluid"
+                                        src="<%- research_areas.image_research_areas %>"
+                                        alt="<%- research_areas.image_research_areas %>"
+                                    />
+                                </td>
                                 <td>
                                     <a
-                                        href="/admin/footer/<%- footer_contact.id_footer %>"
+                                        href="/admin/research_areas/<%- research_areas.id_research_areas %>"
                                         class="btn btn-primary"
                                         style="margin-bottom: 10%"
-                                        >View</a
-                                    >
+                                        >View
+                                    </a>
                                     <a
-                                        href="/admin/footer/update/<%- footer_contact.id_footer %>"
+                                        href="/admin/research_areas/update/<%- research_areas.id_research_areas %>"
                                         class="btn btn-warning"
                                         style="margin-bottom: 10%"
-                                        >Edit</a
-                                    >
+                                        >Edit
+                                    </a>
                                     <a
-                                        href="/admin/footer/delete/<%- footer_contact.id_footer %>"
+                                        href="/admin/research_areas/delete/<%- research_areas.id_research_areas %>"
                                         class="btn btn-danger"
                                         style="margin-bottom: 10%"
-                                        >Delete</a
-                                    >
+                                        >Delete
+                                    </a>
                                 </td>
                             </tr>
                             <% }) %>
@@ -70,5 +83,11 @@
                 </div>
             </div>
         </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>

@@ -40,37 +40,26 @@
             </div>
         </section>
 
-
         <section class="section-cards-partners">
             <div class="main-partners-div">
-                <div class="partners-div"></div>
+                <% partnersArray.forEach(partners => { %>
+                <div class="partners-div">
+                    <div class="left-partners-main-div">
+                        <div class="image-left-div">
+                            <img src="<%= partners.image_partners %> " alt="" />
+                        </div>
+                    </div>
+                    <div class="right-partners-main-div">
+                        <h1><%= partners.title_partners %></h1>
+                        <p><%= partners.description_partners %></p>
+                    </div>
+                </div>
+                <% }) %>
             </div>
         </section>
 
-
-
         <%- include("./partials/footer.ejs") %>
 
-        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                autoHeight: true,
-                cssMode: true,
-                // scrollbar: {
-                //     el: ".swiper-scrollbar",
-                //     hide: true,
-                // },
-                navigation: {
-                    nextEl: ".swiper-button-next",
-                    prevEl: ".swiper-button-prev",
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                },
-                mousewheel: true,
-                keyboard: true,
-            });
-        </script>
         <script src="javascripts/navbar.js"></script>
         <!-- <script src="javascripts/partners.js"></script> -->
     </body>

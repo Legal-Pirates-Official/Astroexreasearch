@@ -11,22 +11,24 @@
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous"
         />
-        <title>Footer Contact</title>
+        <link rel="stylesheet" href="../../stylesheets/admin-show.css" />
+        <title>partners Show</title>
     </head>
+
     <body>
         <%- include("../../partials/admin_nav.ejs") %>
 
         <div class="container">
             <div class="row">
                 <div class="row">
-                    <h1>Footer Show</h1>
+                    <h1>partners Show</h1>
                 </div>
                 <div class="row">
                     <a
                         class="btn btn-primary"
                         style="margin: 2% 0%; width: 10%"
-                        href="/admin/footer_contact/message"
-                        >Add footer</a
+                        href="/admin/partners/insert"
+                        >Add partners</a
                     >
                 </div>
             </div>
@@ -35,29 +37,39 @@
                     <table class="table table-striped table-dark table-hover">
                         <thead>
                             <tr>
-                                <th class="col-name">Emails</th>
+                                <th class="col-name">Name</th>
+                                <th class="col-name">Job Title</th>
+                                <th class="col-name">Image</th>
                                 <th class="col-name">Operations</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <% footer_contactArry.forEach(footer_contact => { %>
+                            <% partnersArray.forEach(partners => { %>
                             <tr>
-                                <td><%- footer_contact.email_footer %></td>
+                                <td><%- partners.title_partners %></td>
+                                <td><%- partners.description_partners %></td>
+                                <td>
+                                    <img
+                                        class="img-fluid"
+                                        src="<%- partners.image_partners %>"
+                                        alt="<%- partners.image_partners %>"
+                                    />
+                                </td>
                                 <td>
                                     <a
-                                        href="/admin/footer/<%- footer_contact.id_footer %>"
+                                        href="/admin/partners/<%- partners.id_partners %>"
                                         class="btn btn-primary"
                                         style="margin-bottom: 10%"
                                         >View</a
                                     >
                                     <a
-                                        href="/admin/footer/update/<%- footer_contact.id_footer %>"
+                                        href="/admin/partners/update/<%- partners.id_partners %>"
                                         class="btn btn-warning"
                                         style="margin-bottom: 10%"
                                         >Edit</a
                                     >
                                     <a
-                                        href="/admin/footer/delete/<%- footer_contact.id_footer %>"
+                                        href="/admin/partners/delete/<%- partners.id_partners %>"
                                         class="btn btn-danger"
                                         style="margin-bottom: 10%"
                                         >Delete</a
@@ -70,5 +82,11 @@
                 </div>
             </div>
         </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"
+        ></script>
     </body>
 </html>

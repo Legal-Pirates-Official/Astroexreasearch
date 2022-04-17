@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="stylesheets/events.css" />
+        <link rel="stylesheet" href="stylesheets/navbar.css" />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
+        <title>Events</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/events.css">
-    <link rel="stylesheet" href="stylesheets/navbar.css">
-    <link rel="stylesheet" href="stylesheets/footer.css">
-    <title>Events</title>
-</head>
-
-<body>
-    <%- include("./partials/navbar.ejs") %>
-
+    <body>
+        <%- include("./partials/navbar.ejs") %>
 
         <section class="events-section">
+            <% eventsArray.forEach(events => { %>
+
             <div class="events-main-div">
                 <div class="image-events">
-                    <img src="https://cdn.britannica.com/60/182360-050-CD8878D6/Avengers-Age-of-Ultron-Joss-Whedon.jpg"
-                        alt="">
+                    <img src="<%= events.image_events %> " alt="" />
                 </div>
                 <div class="content-events">
                     <div class="event-name">
-                        <h1>STUDENT/ GRADUATE RESEARCH TRAINEE (SRT/GRT)</h1>
+                        <h1><%= events.name_events %> </h1>
                     </div>
                     <div class="event-button">
                         <button>
                             <div class="button-inside">
-                                <span class="button-inside-span">Register Now</span>
-                                <p>24-Sep-2023, 5:00pm </p>
+                                <span class="button-inside-span"
+                                    >Register Now</span
+                                >
+                                <p><%= events.date_events %><%= events.time_events %>  </p>
                             </div>
                         </button>
                     </div>
                 </div>
             </div>
+            <% }) %>
         </section>
-
 
         <%- include("./partials/footer.ejs") %>
 
-
-
-            <script src="javascripts/navbar.js"></script>
-</body>
-
+        <script src="javascripts/navbar.js"></script>
+    </body>
 </html>
