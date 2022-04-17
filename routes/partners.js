@@ -8,10 +8,11 @@ const upload = multer({storage});
 
 const router = express.Router();
 
-router.get("/teams", (req, res) => {
-    db.query("SELECT * FROM teams", (err, rows) => {
+router.get("/partners", (req, res) => {
+    db.query("SELECT * FROM partners", (err, rows) => {
         if (!err) {
-            res.render("teams", {teamArray: rows});
+            console.log(rows);
+            res.render("partners", {partnersArray: rows});
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -19,10 +20,10 @@ router.get("/teams", (req, res) => {
     });
 });
 
-router.get("/admin/teams", (req, res) => {
-    db.query("SELECT * FROM teams", (err, rows) => {
+router.get("/admin/partners", (req, res) => {
+    db.query("SELECT * FROM partners", (err, rows) => {
         if (!err) {
-            res.render("./admin/teams/team_show", {teamArray: rows});
+            res.render("./admin/partners/partners_show", {partnersArray: rows});
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -30,10 +31,10 @@ router.get("/admin/teams", (req, res) => {
     });
 });
 
-router.get("/admin/teams/insert", async (req, res) => {
-    db.query("SELECT * FROM teams", async (err, rows) => {
+router.get("/admin/partners/insert", async (req, res) => {
+    db.query("SELECT * FROM partners", async (err, rows) => {
         if (!err) {
-            res.render("./admin/teams/team_insert");
+            res.render("./admin/partners/partners_insert");
         } else {
             console.log(err);
         }
@@ -41,24 +42,19 @@ router.get("/admin/teams/insert", async (req, res) => {
 });
 
 router.post(
-    "/admin/teams/insert",
-    upload.single("image_team"),
+    "/admin/partners/insert",
+    upload.single("image_partners"),
     async (req, res) => {
         db.query(
-            `INSERT INTO teams (name_team, job_team, email_team, instagram_url, linkedIn_url, color_team, image_team, select_team ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO partners (title_partners, description_partners, image_partners ) VALUES (?, ?, ?)`,
             [
-                req.body.name_team,
-                req.body.job_team,
-                req.body.email_team,
-                req.body.instagram_url,
-                req.body.linkedIn_url,
-                req.body.color_team,
+                req.body.title_partners,
+                req.body.description_partners,
                 req.file.path,
-                req.body.select_team,
             ],
             async (err, rows) => {
                 if (!err) {
-                    res.redirect("/admin/teams");
+                    res.redirect("/admin/partners");
                 } else {
                     console.log(err);
                 }
@@ -67,13 +63,15 @@ router.post(
     }
 );
 
-router.get("/admin/teams/:id", (req, res) => {
+router.get("/admin/partners/:id", (req, res) => {
     db.query(
-        "SELECT * FROM teams WHERE id_team = ?",
+        "SELECT * FROM partners WHERE id_partners = ?",
         [req.params.id],
         (err, rows) => {
             if (!err) {
-                res.render("./admin/teams/team_view", {team: rows[0]});
+                res.render("./admin/partners/partners_view", {
+                    partners: rows[0],
+                });
             } else {
                 res.status(500).send("Internal server error");
                 console.log(err);
@@ -82,14 +80,14 @@ router.get("/admin/teams/:id", (req, res) => {
     );
 });
 
-router.get("/admin/teams/update/:id", async (req, res) => {
+router.get("/admin/partners/update/:id", async (req, res) => {
     db.query(
-        `SELECT * FROM teams WHERE id_team = ?`,
+        `SELECT * FROM partners WHERE id_partners = ?`,
         [req.params.id],
         async (err, rows) => {
             if (!err) {
-                res.render("./admin/teams/team_update", {
-                    team: rows[0],
+                res.render("./admin/partners/partners_update", {
+                    partners: rows[0],
                 });
             } else {
                 console.log(err);
@@ -99,11 +97,10 @@ router.get("/admin/teams/update/:id", async (req, res) => {
 });
 
 router.post(
-    "/admin/teams/update/:id",
-    upload.single("image_team"),
+    "/admin/partners/update/:id",
+    upload.single("image_partners"),
     async (req, res) => {
         console.log(req.body);
-        // https://res.cloudinary.com/dn3s6sgki/image/upload/v1650037728/Astroex_Research_Association/ac37qkdbythvpck0a2lk.png
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
@@ -111,15 +108,10 @@ router.post(
         console.log(oldimage);
 
         db.query(
-            `UPDATE teams SET name_team = ?, job_team = ?, email_team = ?, instagram_url = ?, linkedIn_url = ?, color_team = ?, select_team = ? , image_team = ? WHERE id_team = ?`,
+            `UPDATE partners SET title_partners = ?, description_partners = ?, image_partners = ? WHERE id_partners = ?`,
             [
-                req.body.name_team,
-                req.body.job_team,
-                req.body.email_team,
-                req.body.instagram_url,
-                req.body.linkedIn_url,
-                req.body.color_team,
-                req.body.select_team,
+                req.body.title_partners,
+                req.body.description_partners,
                 req.file ? req.file.path : req.body.image_checkbox,
                 req.params.id,
             ],
@@ -128,7 +120,7 @@ router.post(
                     await cloudinary.uploader.destroy(
                         "Astroex_Research_Association/" + oldimage
                     );
-                    res.redirect("/admin/teams");
+                    res.redirect("/admin/partners");
                 } else {
                     console.log(err);
                 }
@@ -137,14 +129,13 @@ router.post(
     }
 );
 
-router.get("/admin/teams/delete/:id", async (req, res) => {
-    console.log(req.query.cloudinaryName);
+router.get("/admin/partners/delete/:id", async (req, res) => {
     db.query(
-        `DELETE FROM teams WHERE id_team = ?`,
+        `DELETE FROM partners WHERE id_partners = ?`,
         [req.params.id],
         async (err, rows) => {
             if (!err) {
-                res.redirect("/admin/teams");
+                res.redirect("/admin/partners");
             } else {
                 console.log(err);
             }

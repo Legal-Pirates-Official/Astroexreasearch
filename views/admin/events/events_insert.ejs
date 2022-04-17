@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../stylesheets/admin-nav.css" />
+        <title>Admin events</title>
+    </head>
+
+    <body>
+        <%- include("../../partials/admin_nav.ejs") %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Add events</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form
+                        action="/admin/events/insert"
+                        method="POST"
+                        enctype="multipart/form-data"
+                    >
+                        <div class="form-group">
+                            <label for="name_events">Name</label>
+                            <input
+                                required
+                                type="text"
+                                class="form-control"
+                                id="name_events"
+                                name="name_events"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="description_events">Description</label>
+                            <input
+                                required
+                                type="text"
+                                class="form-control"
+                                id="description_events"
+                                name="description_events"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="date_events">Date</label>
+                            <input
+                                required
+                                type="date"
+                                class="form-control"
+                                id="date_events"
+                                name="date_events"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="time_events">Time</label>
+                            <input
+                                required
+                                type="time"
+                                class="form-control"
+                                id="time_events"
+                                name="time_events"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="image_events">Image</label>
+                            <input
+                                required
+                                type="file"
+                                class="form-control"
+                                id="image_events"
+                                name="image_events"
+                            />
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

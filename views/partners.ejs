@@ -1,255 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="stylesheets/partners.css" />
+        <link
+            rel="stylesheet"
+            href="https://unpkg.com/swiper/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="stylesheets/swiper_partners.css" />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
+        <link rel="stylesheet" href="stylesheets/navbar.css" />
+        <title>Partners</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheets/partners.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="stylesheets/swiper_partners.css">
-    <link rel="stylesheet" href="stylesheets/footer.css">
-    <link rel="stylesheet" href="stylesheets/navbar.css">
-    <title>Partners</title>
-</head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
 
-<body>
-    <%- include("./partials/navbar.ejs") %>
-
-
-
-
-    <section class="partners-main-section">
-        <div class="main-div">
-            <div class="left-partner-div">
-                <h1>Partnership & Collaboration</h1>
-                <p>It is prerequisite for either students or freshly graduates to have at least a year or so of
-                    internship experience and published journals in order to pursue further studies or even for job
-                    hunting. In a world that requires a “job experience” for getting a “job”, one needs an internship or
-                    training experience. Luckily, this is provided by our publishing partner groups namely – </p>
-            </div>
-            <div class="right-partner-div">
-                <div class="images-partners"></div>
-                <div class="shadow-images-partners"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- <section>
-        <div class="main-section-slider">
-            <div class="slide-main">
-                <div class="slide-div slide-div1">
-                    <h1 class="slide-div-h1-one">IJCRT</h1>
-                    <p>The International Journal of Creative Research Thoughts is an UGC approved research journal,
-                        peer-reviewed, and referred journals, and open access journals. It provides a platform for
-                        students and graduates to publish their works and aims to explore advances in research
-                        pertaining to applied, theoretical and experimental technological studies. Their goal is to
-                        promote scientific information interchange between researchers, developers, engineers, faculty,
-                        students, and practitioners working in and around the world.</p>
+        <section class="partners-main-section">
+            <div class="main-div">
+                <div class="left-partner-div">
+                    <h1>Partnership & Collaboration</h1>
+                    <p>
+                        It is prerequisite for either students or freshly
+                        graduates to have at least a year or so of internship
+                        experience and published journals in order to pursue
+                        further studies or even for job hunting. In a world that
+                        requires a “job experience” for getting a “job”, one
+                        needs an internship or training experience. Luckily,
+                        this is provided by our publishing partner groups namely
+                        –
+                    </p>
                 </div>
-                <div class="slide-div slide-div2">
-                    <h1 class="slide-div-h1-two">IJARESM</h1>
-                    <p>The International Journal of All Research Education and Scientific Methods, ISSN: 2455-6211,>5
-                        Impact Factor, SJR: 2.28 is a scholarly online, UGC certified, open access, peer-reviewed,
-                        multi-disciplinary,It is an international scientific journal that aims at promoting research in
-                        all the research fields like Engineering, Science Technology, Education, Management, Medical
-                        Sciences, Dental Sciences, Agriculture Sciences, Social Sciences, Health Care, Arts & Humanities
-                        and many more.</p>
-                </div>
-                <div class="slide-div slide-div3">
-                    <h1 class="slide-div-h1-three">IJRAR</h1>
-                    <p>The International Journal of Research and Analytical Reviews is one of the leading high quality
-                        Scholarly open access and peer reviewed quarterly published research journal. IJRAR is providing
-                        a platform for the researchers, academicians, professional, practitioners and students to impart
-                        and share knowledge in the form of high quality empirical and theoretical research papers, case
-                        studies, literature reviews and book reviews.</p>
-                </div>
-                <div class="slide-div slide-div4">
-                    <h1 class="slide-div-h1-four">IJERSTE</h1>
-                    <p>The International Journal of Enhanced Research in Science Technology and Engineering, ISSN:
-                        2319-7463, >5 Impact Factor, UGC approved, was published in the year 2012 in India. It is an
-                        international academic journal which invites unpublished novel, original, empirical and high
-                        quality research work pertaining to recent developments and practices in the areas of Computer
-                        Science & Engineering, Information Technology, Electronics & Communication, Electrical and
-                        Electronics, Electronics & Telecommunication, Mechanical Engineering, Textile Engineering,
-                        Chemical Engineering, Biotechnology, Instrumentation, Automation, Sensors, Control System,
-                        Robotics, Artificial Intelligence, Civil Engineering, Modeling and Simulation, VLSI, DSP, Image
-                        Processing, Neural Network and Fuzzy Logic, Biology, Physics, Chemistry, Mathematics,
-                        Bio-Chemistry, Food Technology, Algorithms, and emerging paradigms in allied subjects.</p>
-                </div>
-                <div class="slide-div slide-div5">
-                    <h1 class="slide-div-h1-five">IJARESM</h1>
-                    <p>The International Journal of All Research Education and Scientific Methods, ISSN: 2455-6211,>5
-                        Impact Factor, SJR: 2.28 is a scholarly online, UGC certified, open access, peer-reviewed,
-                        multi-disciplinary,It is an international scientific journal that aims at promoting research in
-                        all the research fields like Engineering, Science Technology, Education, Management, Medical
-                        Sciences, Dental Sciences, Agriculture Sciences, Social Sciences, Health Care, Arts & Humanities
-                        and many more.</p>
+                <div class="right-partner-div">
+                    <div class="images-partners"></div>
+                    <div class="shadow-images-partners"></div>
                 </div>
             </div>
-        </div>
-    </section> -->
+        </section>
 
-
-
-    <section class="main-section-swiper">
-        <div class="main-section-slider">
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="slide-div slide-div1">
-                            <h1 class="slide-div-h1-one">IJCRT</h1>
-                            <p>The International Journal of Creative Research Thoughts is an UGC approved research
-                                journal,
-                                peer-reviewed, and referred journals, and open access journals. It provides a platform
-                                for
-                                students and graduates to publish their works and aims to explore advances in research
-                                pertaining to applied, theoretical and experimental technological studies. Their goal is
-                                to
-                                promote scientific information interchange between researchers, developers, engineers,
-                                faculty,
-                                students, and practitioners working in and around the world.</p>
+        <section class="section-cards-partners">
+            <div class="main-partners-div">
+                <% partnersArray.forEach(partners => { %>
+                <div class="partners-div">
+                    <div class="left-partners-main-div">
+                        <div class="image-left-div">
+                            <img src="<%= partners.image_partners %> " alt="" />
                         </div>
                     </div>
-                    <div class="swiper-slide">
-                        <div class="slide-div slide-div2">
-                            <h1 class="slide-div-h1-two">IJARESM</h1>
-                            <p>The International Journal of All Research Education and Scientific Methods, ISSN:
-                                2455-6211,>5
-                                Impact Factor, SJR: 2.28 is a scholarly online, UGC certified, open access,
-                                peer-reviewed,
-                                multi-disciplinary,It is an international scientific journal that aims at promoting
-                                research
-                                in
-                                all the research fields like Engineering, Science Technology, Education, Management,
-                                Medical
-                                Sciences, Dental Sciences, Agriculture Sciences, Social Sciences, Health Care, Arts &
-                                Humanities
-                                and many more.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-div slide-div3">
-                            <h1 class="slide-div-h1-three">IJRAR</h1>
-                            <p>The International Journal of Research and Analytical Reviews is one of the leading high
-                                quality
-                                Scholarly open access and peer reviewed quarterly published research journal. IJRAR is
-                                providing
-                                a platform for the researchers, academicians, professional, practitioners and students
-                                to
-                                impart
-                                and share knowledge in the form of high quality empirical and theoretical research
-                                papers,
-                                case
-                                studies, literature reviews and book reviews.</p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-div slide-div4">
-                            <h1 class="slide-div-h1-four">IJERSTE</h1>
-                            <p>The International Journal of Enhanced Research in Science Technology and Engineering,
-                                ISSN:
-                                2319-7463, >5 Impact Factor, UGC approved, was published in the year 2012 in India. It
-                                is an
-                                international academic journal which invites unpublished novel, original, empirical and
-                                high
-                                quality research work pertaining to recent developments and practices in the areas of
-                                Computer
-                                Science & Engineering, Information Technology, Electronics & Communication, Electrical
-                                and
-                                Electronics, Electronics & Telecommunication, Mechanical Engineering, Textile
-                                Engineering,
-                                Chemical Engineering, Biotechnology, Instrumentation, Automation, Sensors, Control
-                                System,
-                                Robotics, Artificial Intelligence, Civil Engineering, Modeling and Simulation, VLSI,
-                                DSP,
-                                Image
-                                Processing, Neural Network and Fuzzy Logic, Biology, Physics, Chemistry, Mathematics,
-                                Bio-Chemistry, Food Technology, Algorithms, and emerging paradigms in allied subjects.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-div slide-div4">
-                            <h1 class="slide-div-h1-four">IJERSTE</h1>
-                            <p>The International Journal of Enhanced Research in Science Technology and Engineering,
-                                ISSN:
-                                2319-7463, >5 Impact Factor, UGC approved, was published in the year 2012 in India. It
-                                is an
-                                international academic journal which invites unpublished novel, original, empirical and
-                                high
-                                quality research work pertaining to recent developments and practices in the areas of
-                                Computer
-                                Science & Engineering, Information Technology, Electronics & Communication, Electrical
-                                and
-                                Electronics, Electronics & Telecommunication, Mechanical Engineering, Textile
-                                Engineering,
-                                Chemical Engineering, Biotechnology, Instrumentation, Automation, Sensors, Control
-                                System,
-                                Robotics, Artificial Intelligence, Civil Engineering, Modeling and Simulation, VLSI,
-                                DSP,
-                                Image
-                                Processing, Neural Network and Fuzzy Logic, Biology, Physics, Chemistry, Mathematics,
-                                Bio-Chemistry, Food Technology, Algorithms, and emerging paradigms in allied subjects.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-div slide-div5">
-                            <h1 class="slide-div-h1-five">IJARESM</h1>
-                            <p>The International Journal of All Research Education and Scientific Methods, ISSN:
-                                2455-6211,>5
-                                Impact Factor, SJR: 2.28 is a scholarly online, UGC certified, open access,
-                                peer-reviewed,
-                                multi-disciplinary,It is an international scientific journal that aims at promoting
-                                research
-                                in
-                                all the research fields like Engineering, Science Technology, Education, Management,
-                                Medical
-                                Sciences, Dental Sciences, Agriculture Sciences, Social Sciences, Health Care, Arts &
-                                Humanities
-                                and many more.</p>
-                        </div>
+                    <div class="right-partners-main-div">
+                        <h1><%= partners.title_partners %></h1>
+                        <p><%= partners.description_partners %></p>
                     </div>
                 </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <!-- <div class="swiper-scrollbar"></div> -->
+                <% }) %>
             </div>
-        </div>
-    </section>
+        </section>
 
+        <%- include("./partials/footer.ejs") %>
 
-
-
-
-    <%- include("./partials/footer.ejs") %>
-
-
-
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            autoHeight: true,
-            cssMode: true,
-            // scrollbar: {
-            //     el: ".swiper-scrollbar",
-            //     hide: true,
-            // },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-            mousewheel: true,
-            keyboard: true,
-        });
-    </script>
-    <script src="javascripts/navbar.js"></script>
-    <!-- <script src="javascripts/partners.js"></script> -->
-</body>
-
+        <script src="javascripts/navbar.js"></script>
+        <!-- <script src="javascripts/partners.js"></script> -->
+    </body>
 </html>

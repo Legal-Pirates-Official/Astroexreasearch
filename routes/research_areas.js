@@ -8,10 +8,10 @@ const upload = multer({storage});
 
 const router = express.Router();
 
-router.get("/teams", (req, res) => {
-    db.query("SELECT * FROM teams", (err, rows) => {
+router.get("/research_areas", (req, res) => {
+    db.query("SELECT * FROM research_areas", (err, rows) => {
         if (!err) {
-            res.render("teams", {teamArray: rows});
+            res.render("research_areas", {research_areasArray: rows});
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -19,10 +19,12 @@ router.get("/teams", (req, res) => {
     });
 });
 
-router.get("/admin/teams", (req, res) => {
-    db.query("SELECT * FROM teams", (err, rows) => {
+router.get("/admin/research_areas", (req, res) => {
+    db.query("SELECT * FROM research_areas", (err, rows) => {
         if (!err) {
-            res.render("./admin/teams/team_show", {teamArray: rows});
+            res.render("./admin/research_areas/research_areas_show", {
+                research_areasArray: rows,
+            });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -30,10 +32,10 @@ router.get("/admin/teams", (req, res) => {
     });
 });
 
-router.get("/admin/teams/insert", async (req, res) => {
-    db.query("SELECT * FROM teams", async (err, rows) => {
+router.get("/admin/research_areas/insert", async (req, res) => {
+    db.query("SELECT * FROM research_areas", async (err, rows) => {
         if (!err) {
-            res.render("./admin/teams/team_insert");
+            res.render("./admin/research_areas/research_areas_insert");
         } else {
             console.log(err);
         }
@@ -41,24 +43,15 @@ router.get("/admin/teams/insert", async (req, res) => {
 });
 
 router.post(
-    "/admin/teams/insert",
-    upload.single("image_team"),
+    "/admin/research_areas/insert",
+    upload.single("image_research_areas"),
     async (req, res) => {
         db.query(
-            `INSERT INTO teams (name_team, job_team, email_team, instagram_url, linkedIn_url, color_team, image_team, select_team ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-            [
-                req.body.name_team,
-                req.body.job_team,
-                req.body.email_team,
-                req.body.instagram_url,
-                req.body.linkedIn_url,
-                req.body.color_team,
-                req.file.path,
-                req.body.select_team,
-            ],
+            `INSERT INTO research_areas (text_research_areas, image_research_areas) VALUES (?, ?)`,
+            [req.body.text_research_areas, req.file.path],
             async (err, rows) => {
                 if (!err) {
-                    res.redirect("/admin/teams");
+                    res.redirect("/admin/research_areas");
                 } else {
                     console.log(err);
                 }
@@ -67,13 +60,15 @@ router.post(
     }
 );
 
-router.get("/admin/teams/:id", (req, res) => {
+router.get("/admin/research_areas/:id", (req, res) => {
     db.query(
-        "SELECT * FROM teams WHERE id_team = ?",
+        "SELECT * FROM research_areas WHERE id_research_areas = ?",
         [req.params.id],
         (err, rows) => {
             if (!err) {
-                res.render("./admin/teams/team_view", {team: rows[0]});
+                res.render("./admin/research_areas/research_areas_view", {
+                    research_areas: rows[0],
+                });
             } else {
                 res.status(500).send("Internal server error");
                 console.log(err);
@@ -82,14 +77,14 @@ router.get("/admin/teams/:id", (req, res) => {
     );
 });
 
-router.get("/admin/teams/update/:id", async (req, res) => {
+router.get("/admin/research_areas/update/:id", async (req, res) => {
     db.query(
-        `SELECT * FROM teams WHERE id_team = ?`,
+        `SELECT * FROM research_areas WHERE id_research_areas = ?`,
         [req.params.id],
         async (err, rows) => {
             if (!err) {
-                res.render("./admin/teams/team_update", {
-                    team: rows[0],
+                res.render("./admin/research_areas/research_areas_update", {
+                    research_areas: rows[0],
                 });
             } else {
                 console.log(err);
@@ -99,11 +94,10 @@ router.get("/admin/teams/update/:id", async (req, res) => {
 });
 
 router.post(
-    "/admin/teams/update/:id",
-    upload.single("image_team"),
+    "/admin/research_areas/update/:id",
+    upload.single("image_research_areas"),
     async (req, res) => {
         console.log(req.body);
-        // https://res.cloudinary.com/dn3s6sgki/image/upload/v1650037728/Astroex_Research_Association/ac37qkdbythvpck0a2lk.png
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
@@ -111,15 +105,9 @@ router.post(
         console.log(oldimage);
 
         db.query(
-            `UPDATE teams SET name_team = ?, job_team = ?, email_team = ?, instagram_url = ?, linkedIn_url = ?, color_team = ?, select_team = ? , image_team = ? WHERE id_team = ?`,
+            `UPDATE research_areas SET text_research_areas = ?, image_research_areas = ? WHERE id_research_areas = ?`,
             [
-                req.body.name_team,
-                req.body.job_team,
-                req.body.email_team,
-                req.body.instagram_url,
-                req.body.linkedIn_url,
-                req.body.color_team,
-                req.body.select_team,
+                req.body.text_research_areas,
                 req.file ? req.file.path : req.body.image_checkbox,
                 req.params.id,
             ],
@@ -128,7 +116,7 @@ router.post(
                     await cloudinary.uploader.destroy(
                         "Astroex_Research_Association/" + oldimage
                     );
-                    res.redirect("/admin/teams");
+                    res.redirect("/admin/research_areas");
                 } else {
                     console.log(err);
                 }
@@ -137,14 +125,14 @@ router.post(
     }
 );
 
-router.get("/admin/teams/delete/:id", async (req, res) => {
+router.get("/admin/research_areas/delete/:id", async (req, res) => {
     console.log(req.query.cloudinaryName);
     db.query(
-        `DELETE FROM teams WHERE id_team = ?`,
+        `DELETE FROM research_areas WHERE id_research_areas = ?`,
         [req.params.id],
         async (err, rows) => {
             if (!err) {
-                res.redirect("/admin/teams");
+                res.redirect("/admin/research_areas");
             } else {
                 console.log(err);
             }

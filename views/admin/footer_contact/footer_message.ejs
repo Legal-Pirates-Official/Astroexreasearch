@@ -10,7 +10,7 @@
 			rel="stylesheet"
 		/>
 
-		<title>Admin training</title>
+		<title>Admin footer</title>
 	</head>
 
 	<body>
@@ -19,49 +19,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h1>Add Training</h1>
+					<h1>Add footer</h1>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<form id="training-insert-form">
+					<form id="footer-insert-form" action="/admin/footer_contact/message">
 						<div class="form-group">
-							<label for="title_training">Title</label>
-							<input
-								required
-								type="text"
-								class="form-control"
-								id="title_training"
-								name="title_training"
-							/>
-						</div>
-						<div class="form-group">
-							<label for="batch_training">Batch</label>
-							<input
-								required
-								type="text"
-								class="form-control"
-								id="batch_training"
-								name="batch_training"
-							/>
-						</div>
-						<div class="form-group">
-							<label for="paragraph_training">Description</label>
-							<!-- <input
-                                required
-                                type="text"
-                                class="form-control"
-                                id="paragraph_training"
-                                name="paragraph_training"
-                            /> -->
-							<!-- <textarea
-								required
-								class="form-control summer"
-								id="summernote"
-								name="paragraph_training"
-								rows="3"
-							></textarea> -->
-							<div id="editor"></div>
+							<label for="message_footer">Message</label>
+							<!-- <div id="editor"></div> -->
+							<textarea name="message_footer" id="message_footer" cols="30" rows="10"></textarea>
 						</div>
 						<div>
 							<button type="submit" class="btn btn-primary">Submit</button>
@@ -77,25 +44,25 @@
 				theme: 'snow'
 			});
 
-			const trainingInsertForm = document.querySelector(
-				'#training-insert-form'
+			const footerInsertForm = document.querySelector(
+				'#footer-insert-form'
 			);
 
-			trainingInsertForm.addEventListener('submit', async (e) => {
+			footerInsertForm.addEventListener('submit', async (e) => {
 				e.preventDefault();
-				const title_training = e.target[0].value;
-				const batch_training = e.target[1].value;
-				const paragraph_training =
+				const title_footer = e.target[0].value;
+				const batch_footer = e.target[1].value;
+				const paragraph_footer =
 					document.querySelector('#editor .ql-editor').innerHTML;
-				await fetch('/admin/training/insert', {
+				await fetch('/admin/footer/insert', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
 					},
 					body: JSON.stringify({
-						title_training,
-						batch_training,
-						paragraph_training
+						title_footer,
+						batch_footer,
+						paragraph_footer
 					})
 				});
 			});
