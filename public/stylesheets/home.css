@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 /* Topics */
-.topics{
+.topics {
   width: 100%;
   height: 90vh;
   position: relative;
@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
 }
-.wraptopics{
+.wraptopics {
   width: 90%;
   height: 90%;
   position: relative;
@@ -22,40 +22,50 @@
   justify-content: center;
   align-items: center;
 }
-.quote{
+.quote {
   width: 50%;
-  height: 70%;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-.quote p{
-  width: 80%;
-  font-size: 3rem;
-  color: #333333;
+.quote h1 {
+  font-family: "Kaushan Script", cursive;
+  font-size: 2rem;
+  color: #000;
+  text-align: center;
+}
+.Marqueetext {
+  width: 70%;
+  height: 70%;
   display: flex;
-  word-wrap: break-word;
-  text-align: left;
-  position: relative;
+  /* border: 2px solid black; */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.778);
+  border-radius: 20px;
+
+  color: white;
+  font-size: 20px;
+}
+.Marqueetext ul {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: "Kaushan Script", cursive;
 }
-.quote h3{
-  width: 80%;
-  font-size: 3.5rem;
-  font-weight: 500;
-  color: #4F4040;
-  display: flex;
-  word-wrap: break-word;
-  text-align: right;
-  position: relative;
-  justify-content: flex-end;
-  align-items: center;
+.Marqueetext ul li {
+  color: #000;
+  list-style: none;
+  padding: 18px;
 }
-.container{
+.Marqueetext ul li a {
+  color: blue;
+}
+.Marqueetext ul li a:hover {
+  color: red;
+}
+.container {
   width: 50%;
   height: 100%;
   position: relative;
@@ -63,34 +73,33 @@
   justify-content: center;
   align-items: center;
 }
-.grid{
+.grid {
   width: 85%;
   height: 80vh;
   position: relative;
   display: grid;
-  grid-template-columns: repeat(4,1fr);
-  grid-template-rows: repeat(2,1fr);
-  grid-template-areas: 
-  "cont1 cont1 cont2 cont2"
-  "cont3 cont3 cont4 cont4";
-  justify-content: space-around;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "cont1 cont1 cont2 cont2"
+    "cont3 cont3 cont4 cont4";
+  justify-content: center;
   align-items: center;
   gap: 20px;
-
 }
-.grid-item1{
+.grid-item1 {
   grid-area: cont1;
 }
-.grid-item2{
+.grid-item2 {
   grid-area: cont2;
 }
-.grid-item3{
+.grid-item3 {
   grid-area: cont3;
 }
-.grid-item4{
+.grid-item4 {
   grid-area: cont4;
 }
-.gridall{
+.gridall {
   width: 90%;
   height: 90%;
   position: relative;
@@ -98,7 +107,7 @@
   justify-content: center;
   align-items: center;
 }
-.grid1{
+.grid1 {
   width: 100%;
   height: 100%;
   position: relative;
@@ -106,7 +115,7 @@
   justify-content: center;
   align-items: center;
 }
-.bgimg{
+.bgimg {
   width: 90%;
   height: 90%;
   position: absolute;
@@ -115,251 +124,217 @@
   align-items: center;
   top: 0;
   right: 0;
-
 }
-.contentimage{
+.contentimage {
   width: 90%;
   height: 90%;
   position: absolute;
   display: flex;
   flex-direction: column;
-  background: #F3A32B;
-  justify-content:space-evenly;
+  background: #f3a32b;
+  justify-content: space-evenly;
   align-items: center;
   left: 0;
   bottom: 0;
   z-index: 10;
 }
-.contentimage img{
-  width:80px;
-  height:80px;
+.contentimage img {
+  width: 80px;
+  height: 80px;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.contentimage h3{
+.contentimage h3 {
   font-size: 1.5rem;
   font-weight: 500;
   color: #000;
 }
-/* Event */
-.event{
+
+/* Quotes */
+.quotation {
   width: 100%;
-  height: 45vh;
-  background: #f5f5f5;
+  height: 35vh;
+  background: #cbcbcb;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.wrapevent{
+.wrapquote {
   width: 85%;
-  height: 90%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Upcoming Event */
-.upcomingevent{
-  width: 100%;
-  height: 30%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.upcomingevent h3{
-  font-size: 3.5rem;
-  font-weight: 500;
-  color: #333333;
-  font-family: "Kaushan Script", cursive;
-}
-
-/* WholeEvent */
-.wholeevent{
-  width: 85%;
-  height: 60%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.eventcontent{
-  width: 80%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.eventrow{
-  width: 100%;
-  height: 80%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.datemon{
-  width: 15%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.datemon h1{
-  font-size:3rem;
-  font-weight: 500;
-}
-.datemon h2{
-  font-size:2rem;
-  font-weight: 400;
-}
-.vline{
-  width: 1px;
-  height: 60%;
-  background: #000;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.eventname{
-  width: 80%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.eventname h2{
-  font-size: 1.5rem;
-  font-weight:100;
-  color: #333333;
-}
-.hline{
-  width: 100%;
-  height: 1px;
-  position: relative;
-  background: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* Button */
-.button{
-  width: 20%;
-  height: 10%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.btn{
-  padding: 12px 28px;
-  background: #fa8c43;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  border: #fa8c43 1px;
-}
-.btn a{
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: #fff;
-}
-
-
-/* joinus */
-.joinus{
-  width: 100%;
-  height: 90vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.wrapjoin{
-  width: 80%;
-  height: 90%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.box1{
-  width: 70%;
-  height: 70%;
-  background: #5A5B6C;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 0;
-  left: 0;
-}
-.box3{
-  width: 70%;
-  height: 70%;
-  background: #FA8C43;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  bottom: 0;
-  right: 0;
-}
-.box2{
-  width: 70%;
-  height: 70%;
-  background: #f5f5f5;
-  position:relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* #00C3FF */
-.cont{
-  width: 70%;
   height: 70%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
 }
-.cont h1{
-  font-size: 4rem;
+.wrapquote p {
+  font-size: 2rem;
   font-weight: 500;
   color: #000;
+  text-align: center;
 }
-.cont h3{
-  font-size: 2rem;
-  font-weight: 400;
-  color: #000;
-}
-.btn1{
-  padding: 12px 28px;
-  background: #fa8c43;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  border: #fa8c43 1px;
-}
-.btn1 a{
-  font-size: 1.2rem;
-  text-decoration: none;
-  color: #fff;
+.wrapquote h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333333;
+  font-family: "Kaushan Script", cursive;
 }
 
+@media screen and (max-width: 1300px) {
+  .contentimage {
+    width: 100%;
+    height: 80%;
+  }
+  .bgimg img {
+    height: 15vw;
+  }
+  .bgimg {
+    width: 80%;
+    height: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .contentimage {
+    width: 95%;
+    height: 70%;
+  }
+  .bgimg img {
+    height: 15vw;
+  }
+  .bgimg {
+    width: 73%;
+    height: 100%;
+  }
+  .grid1 {
+    width: 100%;
+    height: 100%;
+  }
+}
+@media (max-width: 1000px) {
+  .wraptopics {
+    width: 95%;
+    height: 95%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .topics {
+    height: 190vh;
+  }
+  .quote {
+    width: 100%;
+    height: 50%;
+    justify-content: space-around;
+  }
+  .container {
+    width: 100%;
+    height: 50%;
+  }
+  .contentimage {
+    width: 90%;
+    height: 90%;
+  }
+  .bgimg img {
+    height: 22vw;
+  }
+  .bgimg {
+    width: 90%;
+    height: 90%;
+  }
+  .grid {
+    width: 65%;
+  }
+}
+@media (max-width: 900px) {
+  .contentimage {
+    height: 84%;
+  }
+  .bgimg img {
+    height: 23vw;
+  }
+  .bgimg {
+    height: 93%;
+  }
+}
+@media (max-width: 800px) {
+  .contentimage {
+    height: 73%;
+  }
+  .bgimg img {
+    height: 23vw;
+  }
+  .bgimg {
+    width: 88%;
+    height: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .bgimg {
+    display: none;
+  }
+  .grid {
+    width: 80%;
+  }
+  .topics {
+    height: 175vh;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    width: 90%;
+    height: 70vh;
+  }
+  .topics {
+    height: 165vh;
+  }
+  .contentimage {
+    height: 83%;
+  }
+}
+@media (max-width: 500px) {
+  .wrapquote p {
+    font-size: 1.7rem;
+  }
+  .wrapquote h3 {
+    font-size: 2rem;
+  }
+  .contentimage {
+    width: 100%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 400px) {
+  .quote h1 {
+    font-size: 1.8rem;
+  }
+  .topics {
+    height: 140vh;
+  }
+  .grid {
+    width: 90%;
+    height: 65vh;
+  }
+  .contentimage {
+    width: 100%;
+    height: 75%;
+  }
+  .contentimage img {
+    width: 60px;
+    height: 60px;
+  }
+  .contentimage h3 {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 400px) {
+  .wrapquote p {
+    font-size: 1.4rem;
+  }
+  .grid {
+    height: 62vh;
+  }
+}
