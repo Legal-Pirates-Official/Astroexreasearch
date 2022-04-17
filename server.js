@@ -11,6 +11,7 @@ const teams = require("./routes/teams");
 const training = require("./routes/training");
 const simple = require("./routes/simple");
 const contact = require("./routes/contact");
+const footer = require("./routes/footer");
 
 app.use(express.static("public"));
 app.engine("ejs", ejsMate);
@@ -25,6 +26,7 @@ app.use("/", simple);
 app.use("/", teams);
 app.use("/", training);
 app.use("/", contact);
+app.use("/", footer);
 
 app.listen(`${process.env.LISTENING_PORT}`, () => {
     console.log(`Server is running on port ${process.env.LISTENING_PORT}`);
