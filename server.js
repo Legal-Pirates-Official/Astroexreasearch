@@ -7,6 +7,7 @@ const path = require("path");
 
 // routes
 
+const home = require("./routes/home");
 const teams = require("./routes/teams");
 const training = require("./routes/training");
 const simple = require("./routes/simple");
@@ -27,6 +28,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use("/", simple);
+app.use("/", home);
 app.use("/", teams);
 app.use("/", training);
 app.use("/", contact);
