@@ -30,7 +30,7 @@ app.use("/", simple);
 app.use("/", teams);
 app.use("/", training);
 app.use("/", contact);
-app.use("/", footer);
+// app.use("/", footer);
 app.use("/", partners);
 app.use("/", events);
 app.use("/", research_areas);
