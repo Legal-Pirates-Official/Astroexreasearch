@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../../stylesheets/admin-nav.css" />
+        <title>Admin Teams</title>
+    </head>
+
+    <body>
+        <%- include("../../partials/admin_nav.ejs") %>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Add Team</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <form
+                        action="/admin/teams/insert"
+                        method="POST"
+                        enctype="multipart/form-data"
+                    >
+                        <div class="form-group">
+                            <label for="name_team">Name</label>
+                            <input
+                                required
+                                type="text"
+                                class="form-control"
+                                id="name_team"
+                                name="name_team"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="job_team">Job Title</label>
+                            <input
+                                required
+                                type="text"
+                                class="form-control"
+                                id="job_team"
+                                name="job_team"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="email_team">Email</label>
+                            <input
+                                required
+                                type="email"
+                                class="form-control"
+                                id="email_team"
+                                name="email_team"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="instagram_url">Instagram URL</label>
+                            <input
+                                required
+                                type="text"
+                                class="form-control"
+                                id="instagram_url"
+                                name="instagram_url"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedIn_url">LinkedIn URL</label>
+                            <input
+                                required
+                                type="text"
+                                class="form-control"
+                                id="linkedIn_url"
+                                name="linkedIn_url"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="color_team">Colors</label>
+                            <input
+                                required
+                                type="color"
+                                class="form-control"
+                                id="color_team"
+                                name="color_team"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="image_team">Image</label>
+                            <input
+                                required
+                                type="file"
+                                class="form-control"
+                                id="image_team"
+                                name="image_team"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="select_team">Select Team</label>
+                            <select name="select_team" id="select_team">
+                                <option selected disabled>Select Team</option>
+                                <option value="team_a">Team 1</option>
+                                <option value="team_b">Team 2</option>
+                            </select>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-primary">
+                                Submit
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

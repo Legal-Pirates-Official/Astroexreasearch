@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="stylesheets/training.css" />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
+        <link rel="stylesheet" href="stylesheets/navbar.css" />
+        <title>Training</title>
+    </head>
+
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+        <section class="training-section">
+            <div class="heading-section">
+                <h1><%= training.batch_training %></h1>
+            </div>
+            <div class="box-div box-div1">
+                <div class="floating-content">
+                    <p><%= training.title_training %></p>
+                </div>
+                <div class="standard-content">
+                    <p><%= training.paragraph_training %></p>
+                </div>
+            </div>
+        </section>
+
+        <%- include("./partials/footer.ejs") %>
+
+        <script src="javascripts/navbar.js"></script>
+    </body>
+</html>

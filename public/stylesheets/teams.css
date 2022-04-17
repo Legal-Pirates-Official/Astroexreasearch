@@ -55,7 +55,11 @@
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 }
 
-.team-div:nth-child(1) {
+.team-div {
+    background: var(--background);
+}
+
+/* .team-div:nth-child(1) {
     background: #e63946;
 }
 .team-div:nth-child(2) {
@@ -84,7 +88,7 @@
 }
 .team-div:nth-child(10) {
     background: #219ebc;
-}
+} */
 
 .team-image {
     position: relative;
@@ -175,12 +179,10 @@
 }
 
 @media (max-width: 400px) {
-    .our-teams
-    {
+    .our-teams {
         flex-direction: column;
     }
-    .team-div
-    {
+    .team-div {
         width: 90%;
     }
 }
