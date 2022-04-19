@@ -129,6 +129,36 @@
 }
 
 
+@media (max-width: 900px) {
+    .contact-section
+    {
+        flex-direction: column-reverse;
+        height: fit-content;
+    }
+    .contact-left-container
+    {
+        height: 20rem;
+        width: 100%;
+    }
+    .contact-left
+    {
+        width: 55%;
+        height: 95%;
+    }
+    .contact-title
+    {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 10%;
+    }
+    .contact-right-container{
+        width: 100%;
+    }
+    .form-group
+    {
+        width: 80%;
+    }
+}
 @media (max-width: 400px) {
     .contact-section
     {

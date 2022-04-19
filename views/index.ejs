@@ -2,138 +2,151 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-  <link rel="stylesheet" href="stylesheets/home.css">
-  <link rel="stylesheet" href="stylesheets/navbar.css">
-  <link rel="stylesheet" href="stylesheets/footer.css">
-  <link rel="stylesheet" href="stylesheets/swiper_home.css">
-  <title>Home</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Link Swiper's CSS -->
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="stylesheets/home.css">
+	<link rel="stylesheet" href="stylesheets/navbar.css">
+	<link rel="stylesheet" href="stylesheets/footer.css">
+	<link rel="stylesheet" href="stylesheets/swiper_home.css">
+	<title>Home</title>
 </head>
 
 <body>
-  <%- include("./partials/navbar.ejs") %>
+	<%- include("./partials/navbar.ejs") %>
 
-    <!-- Swiper -->
+		<!-- Swiper -->
 
-    <section class="slider">
-      <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
-        <div class="parallax-bg" style="
-          background-image: url(/images/Image2.jpg);
+		<section class="slider">
+			<div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper">
+				<div class="parallax-bg" style="background-image: url(/images/Image2.jpg);
         " data-swiper-parallax="-23%"></div>
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <div class="content">
-              <div class="wrapslide2">
-                <div class="subtitle" data-swiper-parallax="-200">Enhance Your Knowledge with us</div>
-                <button class="btnforslider"><a href="">Join Us</a></button>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide">
-            <div class="title" data-swiper-parallax="-300">Welcome to Our Community Site</div>
-          </div>
-          <div class="swiper-slide">
-            <div class="wrapslide2">
-              <div class="subtitle" data-swiper-parallax="-200">We Are Organizing Lots of Events For You,Join With Us
-              </div>
-              <button class="btnforslider"><a href="./views/events.html">Register Now</a></button>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
-      </div>
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="content">
+							<div class="wrapslide2">
+								<div class="subtitle" data-swiper-parallax="-200">Enhance Your Knowledge with us</div>
+								<button class="btnforslider"><a href="">Join Us</a></button>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="title" data-swiper-parallax="-300">Welcome to Our Community Site</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="wrapslide2">
+							<div class="subtitle" data-swiper-parallax="-200">We Are Organizing Lots of Events For
+								You,Join With Us
+							</div>
+							<button class="btnforslider"><a href="./views/events.html">Register Now</a></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-button-next"></div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-pagination"></div>
+			</div>
+		</section>
 
-    </section>
-    <section class="topics">
-      <div class="wraptopics">
-        <div class="quote">
-          <h1 class="div-2-title">LATEST UPDATES</h1>
-          <marquee class="Marqueetext" direction="down" height="350" width="350"  direction="up" scrollamount="5" onmousedown='' onmouseup=''
-          onmouseover="this.stop();" onmouseout="this.start();" onmouseout="this.start();"
-          ontouchstart="this.stop()" ontouchend="this.start()" >
-        
-          <ul>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, nobis! Mollitia neque ea iure perspiciatis necessitatibus maxime?<a href="./">Click Here</a>.</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, nobis! Mollitia neque ea iure perspiciatis necessitatibus maxime?<a href="./">Click Here</a>.</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, nobis! Mollitia neque ea iure perspiciatis necessitatibus maxime?<a href="./">Click Here</a>.</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, nobis! Mollitia neque ea iure perspiciatis necessitatibus maxime?<a href="./">Click Here</a>.</li>
-            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aut, nobis! Mollitia neque ea iure perspiciatis necessitatibus maxime?<a href="./">Click Here</a>.</li>
-          </ul>
-        
-        </marquee> 
-        </div>
-        <!-- grid-item grid1 -->
-        <div class="container">
-          <div class="grid">
-            <div class="grid-item1 gridall">
-              <div class="grid1">
-                <div class="bgimg">
-                  <img src="images/bgimg.png" alt="">
-                </div>
-                <div class="contentimage">
-                  <img src="images/goals.png" alt="">
-                  <h3>Mission</h3>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item2 gridall">
-              <div class="grid1">
-                <div class="bgimg">
-                  <img src="images/bgimg.png" alt="">
-                </div>
-                <div class="contentimage">
-                  <img src="images/events.png" alt="">
-                  <h3>Events</h3>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item3 gridall">
-              <div class="grid1">
-                <div class="bgimg">
-                  <img src="images/bgimg.png" alt="">
-                </div>
-                <div class="contentimage">
-                  <img src="images/meeting.png" alt="">
-                  <h3>Meet Us</h3>
-                </div>
-              </div>
-            </div>
-            <div class="grid-item4 gridall">
-              <div class="grid1">
-                <div class="bgimg">
-                  <img src="images/bgimg.png" alt="">
-                </div>
-                <div class="contentimage">
-                  <img src="images/research.png" alt="">
-                  <h3>Research</h3>
-                </div>
-              </div>
-            </div>
+		<section class="topics">
+			<div class="wraptopics">
+				<div class="quote">
+					<h1 class="div-2-title">LATEST UPDATES</h1>
+					<marquee 
+						class="Marqueetext" 
+						direction="up" 
+						height="350" 
+						width="350" 
+						direction="up"
+						scrollamount="5" 
+						onmousedown='' 
+						onmouseup='' 
+						onmouseover="this.stop();"
+						onmouseout="this.start();" 
+						onmouseout="this.start();" 
+						ontouchstart="this.stop()"
+						ontouchend="this.start()">
 
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="quotation">
-      <div class="wrapquote">
-        <p>Alone we can do so little; together we can do so much</p>
-        <h3>-Helen Keller</h3>
-      </div>
-    </section>
-    <!-- footer -->
-    <%- include("./partials/footer.ejs") %>
+						<ul>
+							<% eventsArray.forEach(events => { %>
+							<li>
+								<h1><%= events.name_events %> </h1>
+								<p><%= events.description_events %> </p>
+								<a href="./">Click Here</a>.
+							</li>
+							<% }) %>
+						</ul>
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="javascripts/home.js"></script>
-    <script src="javascripts/navbar.js"></script>
+					</marquee>
+				</div>
+				<!-- grid-item grid1 -->
+				<div class="container">
+					<div class="grid">
+						<div class="grid-item1 gridall">
+							<div class="grid1">
+								<div class="bgimg">
+									<img src="images/bgimg.png" alt="">
+								</div>
+								<div class="contentimage">
+									<img src="images/goals.png" alt="">
+									<h3>Mission</h3>
+								</div>
+							</div>
+						</div>
+						<div class="grid-item2 gridall">
+							<div class="grid1">
+								<div class="bgimg">
+									<img src="images/bgimg.png" alt="">
+								</div>
+								<div class="contentimage">
+									<img src="images/events.png" alt="">
+									<h3>Events</h3>
+								</div>
+							</div>
+						</div>
+						<div class="grid-item3 gridall">
+							<div class="grid1">
+								<div class="bgimg">
+									<img src="images/bgimg.png" alt="">
+								</div>
+								<div class="contentimage">
+									<img src="images/meeting.png" alt="">
+									<h3>Meet Us</h3>
+								</div>
+							</div>
+						</div>
+						<div class="grid-item4 gridall">
+							<div class="grid1">
+								<div class="bgimg">
+									<img src="images/bgimg.png" alt="">
+								</div>
+								<div class="contentimage">
+									<img src="images/research.png" alt="">
+									<h3>Research</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="quotation">
+			<div class="wrapquote">
+				<p>Alone we can do so little; together we can do so much</p>
+				<h3>-Helen Keller</h3>
+			</div>
+		</section>
+		<!-- footer -->
+		<%- include("./partials/footer.ejs") %>
+
+
+			<!-- Swiper JS -->
+			<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+			<script src="javascripts/home.js"></script>
+			<script src="javascripts/navbar.js"></script>
 </body>
 
 </html>

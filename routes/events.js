@@ -41,6 +41,7 @@ router.get("/admin/events/insert", async (req, res) => {
     });
 });
 
+
 router.post(
     "/admin/events/insert",
     upload.single("image_events"),
