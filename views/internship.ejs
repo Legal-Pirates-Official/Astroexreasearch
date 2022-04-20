@@ -33,9 +33,13 @@
                         <%= internship.subheading_internship %>
                     </h2>
                     <div class="tags-internship-div">
-                        <a class="tags-internship" href=""
-                            ><%= internship.tag_internship %>
+                        <%
+                        internship.tag_internship.split(",").forEach((element,
+                        index) => { %>
+                        <a class="tags-internship" href="">
+                            <%= element.split("=")[1] %>
                         </a>
+                        <% }); %>
                     </div>
                     <p><%= internship.description_internship %></p>
                 </div>

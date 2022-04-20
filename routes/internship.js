@@ -19,6 +19,24 @@ router.get("/internship", (req, res) => {
     });
 });
 
+router.get("/internships", (req, res) => {
+    const search = req.query.search;
+
+    db.query(
+        `SELECT * FROM internship WHERE heading_internship = ${
+            search ? `'${search}'` : "heading_internship"
+        }`,
+        (err, rows) => {
+            if (!err) {
+                res.render("internship", {internshipArray: rows});
+            } else {
+                res.status(500).send("Internal server error");
+                console.log(err);
+            }
+        }
+    );
+});
+
 router.get("/admin/internship", (req, res) => {
     db.query("SELECT * FROM internship", (err, rows) => {
         if (!err) {
@@ -44,13 +62,25 @@ router.get("/admin/internship/insert", async (req, res) => {
 
 router.post("/admin/internship/insert", async (req, res) => {
     console.log(req.body);
-    db.query(
+    let data;
+
+    Object.keys(req.body).forEach((key, index) => {
+        if (key.includes("tag_internship")) {
+            data = !data
+                ? `${key}=${req.body[key]},`
+                : Object.keys(req.body).length - 1 == index
+                ? data + `${key}=${req.body[key]}`
+                : data + `${key}=${req.body[key]},`;
+        }
+    });
+
+    await db.query(
         `INSERT INTO internship (heading_internship, subheading_internship, description_internship, tag_internship) VALUES (?, ?, ?, ?)`,
         [
             req.body.heading_internship,
             req.body.subheading_internship,
             req.body.description_internship,
-            req.body.tag_internship,
+            data,
         ],
         async (err, rows) => {
             if (!err) {

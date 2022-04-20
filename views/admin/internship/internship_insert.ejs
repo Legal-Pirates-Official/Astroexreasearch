@@ -29,49 +29,59 @@
                         action="/admin/internship/insert"
                         method="POST"
                     >
-                        <div class="form-group">
-                            <label for="heading_internship">Title</label>
-                            <input
-                                required
-                                type="text"
-                                class="form-control"
-                                id="heading_internship"
-                                name="heading_internship"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="subheading_internship"
-                                >Sub Heading</label
-                            >
-                            <input
-                                required
-                                type="text"
-                                class="form-control"
-                                id="subheading_internship"
-                                name="subheading_internship"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="description_internship"
-                                >Description</label
-                            >
-                            <input
-                                required
-                                type="text"
-                                class="form-control"
-                                id="description_internship"
-                                name="description_internship"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="tag_internship">Tag Lines</label>
-                            <textarea
-                                required
-                                class="form-control summer"
-                                id="tag_internship"
-                                name="tag_internship"
-                                rows="3"
-                            ></textarea>
+                        <div class="form-group-container">
+                            <div class="form-group">
+                                <label for="heading_internship">Title</label>
+                                <input
+                                    required
+                                    type="text"
+                                    class="form-control"
+                                    id="heading_internship"
+                                    name="heading_internship"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="subheading_internship"
+                                    >Sub Heading</label
+                                >
+                                <input
+                                    required
+                                    type="text"
+                                    class="form-control"
+                                    id="subheading_internship"
+                                    name="subheading_internship"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="description_internship"
+                                    >Description</label
+                                >
+                                <input
+                                    required
+                                    type="text"
+                                    class="form-control"
+                                    id="description_internship"
+                                    name="description_internship"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <div class="plus-container">
+                                    <label for="description_internship"
+                                        >Add Tag</label
+                                    >
+                                    <div class="plus-icon">
+                                        <p class="plusIcon">+</p>
+                                    </div>
+                                </div>
+                                <label for="tag_internship_1">Tag Lines</label>
+                                <textarea
+                                    required
+                                    class="form-control summer"
+                                    id="tag_internship_1"
+                                    name="tag_internship_1"
+                                    rows="3"
+                                ></textarea>
+                            </div>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary">
@@ -103,5 +113,29 @@
             integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
             crossorigin="anonymous"
         ></script>
+        <script>
+            const plusIcon = document.querySelector(".plusIcon");
+            const formGroupContainer = document.querySelector(
+                ".form-group-container"
+            );
+            let count = 1;
+
+            plusIcon.addEventListener("click", () => {
+                formGroupContainer.insertAdjacentHTML(
+                    "beforeend",
+                    `<div class="form-group">
+                        <label for="tag_internship_${count + 1}">Tag Lines</label>
+                        <textarea
+                            required
+                            class="form-control summer"
+                            id="tag_internship_${count + 1}"
+                            name="tag_internship_${count + 1}"
+                            rows="3"
+                        ></textarea><br>
+                    </div>`
+                );
+                count++;
+            });
+        </script>
     </body>
 </html>

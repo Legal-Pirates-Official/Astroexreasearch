@@ -49,8 +49,19 @@
                             <tr>
                                 <td><%- internship.heading_internship %></td>
                                 <td><%- internship.subheading_internship %></td>
-                                <td><%- internship.description_internship %></td>
-                                <td><%- internship.tag_internship %></td>
+                                <td>
+                                    <%- internship.description_internship %>
+                                </td>
+                                <!-- <td><%- internship.tag_internship %></td> -->
+                                <td>
+                                    <ul>
+                                        <%
+                                        internship.tag_internship.split(",").forEach((element,
+                                        index) => { %>
+                                        <li><%= element.split("=")[1] %></li>
+                                        <% }); %>
+                                    </ul>
+                                </td>
                                 <td>
                                     <a
                                         href="/admin/internship/<%- internship.id_internship %>"
