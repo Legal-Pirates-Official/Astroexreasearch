@@ -10,7 +10,7 @@
             rel="stylesheet"
         />
 
-        <title>Admin training</title>
+        <title>Admin Internship</title>
     </head>
 
     <body>
@@ -19,54 +19,59 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Add Training</h1>
+                    <h1>Add Internship</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <form
-                        id="training-insert-form"
-                        action="/admin/training/insert"
+                        id="internship-insert-form"
+                        action="/admin/internship/insert"
                         method="POST"
-                        enctype="multipart/form-data"
                     >
                         <div class="form-group">
-                            <label for="title_training">Title</label>
+                            <label for="heading_internship">Title</label>
                             <input
                                 required
                                 type="text"
                                 class="form-control"
-                                id="title_training"
-                                name="title_training"
+                                id="heading_internship"
+                                name="heading_internship"
                             />
                         </div>
                         <div class="form-group">
-                            <label for="batch_training">Batch</label>
+                            <label for="subheading_internship"
+                                >Sub Heading</label
+                            >
                             <input
                                 required
                                 type="text"
                                 class="form-control"
-                                id="batch_training"
-                                name="batch_training"
+                                id="subheading_internship"
+                                name="subheading_internship"
                             />
                         </div>
                         <div class="form-group">
-                            <label for="paragraph_training">Description</label>
-                            <!-- <input
+                            <label for="description_internship"
+                                >Description</label
+                            >
+                            <input
                                 required
                                 type="text"
                                 class="form-control"
-                                id="paragraph_training"
-                                name="paragraph_training"
-                            /> -->
-                            <!-- <textarea
-								required
-								class="form-control summer"
-								id="summernote"
-								name="paragraph_training"
-								rows="3"
-							></textarea> -->
-                            <div id="editor"></div>
+                                id="description_internship"
+                                name="description_internship"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <label for="tag_internship">Tag Lines</label>
+                            <textarea
+                                required
+                                class="form-control summer"
+                                id="tag_internship"
+                                name="tag_internship"
+                                rows="3"
+                            ></textarea>
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary">
@@ -77,36 +82,6 @@
                 </div>
             </div>
         </div>
-
-        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-        <script>
-            var quill = new Quill("#editor", {
-                theme: "snow",
-            });
-
-            const trainingInsertForm = document.querySelector(
-                "#training-insert-form"
-            );
-
-            trainingInsertForm.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                const title_training = e.target[0].value;
-                const batch_training = e.target[1].value;
-                const paragraph_training =
-                    document.querySelector("#editor .ql-editor").innerHTML;
-                await fetch("/admin/training/insert", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        title_training,
-                        batch_training,
-                        paragraph_training,
-                    }),
-                });
-            });
-        </script>
 
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"

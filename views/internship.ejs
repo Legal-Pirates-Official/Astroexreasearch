@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./stylesheets/internship.css" />
+        <link rel="stylesheet" href="./stylesheets/footer.css" />
+        <link rel="stylesheet" href="./stylesheets/navbar.css" />
+        <title>Internship</title>
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+
+        <section class="main-section">
+            <section class="internship-section">
+                <div class="search-bar">
+                    <form action="/internships" method="get">
+                        <input
+                            type="text"
+                            name="search"
+                            placeholder="Search for Internships"
+                        />
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+            </section>
+            <div class="main-div-intership">
+                <% internshipArray.forEach(internship => { %>
+                <div class="div-internship">
+                    <h1><%= internship.heading_internship %></h1>
+                    <h2 style="font-weight: 400">
+                        <%= internship.subheading_internship %>
+                    </h2>
+                    <div class="tags-internship-div">
+                        <a class="tags-internship" href=""
+                            ><%= internship.tag_internship %>
+                        </a>
+                    </div>
+                    <p><%= internship.description_internship %></p>
+                </div>
+                <% }) %>
+            </div>
+        </section>
+    </body>
+</html>

@@ -16,6 +16,7 @@ const footer = require("./routes/footer");
 const partners = require("./routes/partners");
 const events = require("./routes/events");
 const research_areas = require("./routes/research_areas");
+const internship = require("./routes/internship");
 
 app.use(express.static("public"));
 app.engine("ejs", ejsMate);
@@ -36,6 +37,7 @@ app.use("/", contact);
 app.use("/", partners);
 app.use("/", events);
 app.use("/", research_areas);
+app.use("/", internship);
 
 app.listen(`${process.env.LISTENING_PORT}`, () => {
     console.log(`Server is running on port ${process.env.LISTENING_PORT}`);

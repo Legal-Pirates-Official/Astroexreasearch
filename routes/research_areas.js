@@ -46,6 +46,7 @@ router.post(
     "/admin/research_areas/insert",
     upload.single("image_research_areas"),
     async (req, res) => {
+        console.log(req.body);
         db.query(
             `INSERT INTO research_areas (text_research_areas, image_research_areas) VALUES (?, ?)`,
             [req.body.text_research_areas, req.file.path],
@@ -101,8 +102,6 @@ router.post(
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
-
-        console.log(oldimage);
 
         db.query(
             `UPDATE research_areas SET text_research_areas = ?, image_research_areas = ? WHERE id_research_areas = ?`,

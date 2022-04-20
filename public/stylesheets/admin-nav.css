@@ -72,7 +72,7 @@ body {
     right: 10px;
 }
 
-.show {
+.dropdown-navbar.show {
     display: flex;
 }
 
