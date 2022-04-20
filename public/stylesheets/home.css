@@ -213,78 +213,78 @@
     }
 }
 @media (max-width: 1200px) {
-    .contentimage {
-        width: 95%;
-        height: 70%;
-    }
-    .bgimg img {
-        height: 15vw;
-    }
-    .bgimg {
-        width: 73%;
-        height: 100%;
-    }
-    .grid1 {
-        width: 100%;
-        height: 100%;
-    }
+  .contentimage {
+    width: 95%;
+    height: 70%;
+  }
+  .bgimg img {
+    height: 15vw;
+  }
+  .bgimg {
+    width: 73%;
+    height: 107%;
+  }
+  .grid1 {
+    width: 100%;
+    height: 100%;
+  }
 }
 @media (max-width: 1000px) {
-    .wraptopics {
-        width: 95%;
-        height: 95%;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-    .topics {
-        height: 190vh;
-    }
-    .quote {
-        width: 100%;
-        height: 50%;
-        justify-content: space-around;
-    }
-    .container {
-        width: 100%;
-        height: 50%;
-    }
-    .contentimage {
-        width: 90%;
-        height: 90%;
-    }
-    .bgimg img {
-        height: 22vw;
-    }
-    .bgimg {
-        width: 90%;
-        height: 90%;
-    }
-    .grid {
-        width: 65%;
-    }
+  .wraptopics {
+    width: 95%;
+    height: 95%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .topics {
+    height: 190vh;
+  }
+  .quote {
+    width: 100%;
+    height: 50%;
+    justify-content: space-around;
+  }
+  .container {
+    width: 100%;
+    height: 50%;
+  }
+  .contentimage {
+    width: 72%;
+    height: 74%;
+  }
+  .bgimg img {
+    height: 19vw;
+  }
+  .bgimg {
+    width: 108%;
+    height: 105%;
+  }
+  .grid {
+    width: 70%;
+  }
 }
 @media (max-width: 900px) {
-    .contentimage {
-        height: 84%;
-    }
-    .bgimg img {
-        height: 23vw;
-    }
-    .bgimg {
-        height: 93%;
-    }
+  .contentimage {
+    height: 72%;
+  }
+  .bgimg img {
+    height: 20vw;
+  }
+  .bgimg {
+    height: 100%;
+  }
 }
 @media (max-width: 800px) {
-    .contentimage {
-        height: 73%;
-    }
-    .bgimg img {
-        height: 23vw;
-    }
-    .bgimg {
-        width: 88%;
-        height: 100%;
-    }
+  .contentimage {
+    height: 66%;
+  }
+  .bgimg img {
+    height: 23vw;
+  }
+  .bgimg {
+    width: 116%;
+    height: 116%;
+  }
 }
 @media (max-width: 700px) {
     .bgimg {
@@ -302,16 +302,16 @@
     }
 }
 @media (max-width: 600px) {
-    .grid {
-        width: 90%;
-        height: 70vh;
-    }
-    .topics {
-        height: 165vh;
-    }
-    .contentimage {
-        height: 83%;
-    }
+  .grid {
+    width: 90%;
+    height: 70vh;
+  }
+  .topics {
+    height: 165vh;
+  }
+  .contentimage {
+    height: 81%;
+  }
 }
 @media (max-width: 500px) {
     .wrapquote p {
