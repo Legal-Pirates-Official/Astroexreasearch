@@ -19,22 +19,25 @@ router.get("/internship", (req, res) => {
     });
 });
 
-router.get("/internships", (req, res) => {
-    const search = req.query.search;
-
-    db.query(
-        `SELECT * FROM internship WHERE heading_internship = ${
-            search ? `'${search}'` : "heading_internship"
-        }`,
-        (err, rows) => {
-            if (!err) {
-                res.render("internship", {internshipArray: rows});
-            } else {
-                res.status(500).send("Internal server error");
-                console.log(err);
-            }
+router.get("/internship/:search", (req, res) => {
+    const search = req.params.search;
+    db.query(`SELECT * FROM internship`, (err, rows) => {
+        if (!err) {
+            console.log(search);
+            let internshipArray = [];
+            rows.forEach((element) => {
+                console.log(element.heading_internship.toLowerCase().includes(search.toLowerCase()));
+                if (element.heading_internship.toLowerCase().includes(search)) {
+                    internshipArray.push(element);
+                }
+            });
+            console.log(internshipArray);
+            res.render("internship", {internshipArray});
+        } else {
+            res.status(500).send("Internal server error");
+            console.log(err);
         }
-    );
+    });
 });
 
 router.get("/admin/internship", (req, res) => {

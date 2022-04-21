@@ -15,8 +15,10 @@
         <section class="main-section">
             <section class="internship-section">
                 <div class="search-bar">
-                    <form action="/internships" method="get">
+                    <form action="/internship/search" method="get">
                         <input
+                            data-target="<%= internshipArray %>"
+                            class="search_internship"
                             type="text"
                             name="search"
                             placeholder="Search for Internships"
@@ -46,5 +48,8 @@
                 <% }) %>
             </div>
         </section>
+
+        <script src="../javascripts/internship.js"></script>
+        <script src="../javascripts/navbar.js"></script>
     </body>
 </html>

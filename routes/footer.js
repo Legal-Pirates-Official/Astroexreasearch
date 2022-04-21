@@ -46,45 +46,45 @@ router.get("/admin/footer_contact/message", (req, res) => {
     });
 });
 
-// router("admin/footer_contact/message", (req, res) => {
-//     db.query("SELECT * FROM footer_contact", (err, rows) => {
-//         if (!err) {
-//             const output = `
-//                 <p>You have a new contact request</p>
-//                 <h3>Contact Details</h3>
-//                 <h3>Message</h3>
-//                 <p>${req.body.message_footer}</p>
-//                 `;
+router.post("admin/footer_contact/message", (req, res) => {
+    db.query("SELECT * FROM footer_contact", (err, rows) => {
+        if (!err) {
+            const output = `
+                <p>You have a new contact request</p>
+                <h3>Contact Details</h3>
+                <h3>Message</h3>
+                <p>${req.body.message_footer}</p>
+                `;
 
-//             let transporter = nodemailer.createTransport({
-//                 // port: 587,
-//                 // secure: false,
-//                 service: "gmail",
-//                 auth: {
-//                     user: "",
-//                     pass: "",
-//                 },
-//             });
+            let transporter = nodemailer.createTransport({
+                // port: 587,
+                // secure: false,
+                service: "gmail",
+                auth: {
+                    user: "",
+                    pass: "",
+                },
+            });
 
-//             let mailOptions = {
-//                 from: "",
-//                 to: "",
-//                 subject: "Customer Contact Request",
-//                 text: "Hello world?",
-//                 html: output,
-//             };
+            let mailOptions = {
+                from: "",
+                to: "",
+                subject: "Customer Contact Request",
+                text: "Hello world?",
+                html: output,
+            };
 
-//             transporter.sendMail(mailOptions, (error, info) => {
-//                 if (error) {
-//                     return console.log(error);
-//                 }
-//                 res.redirect("/admin/footer_contact");
-//             });
-//         } else {
-//             res.status(500).send("Internal server error");
-//             console.log(err);
-//         }
-//     });
-// });
+            transporter.sendMail(mailOptions, (error, info) => {
+                if (error) {
+                    return console.log(error);
+                }
+                res.redirect("/admin/footer_contact");
+            });
+        } else {
+            res.status(500).send("Internal server error");
+            console.log(err);
+        }
+    });
+});
 
 module.exports = router;
