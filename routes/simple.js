@@ -19,9 +19,9 @@ router.get("/about", (req, res) => {
 //     res.render("contact");
 // });
 
-// router.get("/partners", (req, res) => {
-//     res.render("partners");
-// });
+router.get("/partners", (req, res) => {
+    res.render("partners");
+});
 
 // router.get("/teams", (req, res) => {
 //     res.render("teams");

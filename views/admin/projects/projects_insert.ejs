@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="../../stylesheets/admin-nav.css" />
-        <title>Admin partners</title>
+        <title>Admin projects</title>
     </head>
 
     <body>
@@ -14,36 +14,48 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>Add partners</h1>
+                    <h1>Add projects</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
                     <form
-                        action="/admin/partners/insert"
+                        action="/admin/projects/insert"
                         method="POST"
                         enctype="multipart/form-data"
                     >
                         <div class="form-group">
-                            <label for="name_partners"
-                                >Name of the partners</label
+                            <label for="title_projects"
+                                >Name of the Projects</label
                             >
                             <input
                                 required
                                 type="text"
                                 class="form-control"
-                                id="name_partners"
-                                name="name_partners"
+                                id="title_projects"
+                                name="title_projects"
                             />
                         </div>
                         <div class="form-group">
-                            <label for="image_partners">Image</label>
+                            <label for="description_projects"
+                                >Description</label
+                            >
+                            <textarea
+                                required
+                                type="text"
+                                class="form-control"
+                                id="description_projects"
+                                name="description_projects"
+                            ></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="image_projects">Image</label>
                             <input
                                 required
                                 type="file"
                                 class="form-control"
-                                id="image_partners"
-                                name="image_partners"
+                                id="image_projects"
+                                name="image_projects"
                             />
                         </div>
                         <div>

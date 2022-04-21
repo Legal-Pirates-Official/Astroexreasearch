@@ -12,7 +12,7 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="../../stylesheets/admin-show.css" />
-        <title>partners Show</title>
+        <title>projects Show</title>
     </head>
 
     <body>
@@ -21,14 +21,14 @@
         <div class="container">
             <div class="row">
                 <div class="row">
-                    <h1>partners Show</h1>
+                    <h1>projects Show</h1>
                 </div>
                 <div class="row">
                     <a
                         class="btn btn-primary"
                         style="margin: 2% 0%; width: 10%"
-                        href="/admin/partners/insert"
-                        >Add partners</a
+                        href="/admin/projects/insert"
+                        >Add projects</a
                     >
                 </div>
             </div>
@@ -38,36 +38,38 @@
                         <thead>
                             <tr>
                                 <th class="col-name">Name</th>
+                                <th class="col-name">Job Title</th>
                                 <th class="col-name">Image</th>
                                 <th class="col-name">Operations</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <% partnersArray.forEach(partners => { %>
+                            <% projectsArray.forEach(projects => { %>
                             <tr>
-                                <td><%- partners.name_partners %></td>
+                                <td><%- projects.title_projects %></td>
+                                <td><%- projects.description_projects %></td>
                                 <td>
                                     <img
                                         class="img-fluid"
-                                        src="<%- partners.image_partners %>"
-                                        alt="<%- partners.image_partners %>"
+                                        src="<%- projects.image_projects %>"
+                                        alt="<%- projects.image_projects %>"
                                     />
                                 </td>
                                 <td>
                                     <a
-                                        href="/admin/partners/<%- partners.id_partners %>"
+                                        href="/admin/projects/<%- projects.id_projects %>"
                                         class="btn btn-primary"
                                         style="margin-bottom: 10%"
                                         >View</a
                                     >
                                     <a
-                                        href="/admin/partners/update/<%- partners.id_partners %>"
+                                        href="/admin/projects/update/<%- projects.id_projects %>"
                                         class="btn btn-warning"
                                         style="margin-bottom: 10%"
                                         >Edit</a
                                     >
                                     <a
-                                        href="/admin/partners/delete/<%- partners.id_partners %>"
+                                        href="/admin/projects/delete/<%- projects.id_projects %>"
                                         class="btn btn-danger"
                                         style="margin-bottom: 10%"
                                         >Delete</a
