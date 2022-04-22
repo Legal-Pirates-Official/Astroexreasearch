@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const {storage, cloudinary} = require("../cloudinary");
 const upload = multer({storage});
+const {isloggedin} = require("../middleware");
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get("/events", (req, res) => {
     });
 });
 
-router.get("/admin/events", (req, res) => {
+router.get("/admin/events", isloggedin, (req, res) => {
     db.query("SELECT * FROM events", (err, rows) => {
         if (!err) {
             res.render("./admin/events/events_show", {eventsArray: rows});
@@ -30,8 +31,7 @@ router.get("/admin/events", (req, res) => {
     });
 });
 
-
-router.get("/admin/events/insert", async (req, res) => {
+router.get("/admin/events/insert", isloggedin, async (req, res) => {
     db.query("SELECT * FROM events", async (err, rows) => {
         if (!err) {
             res.render("./admin/events/events_insert");
@@ -41,10 +41,10 @@ router.get("/admin/events/insert", async (req, res) => {
     });
 });
 
-
 router.post(
     "/admin/events/insert",
     upload.single("image_events"),
+    isloggedin,
     async (req, res) => {
         db.query(
             `INSERT INTO events (name_events, description_events, date_events, time_events, image_events) VALUES (?, ?, ?, ?, ?)`,
@@ -66,7 +66,7 @@ router.post(
     }
 );
 
-router.get("/admin/events/:id", (req, res) => {
+router.get("/admin/events/:id", isloggedin, (req, res) => {
     db.query(
         "SELECT * FROM events WHERE id_events = ?",
         [req.params.id],
@@ -81,7 +81,7 @@ router.get("/admin/events/:id", (req, res) => {
     );
 });
 
-router.get("/admin/events/update/:id", async (req, res) => {
+router.get("/admin/events/update/:id", isloggedin, async (req, res) => {
     db.query(
         `SELECT * FROM events WHERE id_events = ?`,
         [req.params.id],
@@ -100,6 +100,7 @@ router.get("/admin/events/update/:id", async (req, res) => {
 router.post(
     "/admin/events/update/:id",
     upload.single("image_events"),
+    isloggedin,
     async (req, res) => {
         console.log(req.body);
         const oldimage = req.body.image_checkbox
@@ -132,7 +133,7 @@ router.post(
     }
 );
 
-router.get("/admin/events/delete/:id", async (req, res) => {
+router.get("/admin/events/delete/:id", isloggedin, async (req, res) => {
     console.log(req.query.cloudinaryName);
     db.query(
         `DELETE FROM events WHERE id_events = ?`,

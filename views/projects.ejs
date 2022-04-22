@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="stylesheets/projects.css" />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
+        <link rel="stylesheet" href="stylesheets/navbar.css" />
+        <title>Projects</title>
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+
+        <section class="project-section">
+            <div class="project-main-div">
+                <div class="heading-div">
+                    <h1>Latest Projects</h1>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt ut aliqua. Ut enim
+                    </p>
+                </div>
+                <div class="project-container">
+                    <% projectsArray.forEach(projects => { %>
+                    <div class="project-div">
+                        <div class="image-container">
+                            <img
+                                src="<%= projects.image_projects %>"
+                                alt="<%= projects.title_projects %>"
+                            />
+                        </div>
+                        <div class="content-container">
+                            <h1><%= projects.title_projects %></h1>
+                            <p><%= projects.description_projects %></p>
+                        </div>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

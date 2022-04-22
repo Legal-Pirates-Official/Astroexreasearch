@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const {storage, cloudinary} = require("../cloudinary");
 const upload = multer({storage});
+const {isloggedin} = require("../middleware");
 
 const router = express.Router();
 
@@ -20,7 +21,7 @@ router.get("/partners", (req, res) => {
     });
 });
 
-router.get("/admin/partners", (req, res) => {
+router.get("/admin/partners", isloggedin, (req, res) => {
     db.query("SELECT * FROM partners", (err, rows) => {
         if (!err) {
             res.render("./admin/partners/partners_show", {partnersArray: rows});
@@ -31,7 +32,7 @@ router.get("/admin/partners", (req, res) => {
     });
 });
 
-router.get("/admin/partners/insert", async (req, res) => {
+router.get("/admin/partners/insert", isloggedin, async (req, res) => {
     db.query("SELECT * FROM partners", async (err, rows) => {
         if (!err) {
             res.render("./admin/partners/partners_insert");
@@ -44,6 +45,7 @@ router.get("/admin/partners/insert", async (req, res) => {
 router.post(
     "/admin/partners/insert",
     upload.single("image_partners"),
+    isloggedin,
     async (req, res) => {
         console.log(req.body);
         db.query(
@@ -60,7 +62,7 @@ router.post(
     }
 );
 
-router.get("/admin/partners/:id", (req, res) => {
+router.get("/admin/partners/:id", isloggedin, (req, res) => {
     db.query(
         "SELECT * FROM partners WHERE id_partners = ?",
         [req.params.id],
@@ -77,7 +79,7 @@ router.get("/admin/partners/:id", (req, res) => {
     );
 });
 
-router.get("/admin/partners/update/:id", async (req, res) => {
+router.get("/admin/partners/update/:id", isloggedin, async (req, res) => {
     db.query(
         `SELECT * FROM partners WHERE id_partners = ?`,
         [req.params.id],
@@ -96,6 +98,7 @@ router.get("/admin/partners/update/:id", async (req, res) => {
 router.post(
     "/admin/partners/update/:id",
     upload.single("image_partners"),
+    isloggedin,
     async (req, res) => {
         console.log(req.body);
         const oldimage = req.body.image_checkbox
@@ -125,7 +128,7 @@ router.post(
     }
 );
 
-router.get("/admin/partners/delete/:id", async (req, res) => {
+router.get("/admin/partners/delete/:id", isloggedin, async (req, res) => {
     db.query(
         `DELETE FROM partners WHERE id_partners = ?`,
         [req.params.id],

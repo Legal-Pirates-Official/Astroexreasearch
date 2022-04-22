@@ -5,13 +5,13 @@ const multer = require("multer");
 const path = require("path");
 const {storage, cloudinary} = require("../cloudinary");
 const upload = multer({storage});
+const {isloggedin} = require("../middleware");
 
 const router = express.Router();
 
 router.get("/projects", (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
-            console.log(rows);
             res.render("projects", {projectsArray: rows});
         } else {
             res.status(500).send("Internal server error");
@@ -20,7 +20,7 @@ router.get("/projects", (req, res) => {
     });
 });
 
-router.get("/admin/projects", (req, res) => {
+router.get("/admin/projects", isloggedin, (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
             res.render("./admin/projects/projects_show", {projectsArray: rows});
@@ -31,7 +31,7 @@ router.get("/admin/projects", (req, res) => {
     });
 });
 
-router.get("/admin/projects/insert", async (req, res) => {
+router.get("/admin/projects/insert", isloggedin, async (req, res) => {
     db.query("SELECT * FROM projects", async (err, rows) => {
         if (!err) {
             res.render("./admin/projects/projects_insert");
@@ -44,6 +44,7 @@ router.get("/admin/projects/insert", async (req, res) => {
 router.post(
     "/admin/projects/insert",
     upload.single("image_projects"),
+    isloggedin,
     async (req, res) => {
         db.query(
             `INSERT INTO projects (title_projects, description_projects, image_projects ) VALUES (?, ?, ?)`,
@@ -63,7 +64,7 @@ router.post(
     }
 );
 
-router.get("/admin/projects/:id", (req, res) => {
+router.get("/admin/projects/:id", isloggedin, (req, res) => {
     db.query(
         "SELECT * FROM projects WHERE id_projects = ?",
         [req.params.id],
@@ -80,7 +81,7 @@ router.get("/admin/projects/:id", (req, res) => {
     );
 });
 
-router.get("/admin/projects/update/:id", async (req, res) => {
+router.get("/admin/projects/update/:id", isloggedin, async (req, res) => {
     db.query(
         `SELECT * FROM projects WHERE id_projects = ?`,
         [req.params.id],
@@ -99,6 +100,7 @@ router.get("/admin/projects/update/:id", async (req, res) => {
 router.post(
     "/admin/projects/update/:id",
     upload.single("image_projects"),
+    isloggedin,
     async (req, res) => {
         console.log(req.body);
         const oldimage = req.body.image_checkbox
@@ -129,7 +131,7 @@ router.post(
     }
 );
 
-router.get("/admin/projects/delete/:id", async (req, res) => {
+router.get("/admin/projects/delete/:id", isloggedin, async (req, res) => {
     db.query(
         `DELETE FROM projects WHERE id_projects = ?`,
         [req.params.id],

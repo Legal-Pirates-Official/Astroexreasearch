@@ -26,9 +26,8 @@
                     <form
                         action="/admin/research_areas/insert"
                         method="POST"
-                        enctype="multipart/form-data"
                     >
-                        <!-- <div class="form-group">
+                        <div class="form-group">
                             <label for="text_research_areas">Name</label>
                             <input
                                 required
@@ -36,17 +35,6 @@
                                 class="form-control"
                                 id="text_research_areas"
                                 name="text_research_areas"
-                            />
-                        </div> -->
-                        <div id="editor"></div>
-                        <div class="form-group">
-                            <label for="image_research_areas">Image</label>
-                            <input
-                                required
-                                type="file"
-                                class="form-control"
-                                id="image_research_areas"
-                                name="image_research_areas"
                             />
                         </div>
                         <div>
@@ -58,33 +46,5 @@
                 </div>
             </div>
         </div>
-
-        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
-        <script>
-            var quill = new Quill("#editor", {
-                theme: "snow",
-            });
-
-            const research_areasInsertForm = document.querySelector(
-                "#research_areas-insert-form"
-            );
-
-            research_areasInsertForm.addEventListener("submit", async (e) => {
-                e.preventDefault();
-                const image_research_areas = e.target[0].value;
-                const text_research_areas =
-                    document.querySelector("#editor .ql-editor").innerHTML;
-                await fetch("/admin/research_areas/insert", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        image_research_areas,
-                        text_research_areas,
-                    }),
-                });
-            });
-        </script>
     </body>
 </html>

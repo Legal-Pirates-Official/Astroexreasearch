@@ -213,78 +213,78 @@
     }
 }
 @media (max-width: 1200px) {
-  .contentimage {
-    width: 95%;
-    height: 70%;
-  }
-  .bgimg img {
-    height: 15vw;
-  }
-  .bgimg {
-    width: 73%;
-    height: 107%;
-  }
-  .grid1 {
-    width: 100%;
-    height: 100%;
-  }
+    .contentimage {
+        width: 95%;
+        height: 70%;
+    }
+    .bgimg img {
+        height: 15vw;
+    }
+    .bgimg {
+        width: 73%;
+        height: 107%;
+    }
+    .grid1 {
+        width: 100%;
+        height: 100%;
+    }
 }
 @media (max-width: 1000px) {
-  .wraptopics {
-    width: 95%;
-    height: 95%;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .topics {
-    height: 190vh;
-  }
-  .quote {
-    width: 100%;
-    height: 50%;
-    justify-content: space-around;
-  }
-  .container {
-    width: 100%;
-    height: 50%;
-  }
-  .contentimage {
-    width: 72%;
-    height: 74%;
-  }
-  .bgimg img {
-    height: 19vw;
-  }
-  .bgimg {
-    width: 108%;
-    height: 105%;
-  }
-  .grid {
-    width: 70%;
-  }
+    .wraptopics {
+        width: 95%;
+        height: 95%;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+    .topics {
+        height: 190vh;
+    }
+    .quote {
+        width: 100%;
+        height: 50%;
+        justify-content: space-around;
+    }
+    .container {
+        width: 100%;
+        height: 50%;
+    }
+    .contentimage {
+        width: 72%;
+        height: 74%;
+    }
+    .bgimg img {
+        height: 19vw;
+    }
+    .bgimg {
+        width: 108%;
+        height: 105%;
+    }
+    .grid {
+        width: 70%;
+    }
 }
 @media (max-width: 900px) {
-  .contentimage {
-    height: 72%;
-  }
-  .bgimg img {
-    height: 20vw;
-  }
-  .bgimg {
-    height: 100%;
-  }
+    .contentimage {
+        height: 72%;
+    }
+    .bgimg img {
+        height: 20vw;
+    }
+    .bgimg {
+        height: 100%;
+    }
 }
 @media (max-width: 800px) {
-  .contentimage {
-    height: 66%;
-  }
-  .bgimg img {
-    height: 23vw;
-  }
-  .bgimg {
-    width: 116%;
-    height: 116%;
-  }
+    .contentimage {
+        height: 66%;
+    }
+    .bgimg img {
+        height: 23vw;
+    }
+    .bgimg {
+        width: 116%;
+        height: 116%;
+    }
 }
 @media (max-width: 700px) {
     .bgimg {
@@ -296,22 +296,28 @@
     .topics {
         height: 175vh;
     }
-    .quotation
-    {
+    .quotation {
         margin-bottom: 5%;
+    }
+    .Marqueetext {
+        width: 80%;
+    }
+    .contentimage:hover {
+        left: 0%;
+        bottom: 0%;
     }
 }
 @media (max-width: 600px) {
-  .grid {
-    width: 90%;
-    height: 70vh;
-  }
-  .topics {
-    height: 165vh;
-  }
-  .contentimage {
-    height: 81%;
-  }
+    .grid {
+        width: 90%;
+        height: 70vh;
+    }
+    .topics {
+        height: 165vh;
+    }
+    .contentimage {
+        height: 81%;
+    }
 }
 @media (max-width: 500px) {
     .wrapquote p {

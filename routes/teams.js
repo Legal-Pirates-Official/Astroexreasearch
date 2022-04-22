@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const {storage, cloudinary} = require("../cloudinary");
 const upload = multer({storage});
+const {isloggedin} = require("../middleware");
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get("/teams", (req, res) => {
     });
 });
 
-router.get("/admin/teams", (req, res) => {
+router.get("/admin/teams", isloggedin, (req, res) => {
     db.query("SELECT * FROM teams", (err, rows) => {
         if (!err) {
             res.render("./admin/teams/team_show", {teamArray: rows});
@@ -30,7 +31,7 @@ router.get("/admin/teams", (req, res) => {
     });
 });
 
-router.get("/admin/teams/insert", async (req, res) => {
+router.get("/admin/teams/insert", isloggedin, async (req, res) => {
     db.query("SELECT * FROM teams", async (err, rows) => {
         if (!err) {
             res.render("./admin/teams/team_insert");
@@ -43,6 +44,7 @@ router.get("/admin/teams/insert", async (req, res) => {
 router.post(
     "/admin/teams/insert",
     upload.single("image_team"),
+    isloggedin,
     async (req, res) => {
         db.query(
             `INSERT INTO teams (name_team, job_team, email_team, instagram_url, linkedIn_url, color_team, image_team, select_team ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
@@ -67,7 +69,7 @@ router.post(
     }
 );
 
-router.get("/admin/teams/:id", (req, res) => {
+router.get("/admin/teams/:id", isloggedin, (req, res) => {
     db.query(
         "SELECT * FROM teams WHERE id_team = ?",
         [req.params.id],
@@ -82,7 +84,7 @@ router.get("/admin/teams/:id", (req, res) => {
     );
 });
 
-router.get("/admin/teams/update/:id", async (req, res) => {
+router.get("/admin/teams/update/:id", isloggedin, async (req, res) => {
     db.query(
         `SELECT * FROM teams WHERE id_team = ?`,
         [req.params.id],
@@ -100,6 +102,7 @@ router.get("/admin/teams/update/:id", async (req, res) => {
 
 router.post(
     "/admin/teams/update/:id",
+    isloggedin,
     upload.single("image_team"),
     async (req, res) => {
         console.log(req.body);
@@ -137,7 +140,7 @@ router.post(
     }
 );
 
-router.get("/admin/teams/delete/:id", async (req, res) => {
+router.get("/admin/teams/delete/:id", isloggedin, async (req, res) => {
     console.log(req.query.cloudinaryName);
     db.query(
         `DELETE FROM teams WHERE id_team = ?`,

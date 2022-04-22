@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const {storage, cloudinary} = require("../cloudinary");
 const upload = multer({storage});
+const {isloggedin} = require("../middleware");
 
 const router = express.Router();
 
@@ -19,14 +20,18 @@ router.get("/internship", (req, res) => {
     });
 });
 
-router.get("/internship/:search", (req, res) => {
+router.get("/internship/:search", isloggedin, (req, res) => {
     const search = req.params.search;
     db.query(`SELECT * FROM internship`, (err, rows) => {
         if (!err) {
             console.log(search);
             let internshipArray = [];
             rows.forEach((element) => {
-                console.log(element.heading_internship.toLowerCase().includes(search.toLowerCase()));
+                console.log(
+                    element.heading_internship
+                        .toLowerCase()
+                        .includes(search.toLowerCase())
+                );
                 if (element.heading_internship.toLowerCase().includes(search)) {
                     internshipArray.push(element);
                 }
@@ -40,7 +45,7 @@ router.get("/internship/:search", (req, res) => {
     });
 });
 
-router.get("/admin/internship", (req, res) => {
+router.get("/admin/internship", isloggedin, (req, res) => {
     db.query("SELECT * FROM internship", (err, rows) => {
         if (!err) {
             res.render("./admin/internship/internship_show", {
@@ -53,7 +58,7 @@ router.get("/admin/internship", (req, res) => {
     });
 });
 
-router.get("/admin/internship/insert", async (req, res) => {
+router.get("/admin/internship/insert", isloggedin, async (req, res) => {
     db.query("SELECT * FROM internship", async (err, rows) => {
         if (!err) {
             res.render("./admin/internship/internship_insert");
@@ -63,7 +68,7 @@ router.get("/admin/internship/insert", async (req, res) => {
     });
 });
 
-router.post("/admin/internship/insert", async (req, res) => {
+router.post("/admin/internship/insert", isloggedin, async (req, res) => {
     console.log(req.body);
     let data;
 
@@ -95,7 +100,7 @@ router.post("/admin/internship/insert", async (req, res) => {
     );
 });
 
-router.get("/admin/internship/:id", (req, res) => {
+router.get("/admin/internship/:id", isloggedin, (req, res) => {
     db.query(
         "SELECT * FROM internship WHERE id_internship = ?",
         [req.params.id],
@@ -112,7 +117,7 @@ router.get("/admin/internship/:id", (req, res) => {
     );
 });
 
-router.get("/admin/internship/update/:id", async (req, res) => {
+router.get("/admin/internship/update/:id", isloggedin, async (req, res) => {
     db.query(
         `SELECT * FROM internship WHERE id_internship = ?`,
         [req.params.id],
@@ -128,7 +133,7 @@ router.get("/admin/internship/update/:id", async (req, res) => {
     );
 });
 
-router.post("/admin/internship/update/:id", async (req, res) => {
+router.post("/admin/internship/update/:id", isloggedin, async (req, res) => {
     console.log(req.body);
     db.query(
         `UPDATE internship SET heading_internship = ?, subheading_internship = ?, description_internship = ? , tag_internship = ?  WHERE id_internship = ?`,
@@ -149,7 +154,7 @@ router.post("/admin/internship/update/:id", async (req, res) => {
     );
 });
 
-router.get("/admin/internship/delete/:id", async (req, res) => {
+router.get("/admin/internship/delete/:id", isloggedin, async (req, res) => {
     db.query(
         `DELETE FROM internship WHERE id_internship = ?`,
         [req.params.id],

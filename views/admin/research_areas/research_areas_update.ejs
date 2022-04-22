@@ -28,7 +28,6 @@
                     <form
                         action="/admin/research_areas/update/<%= research_areas.id_research_areas %>"
                         method="POST"
-                        enctype="multipart/form-data"
                     >
                         <div class="form-group">
                             <label for="text_research_areas">Name</label>
@@ -39,25 +38,6 @@
                                 id="text_research_areas"
                                 name="text_research_areas"
                                 value="<%= research_areas.text_research_areas %>"
-                            />
-                        </div>
-                        <div class="form-group">
-                            <label for="image_research_areas">Image</label>
-                            <input
-                                type="file"
-                                style="width: 50%"
-                                class="form-control"
-                                id="image_research_areas"
-                                name="image_research_areas"
-                            />
-                            <input
-                                checked
-                                readonly
-                                style="height: 0; width: 0"
-                                type="checkbox"
-                                name="image_checkbox"
-                                id="image_checkbox"
-                                value="<%- research_areas.image_research_areas %>"
                             />
                         </div>
                         <div>

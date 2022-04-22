@@ -2,12 +2,14 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const ejsMate = require("ejs-mate");
+const session = require("express-session");
 const ejs = require("ejs");
 const path = require("path");
 
 // routes
 
 const home = require("./routes/home");
+const login = require("./routes/login");
 const teams = require("./routes/teams");
 const training = require("./routes/training");
 const simple = require("./routes/simple");
@@ -26,11 +28,20 @@ app.set("views", path.join(__dirname, "views"));
 
 require("dotenv").config();
 
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false,
+        saveUninitialized: false,
+    })
+);
+
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use("/", simple);
 app.use("/", home);
+app.use("/admin", login);
 app.use("/", teams);
 app.use("/", training);
 app.use("/", contact);

@@ -14,23 +14,26 @@
         <%- include("./partials/navbar.ejs") %>
 
         <section class="main-section">
-            <div class="heading-main-section">
-                <h1>Research Areas</h1>
-            </div>
-            <div class="div-main-section">
-                <% research_areasArray.forEach(research_areas => { %>
-                <div class="card-research">
-                    <div class="image-research">
-                        <img
-                            src="<%= research_areas.image_research_areas %>"
-                            alt=""
-                        />
-                    </div>
-                    <div class="card-content">
-                        <p><%= research_areas.text_research_areas %></p>
+            <div class="main-section-div">
+                <div class="left-div">
+                    <div class="content-div">
+                        <div class="image-div"></div>
+                        <div class="all-contents">
+                            <ul>
+                                <% research_areasArray.forEach(research_areas =>
+                                { %>
+                                <li>
+                                    <%= research_areas.text_research_areas %>
+                                </li>
+                                <% }) %>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-                <% }) %>
+                <div class="right-div">
+                    <div class="shadow-container"></div>
+                    <div class="image-container"></div>
+                </div>
             </div>
         </section>
 

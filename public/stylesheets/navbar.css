@@ -134,6 +134,9 @@ body {
         padding: 10%;
         font-size: 1.3rem;
     }
+    .main-a-dropdown {
+        display: none !important;
+    }
     .dropdown-atag
     {
         display: none;
@@ -145,7 +148,8 @@ body {
         box-shadow: none;
         text-align: left;
         align-items: flex-start;
-        padding-left: 11%;
+        padding-left: 10%;
+        margin-top: 3%;
     }
     .dropdown-navbar a {
         padding: 0px 10px 13px 10px;

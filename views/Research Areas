@@ -1,0 +1,23 @@
+<section class="main-section">
+            <div class="heading-main-section">
+                <h1>Research Areas</h1>
+            </div>
+            <div class="div-main-section">
+                <% research_areasArray.forEach(research_areas => { %>
+                <div class="card-research">
+                    <div class="image-research">
+                        <img
+                            src="<%= research_areas.image_research_areas %>"
+                            alt=""
+                        />
+                    </div>
+                    <div class="card-content">
+                        <p><%= research_areas.text_research_areas %></p>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </section>
+
+
+
