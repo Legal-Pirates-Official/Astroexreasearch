@@ -10,6 +10,13 @@
         <title>About</title>
     </head>
 
+    <style>
+        .about-nav {
+            background: #fa8c43;
+            color: white !important;
+        }
+    </style>
+
     <body>
         <%- include("./partials/navbar.ejs") %>
 
@@ -122,15 +129,33 @@
         </section>
 
         <section class="section-partners">
-            <div class="partner-div">
-                <% partners.forEach(element => { %>
-                <div class="partner-image-div">
-                    <img
-                        src="<%= element.image_partners %>"
-                        alt="<%= element.name_partners %> "
-                    />
-                </div>
-                <% }) %>
+            <h1>Partners</h1>
+            <div class="partners-main-div">
+                <marquee direction="right">
+                    <div class="partners-div">
+                        <% partners.forEach(element => { %>
+                        <img
+                            src="<%= element.image_partners %>"
+                            alt="<%= element.name_partners %>"
+                        />
+                        <% }) %>
+                    </div>
+                </marquee>
+            </div>
+        </section>
+        <section class="section-partners">
+            <h1>Collaborators</h1>
+            <div class="partners-main-div">
+                <marquee direction="left">
+                    <div class="partners-div">
+                        <% collaborators.forEach(element => { %>
+                        <img
+                            src="<%= element.image_collaborators %>"
+                            alt="<%= element.name_collaborators %>"
+                        />
+                        <% }) %>
+                    </div>
+                </marquee>
             </div>
         </section>
 
