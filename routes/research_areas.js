@@ -5,6 +5,7 @@ const multer = require("multer");
 const path = require("path");
 const {storage, cloudinary} = require("../cloudinary");
 const upload = multer({storage});
+const {isloggedin} = require("../middleware");
 
 const router = express.Router();
 
@@ -19,7 +20,7 @@ router.get("/research_areas", (req, res) => {
     });
 });
 
-router.get("/admin/research_areas", (req, res) => {
+router.get("/admin/research_areas", isloggedin, (req, res) => {
     db.query("SELECT * FROM research_areas", (err, rows) => {
         if (!err) {
             res.render("./admin/research_areas/research_areas_show", {
@@ -32,7 +33,7 @@ router.get("/admin/research_areas", (req, res) => {
     });
 });
 
-router.get("/admin/research_areas/insert", async (req, res) => {
+router.get("/admin/research_areas/insert", isloggedin, async (req, res) => {
     db.query("SELECT * FROM research_areas", async (err, rows) => {
         if (!err) {
             res.render("./admin/research_areas/research_areas_insert");
@@ -42,25 +43,22 @@ router.get("/admin/research_areas/insert", async (req, res) => {
     });
 });
 
-router.post(
-    "/admin/research_areas/insert",
-    upload.single("image_research_areas"),
-    async (req, res) => {
-        db.query(
-            `INSERT INTO research_areas (text_research_areas, image_research_areas) VALUES (?, ?)`,
-            [req.body.text_research_areas, req.file.path],
-            async (err, rows) => {
-                if (!err) {
-                    res.redirect("/admin/research_areas");
-                } else {
-                    console.log(err);
-                }
+router.post("/admin/research_areas/insert", isloggedin, async (req, res) => {
+    console.log(req.body);
+    db.query(
+        `INSERT INTO research_areas (text_research_areas) VALUES (?)`,
+        [req.body.text_research_areas],
+        async (err, rows) => {
+            if (!err) {
+                res.redirect("/admin/research_areas");
+            } else {
+                console.log(err);
             }
-        );
-    }
-);
+        }
+    );
+});
 
-router.get("/admin/research_areas/:id", (req, res) => {
+router.get("/admin/research_areas/:id", isloggedin, (req, res) => {
     db.query(
         "SELECT * FROM research_areas WHERE id_research_areas = ?",
         [req.params.id],
@@ -77,7 +75,7 @@ router.get("/admin/research_areas/:id", (req, res) => {
     );
 });
 
-router.get("/admin/research_areas/update/:id", async (req, res) => {
+router.get("/admin/research_areas/update/:id", isloggedin, async (req, res) => {
     db.query(
         `SELECT * FROM research_areas WHERE id_research_areas = ?`,
         [req.params.id],
@@ -95,27 +93,15 @@ router.get("/admin/research_areas/update/:id", async (req, res) => {
 
 router.post(
     "/admin/research_areas/update/:id",
-    upload.single("image_research_areas"),
+    isloggedin,
     async (req, res) => {
         console.log(req.body);
-        const oldimage = req.body.image_checkbox
-            .split("Astroex_Research_Association/")[1]
-            .slice(0, -4);
-
-        console.log(oldimage);
 
         db.query(
-            `UPDATE research_areas SET text_research_areas = ?, image_research_areas = ? WHERE id_research_areas = ?`,
-            [
-                req.body.text_research_areas,
-                req.file ? req.file.path : req.body.image_checkbox,
-                req.params.id,
-            ],
+            `UPDATE research_areas SET text_research_areas = ? WHERE id_research_areas = ?`,
+            [req.body.text_research_areas, req.params.id],
             async (err, rows) => {
                 if (!err) {
-                    await cloudinary.uploader.destroy(
-                        "Astroex_Research_Association/" + oldimage
-                    );
                     res.redirect("/admin/research_areas");
                 } else {
                     console.log(err);
@@ -125,7 +111,7 @@ router.post(
     }
 );
 
-router.get("/admin/research_areas/delete/:id", async (req, res) => {
+router.get("/admin/research_areas/delete/:id", isloggedin, async (req, res) => {
     console.log(req.query.cloudinaryName);
     db.query(
         `DELETE FROM research_areas WHERE id_research_areas = ?`,

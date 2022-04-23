@@ -66,37 +66,6 @@
   background: var(--grey);
 }
 
-/* .team-div:nth-child(1) {
-    background: #e63946;
-}
-.team-div:nth-child(2) {
-    background: #a8dadc;
-}
-.team-div:nth-child(3) {
-    background: #457b9d;
-}
-.team-div:nth-child(4) {
-    background: #b5179e;
-}
-.team-div:nth-child(5) {
-    background: #283618;
-}
-.team-div:nth-child(6) {
-    background: #3d405b;
-}
-.team-div:nth-child(7) {
-    background: #14213d;
-}
-.team-div:nth-child(8) {
-    background: #ef233c;
-}
-.team-div:nth-child(9) {
-    background: #ff9f1c;
-}
-.team-div:nth-child(10) {
-    background: #219ebc;
-} */
-
 .team-image {
   position: relative;
   width: 13rem;
@@ -185,6 +154,14 @@
   align-items: center;
 }
 
+@media (max-width: 700px) {
+    .our-teams {
+        flex-direction: column;
+    }
+    .team-div {
+        width: 90%;
+    }
+}
 @media (max-width: 400px) {
   .our-teams {
     flex-direction: column;

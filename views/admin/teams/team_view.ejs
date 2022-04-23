@@ -17,7 +17,7 @@
     <body>
         <%- include("../../partials/admin_nav.ejs") %>
 
-        <div class="container">
+        <div class="container" style="margin: 3%;">
             <div class="sub_container">
                 <div class="row">
                     <div class="col-md-6">
@@ -52,6 +52,7 @@
                         <h3>Image:</h3>
                         <img
                             class="img-fluid"
+                            style="width: 50%;"
                             src="<%= team.image_team %>"
                             alt="<%= team.name_team %>"
                         />

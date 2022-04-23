@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const db = require("../database");
 
 const router = express.Router();
 
@@ -8,7 +9,10 @@ const router = express.Router();
 // });
 
 router.get("/about", (req, res) => {
-    res.render("about");
+    db.query("SELECT * FROM partners", (err, result) => {
+        if (err) throw err;
+        res.render("about", {partners: result});
+    });
 });
 
 // router.get("/events", (req, res) => {
@@ -19,9 +23,9 @@ router.get("/about", (req, res) => {
 //     res.render("contact");
 // });
 
-// router.get("/partners", (req, res) => {
-//     res.render("partners");
-// });
+router.get("/partners", (req, res) => {
+    res.render("partners");
+});
 
 // router.get("/teams", (req, res) => {
 //     res.render("teams");
@@ -33,7 +37,5 @@ router.get("/about", (req, res) => {
 // router.get("/training", (req, res) => {
 //     res.render("training");
 // });
-
-
 
 module.exports = router;

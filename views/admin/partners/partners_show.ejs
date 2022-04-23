@@ -38,7 +38,6 @@
                         <thead>
                             <tr>
                                 <th class="col-name">Name</th>
-                                <th class="col-name">Job Title</th>
                                 <th class="col-name">Image</th>
                                 <th class="col-name">Operations</th>
                             </tr>
@@ -46,8 +45,7 @@
                         <tbody>
                             <% partnersArray.forEach(partners => { %>
                             <tr>
-                                <td><%- partners.title_partners %></td>
-                                <td><%- partners.description_partners %></td>
+                                <td><%- partners.name_partners %></td>
                                 <td>
                                     <img
                                         class="img-fluid"

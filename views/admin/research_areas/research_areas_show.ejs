@@ -38,7 +38,6 @@
                         <thead>
                             <tr>
                                 <th class="col-name">Name</th>
-                                <th class="col-name">Images</th>
                                 <th class="col-name">Operations</th>
                             </tr>
                         </thead>
@@ -49,13 +48,7 @@
                                 <td>
                                     <%- research_areas.text_research_areas %>
                                 </td>
-                                <td>
-                                    <img
-                                        class="img-fluid"
-                                        src="<%- research_areas.image_research_areas %>"
-                                        alt="<%- research_areas.image_research_areas %>"
-                                    />
-                                </td>
+
                                 <td>
                                     <a
                                         href="/admin/research_areas/<%- research_areas.id_research_areas %>"
