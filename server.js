@@ -45,7 +45,7 @@ app.use("/admin", login);
 app.use("/", teams);
 app.use("/", training);
 app.use("/", contact);
-// app.use("/", footer);
+app.use("/", footer);
 app.use("/", partners);
 app.use("/", projects);
 app.use("/", events);
