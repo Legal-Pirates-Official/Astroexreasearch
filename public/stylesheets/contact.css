@@ -1,9 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Roboto", sans-serif;
 }
+:root {
+    --button: #fa8c43;
+    --black: #000;
+    --white: #fff;
+    --text: #333333;
+    --grey: #808080;
+  }
 
 .contact-section {
     width: 100%;
@@ -34,13 +42,16 @@
 }
 
 .contact-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #000;
     text-transform: uppercase;
     margin-bottom: 2rem;
+   
 }
-
+.contact-title h1{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333333;
+    font-family: "Kaushan Script", cursive;
+}
 .form-group {
     width: 65%;
     height: 5rem;
@@ -106,16 +117,17 @@
     font-size: 1.3rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
-    background: rgb(89, 67, 122);
-    border: 2px solid rgb(89, 67, 122);
-    color: #fff;
+    background: var(--text);
+    border: 2px solid var(--text);
+    color: var(--white);
     font-weight: bold;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 .contact-form form button:hover {
-    background: rgb(225, 183, 191);
+    background: var(--button);
+    border: 2px solid var(--button);
 }
 
 .contact-left {
@@ -125,7 +137,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgb(89, 67, 122);
+    background: url("https://images.pexels.com/photos/3127880/pexels-photo-3127880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center ;
 }
 
 

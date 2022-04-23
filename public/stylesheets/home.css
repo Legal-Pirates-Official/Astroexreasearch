@@ -5,6 +5,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root {
+  --black:#000;
+  --white:#fff;
+  --text:#333333;
+  --button: #fa8c43;
+}
 /* Topics */
 .topics {
     width: 100%;
@@ -34,7 +40,7 @@
 .quote h1 {
     font-family: "Kaushan Script", cursive;
     font-size: 2rem;
-    color: #000;
+    color: var(--black);
     text-align: center;
 }
 .Marqueetext {
@@ -45,7 +51,7 @@
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.778);
     border-radius: 20px;
 
-    color: white;
+    color: var(--white);
     font-size: 20px;
 }
 .Marqueetext ul {
@@ -55,12 +61,13 @@
     align-items: center;
 }
 .Marqueetext ul li {
-    color: #000;
+    color: var(--black);
     list-style: none;
     padding: 18px;
 }
 .Marqueetext ul li a {
     color: blue;
+    cursor: pointer;
 }
 .Marqueetext ul li a:hover {
     color: red;
@@ -146,6 +153,7 @@
     z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .contentimage:hover {
@@ -164,7 +172,7 @@
 .contentimage h3 {
     font-size: 1.5rem;
     font-weight: 500;
-    color: #000;
+    color: var(--black);
 }
 
 /* Quotes */
@@ -189,13 +197,13 @@
 .wrapquote p {
     font-size: 2rem;
     font-weight: 500;
-    color: #000;
+    color: var(--black);
     text-align: center;
 }
 .wrapquote h3 {
     font-size: 3rem;
     font-weight: 700;
-    color: #333333;
+    color: var(--text);
     font-family: "Kaushan Script", cursive;
 }
 
