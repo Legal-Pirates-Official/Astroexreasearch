@@ -1,3 +1,10 @@
+:root {
+  --black:#000;
+  --white:#fff;
+  --text:#333333;
+  --button: #fa8c43;
+}
+
 /* Swiper */
 .slider {
   width: 100%;
@@ -10,7 +17,7 @@
 .swiper {
   width: 100%;
   height: 100%;
-  background: #000;
+  background: var(--black);
   display: flex;
   position: relative;
   justify-content: center;
@@ -48,7 +55,7 @@
 .swiper-slide .title {
   font-size: 4rem;
   font-weight: 300;
-  color: #333333;
+  color: var(--text);
   display: flex;
   text-align: center;
   word-wrap: break-word;
@@ -71,7 +78,7 @@
   height: 60%;
   font-size: 4rem;
   font-weight: 300;
-  color: #333333;
+  color: var(--text);
   text-align: center;
   display: flex;
   word-wrap: break-word;
@@ -82,28 +89,29 @@
 }
 .btnforslider {
   padding: 12px 33px;
-  background: #fa8c43;
+  background: var(--button);
   display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
-  border: #fa8c43 1px;
+  border:  var(--button) 1px;
+  cursor: pointer;
 }
 .btnforslider a {
   font-size: 1.5rem;
   text-decoration: none;
-  color: #fff;
+  color: var(--white);
 }
 .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
   right: 10px;
   left: auto;
-  color: #fa8c43;
+  color: var(--button);
 }
 .swiper-button-prev::after,
 .swiper-rtl .swiper-button-next::after {
   content: "prev";
-  color: #fa8c43;
+  color: var(--button);
 }
 @media screen and (max-width: 1300px) {
 
