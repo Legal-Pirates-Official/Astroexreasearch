@@ -132,7 +132,7 @@ router.get('/admin/internship/update/:id', isloggedin, async (req, res) => {
 				res.render('./admin/internship/internship_update', {
 					internship: rows[0],
 					tag_internship: tagArray,
-                    tag_length: tagArray.length
+					tag_length: tagArray.length
 				});
 			} else {
 				console.log(err);
