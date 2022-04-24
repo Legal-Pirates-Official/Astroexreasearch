@@ -13,6 +13,7 @@
         />
         <title>internship View</title>
     </head>
+	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
     <%- include("../../partials/internship.ejs") %>
 
     <body>
@@ -35,7 +36,13 @@
                     </div>
                     <div>
                         <h3>Tag Line:</h3>
-                        <p><%= internship.tag_internship %></p>
+                        <p>
+                            <ul>
+                                <%internship.tag_internship.split(",").forEach((element, index) => { %>
+                                <li><%= element.split("=")[1] %></li>
+                                <% }); %>
+                            </ul>
+                        </p>
                     </div>
                 </div>
             </div>
