@@ -93,7 +93,7 @@ body {
     margin: 2%;
 }
 
-@media (max-width: 1100) {
+@media (max-width: 600px) {
     .nav > .nav-btn {
         display: inline-block;
         position: absolute;

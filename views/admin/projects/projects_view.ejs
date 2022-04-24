@@ -21,18 +21,19 @@
         <div class="container">
             <div class="sub_container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div>
                         <h3>Name of the projects:</h3>
                         <p><%= projects.title_projects %></p>
                     </div>
-                    <div class="col-md-6">
+                    <div>
                         <h3>Description:</h3>
                         <p><%= projects.description_projects %></p>
                     </div>
-                    <div class="col-md-6">
+                    <div>
                         <h3>Image:</h3>
                         <img
                             class="img-fluid"
+                            style="width: 30%"
                             src="<%= projects.image_projects %>"
                             alt="<%= projects.image_projects %>"
                         />

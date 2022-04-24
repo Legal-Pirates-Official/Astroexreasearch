@@ -83,3 +83,12 @@ form {
 .btn:hover {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+@media (max-width: 768px) {
+  .register-main {
+    width: 90%;
+  }
+  form {
+    width: 100%;
+  }
+}

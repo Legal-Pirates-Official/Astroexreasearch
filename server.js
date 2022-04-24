@@ -54,6 +54,10 @@ app.use("/", events);
 app.use("/", research_areas);
 app.use("/", internship);
 
+app.get("*", (req, res) => {
+    res.render("404");
+});
+
 app.listen(`${process.env.LISTENING_PORT}`, () => {
     console.log(`Server is running on port ${process.env.LISTENING_PORT}`);
 });
