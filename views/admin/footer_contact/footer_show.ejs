@@ -11,6 +11,7 @@
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous"
         />
+        <!-- <link rel="stylesheet" href="../../stylesheets/admin-show.css" /> -->
         <title>Footer Contact</title>
     </head>
     <body>
@@ -23,8 +24,7 @@
                 </div>
                 <div class="row">
                     <a
-                        class="btn btn-primary"
-                        style="margin: 2% 0%; width: 10%"
+                        class="btn btn-primary insert-button"
                         href="/admin/footer_contact/message"
                         >Add footer</a
                     >
@@ -42,22 +42,15 @@
                         <tbody>
                             <% footer_contactArry.forEach(footer_contact => { %>
                             <tr>
-                                <td><%- footer_contact.email_footer %></td>
                                 <td>
-                                    <a
-                                        href="/admin/footer/<%- footer_contact.id_footer %>"
-                                        class="btn btn-primary"
-                                        style="margin-bottom: 10%"
-                                        >View</a
+                                    <span class="first-column"
+                                        ><%- footer_contact.email_footer
+                                        %></span
                                     >
+                                </td>
+                                <td class="operation-view">
                                     <a
-                                        href="/admin/footer/update/<%- footer_contact.id_footer %>"
-                                        class="btn btn-warning"
-                                        style="margin-bottom: 10%"
-                                        >Edit</a
-                                    >
-                                    <a
-                                        href="/admin/footer/delete/<%- footer_contact.id_footer %>"
+                                        href="/admin/footer_contact/delete/<%- footer_contact.id_footer %>"
                                         class="btn btn-danger"
                                         style="margin-bottom: 10%"
                                         >Delete</a

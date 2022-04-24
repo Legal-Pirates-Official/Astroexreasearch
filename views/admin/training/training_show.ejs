@@ -20,61 +20,64 @@
 
         <div class="container">
             <div class="row">
-                <div class="row">
-                    <h1>Training Show</h1>
-                </div>
-                <div class="row">
-                    <a
-                        class="btn btn-primary"
-                        style="margin: 2% 0%; width: 10%"
-                        href="/admin/training/insert"
-                        >Add training</a
-                    >
-                </div>
+                <h1>Training Show</h1>
             </div>
             <div class="row">
-                <div class="row">
-                    <table class="table table-striped table-dark table-hover">
-                        <thead>
-                            <tr>
-                                <th class="col-name">Title</th>
-                                <th class="col-name">Description</th>
-                                <th class="col-name">Batch</th>
-                                <th class="col-name">Operations</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% trainingArray.forEach(training => { %>
-                            <tr>
-                                <td><%- training.title_training %></td>
-                                <td><%- training.paragraph_training %></td>
-                                <td><%- training.batch_training %></td>
-                                <td>
-                                    <a
-                                        href="/admin/training/<%- training.id_training %>"
-                                        class="btn btn-primary"
-                                        style="margin-bottom: 10%"
-                                        >View</a
-                                    >
-                                    <a
-                                        href="/admin/training/update/<%- training.id_training %>"
-                                        class="btn btn-warning"
-                                        style="margin-bottom: 10%"
-                                        >Edit</a
-                                    >
-                                    <a
-                                        href="/admin/training/delete/<%- training.id_training %>"
-                                        class="btn btn-danger"
-                                        style="margin-bottom: 10%"
-                                        >Delete</a
-                                    >
-                                </td>
-                            </tr>
-                            <% }) %>
-                        </tbody>
-                    </table>
-                </div>
+                <a
+                    class="btn btn-primary insert-button"
+                    href="/admin/training/insert"
+                    >Add training</a
+                >
             </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-name">Title</th>
+                        <th class="col-name mobile-view">Description</th>
+                        <th class="col-name mobile-view">Batch</th>
+                        <th class="col-name">Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% trainingArray.forEach(training => { %>
+                    <tr>
+                        <td>
+                            <span class="first-column"
+                                ><%- training.title_training %></span
+                            >
+                        </td>
+                        <td class="mobile-view">
+                            <%- training.paragraph_training %>
+                        </td>
+                        <td class="mobile-view">
+                            <%- training.batch_training %>
+                        </td>
+                        <td class="operations-icons">
+                            <a
+                                href="/admin/training/<%- training.id_training %>"
+                                class="btn btn-primary"
+                                style="margin-bottom: 10%"
+                                >View</a
+                            >
+                            <a
+                                href="/admin/training/update/<%- training.id_training %>"
+                                class="btn btn-warning"
+                                style="margin-bottom: 10%"
+                                >Edit</a
+                            >
+                            <a
+                                href="/admin/training/delete/<%- training.id_training %>"
+                                class="btn btn-danger"
+                                style="margin-bottom: 10%"
+                                >Delete</a
+                            >
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
         </div>
 
         <script

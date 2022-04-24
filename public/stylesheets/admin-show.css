@@ -1,11 +1,41 @@
-*
-{
+* {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
 }
 
-.col-name
-{
+.col-name {
     width: 20%;
+}
+
+.insert-button {
+    width: 20%;
+    margin: 2% 0;
+}
+
+@media (max-width: 500px) {
+    .insert-button {
+        width: 50%;
+        margin: 2% 0;
+    }
+    .mobile-view {
+        display: none;
+    }
+    .row {
+        margin: 0 3%;
+    }
+    td {
+        position: relative;
+        height: 100%;
+    }
+    .first-column {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .operations-icons {
+        display: flex;
+        flex-direction: column;
+    }
 }

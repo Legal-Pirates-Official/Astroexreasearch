@@ -24,60 +24,69 @@
                     <h1>Team Show</h1>
                 </div>
                 <div class="row">
-                    <a class="btn btn-primary" style="margin: 2% 0%; width: 10%;" href="/admin/teams/insert">Add Team</a>
+                    <a
+                        class="btn btn-primary insert-button"
+                        href="/admin/teams/insert"
+                        >Add Team</a
+                    >
                 </div>
             </div>
             <div class="row">
-                <div class="row">
-                    <table class="table table-striped table-dark table-hover">
-                        <thead>
-                            <tr>
-                                <th class="col-name">Name</th>
-                                <th class="col-name">Job Title</th>
-                                <th class="col-name">Email</th>
-                                <th class="col-name">Instagram URL</th>
-                                <th class="col-name">Image</th>
-                                <th class="col-name">Operations</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <% teamArray.forEach(team => { %>
-                            <tr>
-                                <td><%- team.name_team %></td>
-                                <td><%- team.job_team %></td>
-                                <td><%- team.email_team %></td>
-                                <td><%- team.instagram_url %></td>
-                                <td>
-                                    <img
-                                        class="img-fluid"
-                                        src="<%- team.image_team %>"
-                                        alt="<%- team.name_team %>"
-                                    />
-                                </td>
-                                <td>
-                                    <a
-                                        href="/admin/teams/<%- team.id_team %>"
-                                        class="btn btn-primary"
-                                        style="margin-bottom: 10%;"
-                                    >View</a>
-                                    <a
-                                        href="/admin/teams/update/<%- team.id_team %>"
-                                        class="btn btn-warning"
-                                        style="margin-bottom: 10%;"
-                                        >Edit</a
-                                    >
-                                    <a
-                                        href="/admin/teams/delete/<%- team.id_team %>"
-                                        class="btn btn-danger"
-                                        style="margin-bottom: 10%;"
-                                        >Delete</a
-                                    >
-                                </td>
-                            </tr>
-                            <% }) %>
-                        </tbody>
-                    </table>
-                </div>
+                <table class="table table-striped table-dark table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-name">Name</th>
+                            <th class="col-name mobile-view">Job Title</th>
+                            <th class="col-name mobile-view">Email</th>
+                            <th class="col-name mobile-view">Instagram URL</th>
+                            <th class="col-name mobile-view">Image</th>
+                            <th class="col-name">Operations</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% teamArray.forEach(team => { %>
+                        <tr>
+                            <td>
+                                <span class="first-column"
+                                    ><%- team.name_team %></span
+                                >
+                            </td>
+                            <td class="mobile-view"><%- team.job_team %></td>
+                            <td class="mobile-view"><%- team.email_team %></td>
+                            <td class="mobile-view">
+                                <%- team.instagram_url %>
+                            </td>
+                            <td class="mobile-view">
+                                <img
+                                    class="img-fluid"
+                                    src="<%- team.image_team %>"
+                                    alt="<%- team.name_team %>"
+                                />
+                            </td>
+                            <td class="operations-icons">
+                                <a
+                                    href="/admin/teams/<%- team.id_team %>"
+                                    class="btn btn-primary"
+                                    style="margin-bottom: 10%"
+                                    >View</a
+                                >
+                                <a
+                                    href="/admin/teams/update/<%- team.id_team %>"
+                                    class="btn btn-warning"
+                                    style="margin-bottom: 10%"
+                                    >Edit</a
+                                >
+                                <a
+                                    href="/admin/teams/delete/<%- team.id_team %>"
+                                    class="btn btn-danger"
+                                    style="margin-bottom: 10%"
+                                    >Delete</a
+                                >
+                            </td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
             </div>
         </div>
 
