@@ -16,6 +16,15 @@
     justify-content: center;
 }
 
+.training-main-div
+{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .heading-section {
     width: 30%;
     height: 5rem;
@@ -32,7 +41,7 @@
 .box-div {
     position: relative;
     width: 80%;
-    height: 20rem;
+    min-height: 20rem;
     background-color: rgba(242, 242, 242, 0.8);
     display: flex;
     color: black;
@@ -52,7 +61,7 @@
 
 .floating-content {
     position: absolute;
-    top: -10%;
+    top: -5%;
     width: 50%;
     height: 5rem;
     background: rgba(0, 0, 0, 0.9);
@@ -71,12 +80,10 @@
     height: fit-content;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     color: #000000;
     font-size: 1.2rem;
-    padding: 1% 12%;
-    /* text-align: center; */
+    padding: 5% 12%;
 }
 
 .box-div3 .standard-content {

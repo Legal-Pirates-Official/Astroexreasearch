@@ -66,11 +66,12 @@
     padding: 18px;
 }
 .Marqueetext ul li a {
-    color: blue;
+    color: #5A5B6C;
+    text-decoration: none;
     cursor: pointer;
 }
 .Marqueetext ul li a:hover {
-    color: red;
+    color: #FA8C43;
 }
 .container {
     width: 50%;

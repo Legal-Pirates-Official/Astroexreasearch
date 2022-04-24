@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/training", (req, res) => {
     db.query("SELECT * FROM training", (err, rows) => {
         if (!err) {
-            res.render("training", {training: rows[0]});
+            res.render("training", {training: rows});
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
