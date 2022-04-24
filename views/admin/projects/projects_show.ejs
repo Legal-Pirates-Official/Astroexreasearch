@@ -12,6 +12,11 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="../../stylesheets/admin-show.css" />
+        <link
+            rel="shortcut icon"
+            href="../../images/favicon.ico"
+            type="image/x-icon"
+        />
         <title>projects Show</title>
     </head>
     <%- include("../../partials/projects.ejs") %>
@@ -51,7 +56,8 @@
                                 >
                             </td>
                             <td class="mobile-view">
-                                <%- projects.description_projects.slice(0, 80) %>...
+                                <%- projects.description_projects.slice(0, 80)
+                                %>...
                             </td>
                             <td class="mobile-view">
                                 <img
