@@ -46,13 +46,15 @@ router.post(
     upload.single("image_events"),
     isloggedin,
     async (req, res) => {
+        console.log(req.file);
         db.query(
-            `INSERT INTO events (name_events, description_events, date_events, time_events, image_events) VALUES (?, ?, ?, ?, ?)`,
+            `INSERT INTO events (name_events, description_events, date_events, time_events, events_link, image_events) VALUES (?, ?, ?, ?, ?, ?)`,
             [
                 req.body.name_events,
                 req.body.description_events,
                 req.body.date_events,
                 req.body.time_events,
+                req.body.events_link,
                 req.file.path,
             ],
             async (err, rows) => {
@@ -110,12 +112,13 @@ router.post(
         console.log(oldimage);
 
         db.query(
-            `UPDATE events SET name_events = ?, description_events = ?, date_events = ?, time_events = ?, image_events = ? WHERE id_events = ?`,
+            `UPDATE events SET name_events = ?, description_events = ?, date_events = ?, time_events = ?, events_link = ?, image_events = ? WHERE id_events = ?`,
             [
                 req.body.name_events,
                 req.body.description_events,
                 req.body.date_events,
                 req.body.time_events,
+                req.body.events_link,
                 req.file ? req.file.path : req.body.image_checkbox,
                 req.params.id,
             ],

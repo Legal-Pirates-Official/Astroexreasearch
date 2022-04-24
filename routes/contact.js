@@ -33,7 +33,7 @@ router.post("/contact", (req, res) => {
 
     let mailOptions = {
         from: "geniuscriminaloffical@gmail.com",
-        to: "geniuscriminaloffical@gmail.com",
+        to: "prasannavelmurugan0200@gmail.com",
         subject: "Customer Contact Request",
         text: "Hello world?",
         html: output,
@@ -43,7 +43,7 @@ router.post("/contact", (req, res) => {
         if (error) {
             return console.log(error);
         }
-        res.render("./contact", {msg: "Email has been sent"});
+        res.render("./contact");
     });
 });
 
