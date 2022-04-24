@@ -162,6 +162,27 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.image-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    color: white;
+}
+
+.image-div h1 {
+    margin: 2% 0;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.image-div p {
+    font-family: "Kaushan Script", cursive;
+    font-size: 1.5rem;
+}
+
 .right-card-div {
     position: relative;
     width: 50%;
@@ -515,8 +536,7 @@
     padding: 3%;
 }
 
-.section-partners h1
-{
+.section-partners h1 {
     font-family: "Kaushan Script", cursive;
     font-size: 2.5rem;
     color: var(--text);
