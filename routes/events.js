@@ -44,8 +44,9 @@ router.get("/admin/events/insert", isloggedin, async (req, res) => {
 router.post(
     "/admin/events/insert",
     upload.single("image_events"),
-    isloggedin,
+    // isloggedin,
     async (req, res) => {
+        console.log(req.body);
         console.log(req.file);
         db.query(
             `INSERT INTO events (name_events, description_events, date_events, time_events, events_link, image_events) VALUES (?, ?, ?, ?, ?, ?)`,

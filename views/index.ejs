@@ -77,14 +77,15 @@
 						onmouseout="this.start();" 
 						onmouseout="this.start();" 
 						ontouchstart="this.stop()"
-						ontouchend="this.start()">
+						ontouchend="this.start()"
+						>
 
 						<ul>
 							<% eventsArray.forEach(events => { %>
 							<li>
 								<h1><%= events.name_events %> </h1>
 								<p><%= events.description_events %> </p>
-								<a href="./">Click Here</a>.
+								<a target="_blank" href="<%= events.events_link %> ">Click Here</a>.
 							</li>
 							<% }) %>
 						</ul>

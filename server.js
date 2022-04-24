@@ -22,7 +22,6 @@ const projects = require("./routes/projects");
 const events = require("./routes/events");
 const research_areas = require("./routes/research_areas");
 const internship = require("./routes/internship");
-const uploads = require("./routes/uploads");
 
 app.use(express.static("public"));
 app.engine("ejs", ejsMate);
@@ -31,7 +30,6 @@ app.set("views", path.join(__dirname, "views"));
 
 require("dotenv").config();
 
-app.use(upload());
 
 app.use(
     session({
@@ -40,6 +38,8 @@ app.use(
         saveUninitialized: false,
     })
 );
+
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -57,7 +57,6 @@ app.use("/", projects);
 app.use("/", events);
 app.use("/", research_areas);
 app.use("/", internship);
-app.use("/", uploads);
 
 app.get("*", (req, res) => {
     res.render("404");
