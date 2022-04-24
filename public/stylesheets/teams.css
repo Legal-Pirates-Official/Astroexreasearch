@@ -47,7 +47,7 @@
 
 .team-div {
   position: relative;
-  width: 30%;
+  width: 25%;
   height: 25rem;
   display: flex;
   flex-direction: column;
@@ -75,12 +75,12 @@
   font-family: "Kaushan Script", cursive;
 }
 
-.team-div:hover .team-image {
+/* .team-div:hover .team-image {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 0px;
-}
+} */
 
 .team-image img {
   position: relative;
@@ -89,7 +89,7 @@
   border-radius: 50%;
 }
 
-.team-div:hover::after {
+/* .team-div:hover::after {
   content: "";
   position: absolute;
   width: 100%;
@@ -99,7 +99,7 @@
   border-radius: 10px;
   backdrop-filter: blur(5px);
   z-index: 3;
-}
+} */
 
 .team-name {
   width: 100%;
@@ -113,14 +113,14 @@
   z-index: 5;
 }
 
-.team-div:hover .team-name {
+/* .team-div:hover .team-name {
   color: var(--white);
   z-index: 10;
-}
+} */
 
-.team-div:hover .team-image img {
+/* .team-div:hover .team-image img {
   border-radius: 0%;
-}
+} */
 
 .social-icons-img {
   background: var(--white);
