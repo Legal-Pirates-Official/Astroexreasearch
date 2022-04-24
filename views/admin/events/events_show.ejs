@@ -12,8 +12,10 @@
             crossorigin="anonymous"
         />
         <link rel="stylesheet" href="../../stylesheets/admin-show.css" />
-        <title>events Show</title>
+        <title>Events Show</title>
     </head>
+
+    <%- include("../../partials/events.ejs") %>
 
     <body>
         <%- include("../../partials/admin_nav.ejs") %>
@@ -30,66 +32,60 @@
                 >
             </div>
         </div>
-        <div class="row">
-            <div class="row">
-                <table class="table table-striped table-dark table-hover">
-                    <thead>
-                        <tr>
-                            <th class="col-name">Name</th>
-                            <th class="col-name mobile-view">Description</th>
-                            <th class="col-name mobile-view">Date</th>
-                            <th class="col-name mobile-view">Time</th>
-                            <th class="col-name mobile-view">Image</th>
-                            <th class="col-name">Operations</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <% eventsArray.forEach(events => { %>
-                        <tr>
-                            <td><%- events.name_events %></td>
-                            <td class="mobile-view">
-                                <span class="first-column">
-                                    <%- events.description_events %
-                                </span>
-                            </td>
-                            <td class="mobile-view">
-                                <%- events.date_events %>
-                            </td>
-                            <td class="mobile-view">
-                                <%- events.time_events %>
-                            </td>
-                            <td class="mobile-view">
-                                <img
-                                    class="img-fluid"
-                                    src="<%- events.image_events %>"
-                                    alt="<%- events.image_events %>"
-                                />
-                            </td>
-                            <td class="operations-icons">
-                                <a
-                                    href="/admin/events/<%- events.id_events %>"
-                                    class="btn btn-primary"
-                                    style="margin-bottom: 10%"
-                                    >View
-                                </a>
-                                <a
-                                    href="/admin/events/update/<%- events.id_events %>"
-                                    class="btn btn-warning"
-                                    style="margin-bottom: 10%"
-                                    >Edit
-                                </a>
-                                <a
-                                    href="/admin/events/delete/<%- events.id_events %>"
-                                    class="btn btn-danger"
-                                    style="margin-bottom: 10%"
-                                    >Delete
-                                </a>
-                            </td>
-                        </tr>
-                        <% }) %>
-                    </tbody>
-                </table>
-            </div>
+        <div class="row" style="margin: 0 5%;">
+            <table class="table table-striped table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th class="col-name">Name</th>
+                        <th class="col-name mobile-view">Description</th>
+                        <th class="col-name mobile-view">Date</th>
+                        <th class="col-name mobile-view">Time</th>
+                        <th class="col-name mobile-view">Image</th>
+                        <th class="col-name">Operations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% eventsArray.forEach(events => { %>
+                    <tr>
+                        <td><%- events.name_events %></td>
+                        <td class="mobile-view">
+                            <span class="first-column">
+                                <%- events.description_events %>
+                            </span>
+                        </td>
+                        <td class="mobile-view"><%- events.date_events %></td>
+                        <td class="mobile-view"><%- events.time_events %></td>
+                        <td class="mobile-view">
+                            <img
+                                class="img-fluid"
+                                src="<%- events.image_events %>"
+                                alt="<%- events.image_events %>"
+                            />
+                        </td>
+                        <td class="operations-icons">
+                            <a
+                                href="/admin/events/<%- events.id_events %>"
+                                class="btn btn-primary"
+                                style="margin-bottom: 10%"
+                                >View
+                            </a>
+                            <a
+                                href="/admin/events/update/<%- events.id_events %>"
+                                class="btn btn-warning"
+                                style="margin-bottom: 10%"
+                                >Edit
+                            </a>
+                            <a
+                                href="/admin/events/delete/<%- events.id_events %>"
+                                class="btn btn-danger"
+                                style="margin-bottom: 10%"
+                                >Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
         </div>
 
         <script
