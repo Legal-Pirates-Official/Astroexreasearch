@@ -21,17 +21,19 @@ router.post("/contact", (req, res) => {
     <h3>Message</h3>
     <p>${req.body.message}</p>
     `;
+
+
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "legalpirates2020@gmail.com",
-            pass: "TeamOfFive5",
+            user: "geniuscriminaloffical@gmail.com",
+            pass: "Latha13087280$#",
         },
     });
 
     let mailOptions = {
-        from: "legalpirates2020@gmail.com",
-        to: "legalpirates2020@gmail.com",
+        from: "geniuscriminaloffical@gmail.com",
+        to: "geniuscriminaloffical@gmail.com",
         subject: "Customer Contact Request",
         text: "Hello world?",
         html: output,
