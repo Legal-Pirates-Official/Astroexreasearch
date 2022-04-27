@@ -135,6 +135,12 @@
     border-radius: 5px;
 }
 
+.button-inside-span a
+{
+    color: white;
+    text-decoration: none;
+}
+
 .button-inside:hover .button-inside-span {
     transform: translate(0);
 }
