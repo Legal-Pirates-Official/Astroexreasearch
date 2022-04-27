@@ -41,7 +41,7 @@
     font-family: "Kaushan Script", cursive;
     font-size: 2rem;
     color: var(--black);
-    text-align: center;
+    /* text-align: center; */
 }
 .Marqueetext {
     width: 70%;
@@ -64,6 +64,11 @@
     color: var(--black);
     list-style: none;
     padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
 }
 .Marqueetext ul li a {
     color: #5A5B6C;

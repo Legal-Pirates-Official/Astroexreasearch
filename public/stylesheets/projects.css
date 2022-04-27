@@ -94,3 +94,47 @@
     text-align: center;
 }
 
+@media (max-width: 800px) {
+    .project-main-div
+    {
+        width: 90%;
+    }
+}
+@media (max-width: 700px) {
+    .project-section
+    {
+        height: fit-content;
+    }
+    .heading-div p
+    {
+        width: 80%;
+    }
+    .project-main-div
+    {
+        width: 90%;
+        margin-top: 5vh;
+    }
+    .project-div
+    {
+        width: 90%;
+    }
+}
+@media (max-width: 400px) {
+    .project-section
+    {
+        height: fit-content;
+    }
+    .heading-div p
+    {
+        width: 80%;
+    }
+    .project-main-div
+    {
+        width: 90%;
+        margin-top: 5vh;
+    }
+    .project-div
+    {
+        width: 90%;
+    }
+}
