@@ -24,7 +24,6 @@ router.get("/internship/:search", isloggedin, (req, res) => {
     const search = req.params.search;
     db.query(`SELECT * FROM internship`, (err, rows) => {
         if (!err) {
-            console.log(search);
             let internshipArray = [];
             rows.forEach((element) => {
                 console.log(
@@ -36,7 +35,6 @@ router.get("/internship/:search", isloggedin, (req, res) => {
                     internshipArray.push(element);
                 }
             });
-            console.log(internshipArray);
             res.render("internship", {internshipArray});
         } else {
             res.status(500).send("Internal server error");
@@ -73,7 +71,6 @@ router.post(
     upload.single("image_internship"),
     isloggedin,
     async (req, res) => {
-        console.log(req.body);
         let data;
 
         Object.keys(req.body).forEach((key, index) => {

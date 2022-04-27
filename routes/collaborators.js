@@ -36,7 +36,6 @@ router.post(
     upload.single("image_collaborators"),
     isloggedin,
     async (req, res) => {
-        console.log(req.body);
         db.query(
             `INSERT INTO collaborators (name_collaborators, image_collaborators ) VALUES (?, ?)`,
             [req.body.name_collaborators, req.file.path],
@@ -89,12 +88,10 @@ router.post(
     upload.single("image_collaborators"),
     isloggedin,
     async (req, res) => {
-        console.log(req.body);
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
 
-        console.log(oldimage);
 
         db.query(
             `UPDATE collaborators SET name_collaborators = ?,  image_collaborators = ? WHERE id_collaborators = ?`,
