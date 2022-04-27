@@ -105,13 +105,11 @@ router.post(
     isloggedin,
     upload.single("image_team"),
     async (req, res) => {
-        console.log(req.body);
         // https://res.cloudinary.com/dn3s6sgki/image/upload/v1650037728/Astroex_Research_Association/ac37qkdbythvpck0a2lk.png
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
 
-        console.log(oldimage);
 
         db.query(
             `UPDATE teams SET name_team = ?, job_team = ?, email_team = ?, instagram_url = ?, linkedIn_url = ?, color_team = ?, select_team = ? , image_team = ? WHERE id_team = ?`,
@@ -141,7 +139,6 @@ router.post(
 );
 
 router.get("/admin/teams/delete/:id", isloggedin, async (req, res) => {
-    console.log(req.query.cloudinaryName);
     db.query(
         `DELETE FROM teams WHERE id_team = ?`,
         [req.params.id],

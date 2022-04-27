@@ -102,12 +102,10 @@ router.post(
     upload.single("image_projects"),
     isloggedin,
     async (req, res) => {
-        console.log(req.body);
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
 
-        console.log(oldimage);
 
         db.query(
             `UPDATE projects SET title_projects = ?, description_projects = ?, image_projects = ? WHERE id_projects = ?`,

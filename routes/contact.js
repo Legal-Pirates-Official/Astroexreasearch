@@ -10,7 +10,6 @@ router.get("/contact", (req, res) => {
 });
 
 router.post("/contact", (req, res) => {
-    console.log(req.body);
     const output = `
     <p>You have a new contact request</p>
     <h3>Contact Details</h3>
