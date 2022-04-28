@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/training", (req, res) => {
     db.query("SELECT * FROM training", (err, rows) => {
         if (!err) {
-            res.render("training", {training: rows[0]});
+            res.render("training", {training: rows});
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -42,7 +42,6 @@ router.get("/admin/training/insert", isloggedin, async (req, res) => {
 });
 
 router.post("/admin/training/insert", isloggedin, async (req, res) => {
-    console.log(req.body);
     db.query(
         `INSERT INTO training (title_training, paragraph_training, batch_training) VALUES (?, ?, ?)`,
         [
@@ -94,7 +93,6 @@ router.get("/admin/training/update/:id", isloggedin, async (req, res) => {
 });
 
 router.post("/admin/training/update/:id", isloggedin, async (req, res) => {
-    console.log(req.body);
     db.query(
         `UPDATE training SET title_training = ?, paragraph_training = ?, batch_training = ?  WHERE id_training = ?`,
         [

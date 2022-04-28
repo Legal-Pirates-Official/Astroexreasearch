@@ -18,17 +18,21 @@
     <body>
         <%- include("./partials/navbar.ejs") %>
         <section class="training-section">
-            <div class="heading-section">
-                <h1><%= training.batch_training %></h1>
-            </div>
-            <div class="box-div box-div1">
-                <div class="floating-content">
-                    <p><%= training.title_training %></p>
+            <% training.forEach(element => { %>
+            <div class="training-main-div">
+                <div class="heading-section">
+                    <h1><%- element.batch_training %></h1>
                 </div>
-                <div class="standard-content">
-                    <p><%= training.paragraph_training %></p>
+                <div class="box-div box-div1">
+                    <div class="floating-content">
+                        <p><%- element.title_training %></p>
+                    </div>
+                    <div class="standard-content">
+                        <p><%- element.paragraph_training %></p>
+                    </div>
                 </div>
             </div>
+            <% }) %>
         </section>
 
         <%- include("./partials/footer.ejs") %>

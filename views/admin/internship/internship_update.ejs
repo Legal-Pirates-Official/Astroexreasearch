@@ -14,7 +14,11 @@
         <link rel="stylesheet" href="../../../stylesheets/admin-panel.css" />
         <title>Internship Update</title>
     </head>
-	<link rel="shortcut icon" href="../../../images/favicon.ico" type="image/x-icon">
+    <link
+        rel="shortcut icon"
+        href="../../../images/favicon.ico"
+        type="image/x-icon"
+    />
     <%- include("../../partials/internship.ejs") %>
 
     <style>
@@ -37,6 +41,7 @@
                 <div class="col-md-12">
                     <form
                         action="/admin/internship/update/<%= internship.id_internship %>"
+                        enctype="multipart/form-data"
                         method="POST"
                     >
                         <div class="form-group-container">
@@ -75,6 +80,36 @@
                                     id="description_internship"
                                     name="description_internship"
                                     value="<%= internship.description_internship %>"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="form_internship">Form Link</label>
+                                <input
+                                    required
+                                    type="text"
+                                    class="form-control"
+                                    id="form_internship"
+                                    name="form_internship"
+                                    value="<%= internship.form_internship %>"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="image_internship">Image</label>
+                                <input
+                                    type="file"
+                                    style="width: 50%"
+                                    class="form-control"
+                                    id="image_internship"
+                                    name="image_internship"
+                                />
+                                <input
+                                    checked
+                                    readonly
+                                    style="height: 0; width: 0"
+                                    type="checkbox"
+                                    name="image_checkbox"
+                                    id="image_checkbox"
+                                    value="<%- projects.image_internship %>"
                                 />
                             </div>
                             <div

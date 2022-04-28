@@ -44,7 +44,6 @@ router.get("/admin/research_areas/insert", isloggedin, async (req, res) => {
 });
 
 router.post("/admin/research_areas/insert", isloggedin, async (req, res) => {
-    console.log(req.body);
     db.query(
         `INSERT INTO research_areas (text_research_areas) VALUES (?)`,
         [req.body.text_research_areas],
@@ -95,7 +94,6 @@ router.post(
     "/admin/research_areas/update/:id",
     isloggedin,
     async (req, res) => {
-        console.log(req.body);
 
         db.query(
             `UPDATE research_areas SET text_research_areas = ? WHERE id_research_areas = ?`,
@@ -112,7 +110,6 @@ router.post(
 );
 
 router.get("/admin/research_areas/delete/:id", isloggedin, async (req, res) => {
-    console.log(req.query.cloudinaryName);
     db.query(
         `DELETE FROM research_areas WHERE id_research_areas = ?`,
         [req.params.id],

@@ -96,12 +96,19 @@
   align-items: center;
   border:  var(--button) 1px;
   cursor: pointer;
-}
-.btnforslider a {
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--white);
 }
+
+.btnforslider:hover
+{
+  background: #fa8c43af;
+  color: var(--white);
+}
+
+/* .btnforslider a {
+} */
 .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
   right: 10px;

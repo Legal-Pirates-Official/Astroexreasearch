@@ -44,10 +44,8 @@ router.get("/admin/events/insert", isloggedin, async (req, res) => {
 router.post(
     "/admin/events/insert",
     upload.single("image_events"),
-    // isloggedin,
+    isloggedin,
     async (req, res) => {
-        console.log(req.body);
-        console.log(req.file);
         db.query(
             `INSERT INTO events (name_events, description_events, date_events, time_events, events_link, image_events) VALUES (?, ?, ?, ?, ?, ?)`,
             [
@@ -105,12 +103,10 @@ router.post(
     upload.single("image_events"),
     isloggedin,
     async (req, res) => {
-        console.log(req.body);
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
 
-        console.log(oldimage);
 
         db.query(
             `UPDATE events SET name_events = ?, description_events = ?, date_events = ?, time_events = ?, events_link = ?, image_events = ? WHERE id_events = ?`,
@@ -138,7 +134,6 @@ router.post(
 );
 
 router.get("/admin/events/delete/:id", isloggedin, async (req, res) => {
-    console.log(req.query.cloudinaryName);
     db.query(
         `DELETE FROM events WHERE id_events = ?`,
         [req.params.id],

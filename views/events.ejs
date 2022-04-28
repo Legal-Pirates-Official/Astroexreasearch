@@ -6,8 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="stylesheets/events.css" />
         <link rel="stylesheet" href="stylesheets/navbar.css" />
-	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="stylesheets/footer.css" />
+        <link
+            rel="shortcut icon"
+            href="images/favicon.ico"
+            type="image/x-icon"
+        />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
         <title>Events</title>
     </head>
 
@@ -22,15 +26,22 @@
                 </div>
                 <div class="content-events">
                     <div class="event-name">
-                        <h1><%= events.name_events %> </h1>
+                        <h1><%= events.name_events %></h1>
                     </div>
                     <div class="event-button">
                         <button>
                             <div class="button-inside">
                                 <span class="button-inside-span"
-                                    >Register Now</span
+                                    ><a
+                                        target="_blank"
+                                        href="<%= events.events_link %>"
+                                        >Register Now</a
+                                    ></span
                                 >
-                                <p><%= events.date_events %> <br> <%= events.time_events %></p>
+                                <p>
+                                    <%= events.date_events %> <br />
+                                    <%= events.time_events %>
+                                </p>
                             </div>
                         </button>
                     </div>
