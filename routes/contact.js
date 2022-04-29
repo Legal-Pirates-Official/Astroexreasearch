@@ -9,14 +9,8 @@ router.get('/contact', (req, res) => {
 	res.render('contact');
 });
 
-<<<<<<< HEAD
-router.post('/contact', (req, res) => {
-	console.log(req.body);
-	const output = `
-=======
 router.post("/contact", (req, res) => {
     const output = `
->>>>>>> e2f7de2b1c78200a0e8a2e8c87b1a7265a215ded
     <p>You have a new contact request</p>
     <h3>Contact Details</h3>
     <ul>
