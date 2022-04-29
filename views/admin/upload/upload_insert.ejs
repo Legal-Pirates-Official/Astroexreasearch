@@ -20,7 +20,7 @@
         <title>Project files</title>
     </head>
 
-    <%#- include("../../partials/upload_files.ejs") %>
+    <%- include("../../partials/upload_files.ejs") %>
     <body>
         <%- include("../../partials/admin_nav.ejs") %>
 
@@ -38,14 +38,15 @@
                         enctype="multipart/form-data"
                     >
                         <div class="form-group">
-                            <!-- <label for="name_upload_files">Name</label>
+                            <label for="name_upload_files">Name</label>
                             <input
                                 type="text"
                                 class="form-control"
                                 id="name_upload_files"
                                 name="name_upload_files"
                                 placeholder="Enter name"
-                            /> -->
+                            />
+                        </div>
                         <div class="form-group">
                             <label for="file_upload_files">File</label>
                             <input

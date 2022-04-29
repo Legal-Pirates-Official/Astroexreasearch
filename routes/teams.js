@@ -105,7 +105,6 @@ router.post(
     isloggedin,
     upload.single("image_team"),
     async (req, res) => {
-        // https://res.cloudinary.com/dn3s6sgki/image/upload/v1650037728/Astroex_Research_Association/ac37qkdbythvpck0a2lk.png
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);

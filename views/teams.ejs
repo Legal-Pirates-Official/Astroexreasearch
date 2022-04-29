@@ -25,38 +25,62 @@
     <body>
         <%- include("./partials/navbar.ejs") %>
 
+        <!-- Top Section - Start -->
+        <section class="top-section">
+            <div class="main-container">
+                <div class="main-content">
+                    <h1>Teams</h1>
+                    <p>
+                        We have mentored hundreds of students across various
+                        countries and helped them to publish research papers
+                        too. Any individual who is interested in doing research
+                        can join Astroex Research Association without any second
+                        thought.
+                    </p>
+                </div>
+            </div>
+            <div class="floating_container">
+                <p>
+                    We have mentored hundreds of students across various
+                    countries and helped them to publish research papers too.
+                    Any individual who is interested in doing research can join
+                    Astroex Research Association without any second thought.
+                </p>
+            </div>
+        </section>
+        <!-- Top Section - End -->
+
         <section class="team-section">
-            <h1 class="team-section-h1">Me<span>et The Te</span>am</h1>
+            <!-- <h1 class="team-section-h1">Me<span>et The Te</span>am</h1> -->
             <h1 class="team-section-h1">Teams</h1>
             <div class="our-teams">
                 <% teamArray.forEach(teams => { %> <% if (teams.select_team ==
                 "team_a") { %>
-                <div
-                    class="team-div"
-                    style="--background: <%= teams.color_team %>"
-                >
-                    <div class="team-image">
-                        <img src="<%= teams.image_team %>" alt="" />
-                    </div>
-                    <div class="team-name">
+                <div class="one_team_top">
+                    <div class="one_team">
+                        <img
+                            class="one-team-image"
+                            src="<%= teams.image_team %>"
+                            alt=""
+                        />
                         <h2><%= teams.name_team %></h2>
                         <p><%= teams.job_team %></p>
-                        <div class="social-icons">
+                        <div class="social_icons_div">
                             <a href="<%= teams.instagram_url %>">
                                 <img
-                                    class="social-icons-img"
+                                    class="social_icons_img"
                                     src="https://img.icons8.com/ios/40/instagram-new--v1.png"
                                 />
                             </a>
                             <a href="<%= teams.linkedIn_url %>">
                                 <img
-                                    class="social-icons-img"
+                                    class="social_icons_img"
                                     src="https://img.icons8.com/ios/40/linkedin.png"
                                 />
                             </a>
                             <a href="<%= teams.email_team %>">
                                 <img
-                                    class="social-icons-img"
+                                    class="social_icons_img"
                                     src="https://img.icons8.com/ios/40/whatsapp--v1.png"
                                 />
                             </a>
@@ -65,43 +89,42 @@
                 </div>
                 <% } %> <% }) %>
             </div>
+
             <h1 class="team-section-h1">Research Advisors</h1>
             <div class="our-teams">
                 <% teamArray.forEach(teams => { %> <% if (teams.select_team ==
                 "team_b") { %>
-                <div
-                    class="team-div"
-                    style="--background: <%= teams.color_team %>"
-                >
-                    <div class="team-image">
-                        <img src="<%= teams.image_team %>" alt="" />
-                    </div>
-                    <div class="team-name">
+                <div class="one_team_top">
+                    <div class="one_team">
+                        <img
+                            class="one-team-image"
+                            src="<%= teams.image_team %>"
+                            alt=""
+                        />
                         <h2><%= teams.name_team %></h2>
                         <p><%= teams.job_team %></p>
-                        <div class="social-icons">
+                        <div class="social_icons_div">
                             <a href="<%= teams.instagram_url %>">
                                 <img
-                                    class="social-icons-img"
+                                    class="social_icons_img"
                                     src="https://img.icons8.com/ios/40/instagram-new--v1.png"
                                 />
                             </a>
                             <a href="<%= teams.linkedIn_url %>">
                                 <img
-                                    class="social-icons-img"
+                                    class="social_icons_img"
                                     src="https://img.icons8.com/ios/40/linkedin.png"
                                 />
                             </a>
                             <a href="<%= teams.email_team %>">
                                 <img
-                                    class="social-icons-img"
+                                    class="social_icons_img"
                                     src="https://img.icons8.com/ios/40/whatsapp--v1.png"
                                 />
                             </a>
                         </div>
                     </div>
                 </div>
-
                 <% } %> <% }) %>
             </div>
         </section>

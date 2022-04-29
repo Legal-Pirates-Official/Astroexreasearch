@@ -150,6 +150,9 @@ router.post(
     upload.single("image_internship"),
     isloggedin,
     async (req, res) => {
+        const oldimage = req.body.image_checkbox
+            .split("Astroex_Research_Association/")[1]
+            .slice(0, -4);
         let data;
 
         Object.keys(req.body).forEach((key, index) => {
@@ -161,6 +164,7 @@ router.post(
                     : data + `${key}=${req.body[key]},`;
             }
         });
+
         db.query(
             `UPDATE internship SET heading_internship = ?, subheading_internship = ?, description_internship = ?, form_internship = ?, image_internship = ? , tag_internship = ?  WHERE id_internship = ?`,
             [

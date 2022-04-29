@@ -39,7 +39,7 @@ router.post(
 		console.log(req.file);
 		await db.query(
 			'INSERT INTO upload_files SET name_upload_files = ?, file_upload_files = ?',
-			[req.file.filename, req.file.path]
+			[req.body.name_upload_files, req.file.path]
 		);
 		res.redirect('/admin/upload_files');
 	}
