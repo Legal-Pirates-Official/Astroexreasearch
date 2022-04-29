@@ -1,10 +1,10 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const db = require("../database");
-const multer = require("multer");
-const path = require("path");
-const {storage, cloudinary} = require("../cloudinary");
-const upload = multer({storage});
+const db = require('../database');
+const multer = require('multer');
+const path = require('path');
+const { storage, cloudinary } = require('../cloudinary');
+const upload = multer({ storage });
 
 const router = express.Router();
 
