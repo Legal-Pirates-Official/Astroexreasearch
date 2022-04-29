@@ -7,7 +7,6 @@ const { storage, cloudinary } = require('../cloudinary');
 const upload = multer({ storage });
 const { isloggedin } = require('../middleware');
 const fs = require('fs');
-const PDFDocument = require('pdfkit');
 
 const router = express.Router();
 
