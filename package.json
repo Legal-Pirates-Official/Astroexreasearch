@@ -8,13 +8,12 @@
     "start": "node server.js",
     "dev": "nodemon server.js",
     "update": "git pull origin main && npm run restart",
-    "restart": "sudo systemctl restart nginx && pm2 restart all"
+    "restart": "sudo systemctl restart nginx && pm2 restart all "
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Legal-Pirates-Official/Astroexreasearch.git"
   },
-
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -38,7 +37,6 @@
     "nodemailer": "^6.7.1",
     "nodemon": "^2.0.15",
     "path": "^0.12.7",
-    "pdfkit": "^0.13.0",
     "routes": "^2.1.0"
   }
 }
