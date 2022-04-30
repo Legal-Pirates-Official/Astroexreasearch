@@ -57,33 +57,27 @@ const transporter = nodemailer.createTransport({
 
 router.post('/admin/footer_contact/message', async (req, res) => {
 	const { subscribemessage } = req.body;
-
 	await db.query(`SELECT * FROM footer_contact`, (err, rows) => {
-		console.log(rows[0]);
 		if (!err) {
 			rows.forEach(async (mail) => {
 				const mailOptions = {
 					from: 'geniuscriminaloffical@gmail.com',
 					to: mail.email_footer,
 					subject: 'Message from Astroxresearch',
-					text:
+					html:
 						subscribemessage +
 						'\n\n' +
 						`<a href="/footer_contact/opt-out/${mail.id_footer}">Opt out</a>`
 				};
-				new Promise(async (resolve, reject) => {
-					await transporter.sendMail(mailOptions, function (error, info) {
-						if (error) {
-							// console.log(error);
-							resolve();
-						} else {
-							resolve();
-							// console.log('Email sent: ' + info.response);
-						}
-					});
+				await transporter.sendMail(mailOptions, function (error, info) {
+					if (error) {
+						console.log(error);
+					} else {
+						console.log('Email sent: ' + info.response);
+						res.json('/admin/footer_contact/message');
+					}
 				});
 			});
-			res.redirect('/admin/footer_contact/message');
 		} else {
 			console.log(err);
 		}
