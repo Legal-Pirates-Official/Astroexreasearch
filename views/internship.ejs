@@ -34,7 +34,7 @@
                 </div>
             </section>
             <div class="main-div-intership">
-                <% internshipArray.forEach(internship => { %>
+                <% internshipArray.reverse().forEach(internship => { %>
                 <div class="div-internship">
                     <h1><%= internship.heading_internship %></h1>
                     <h2 style="font-weight: 400">
@@ -42,7 +42,7 @@
                     </h2>
                     <div class="tags-internship-div">
                         <%
-                        internship.tag_internship.split(",").forEach((element,
+                        internship.tag_internship.split(",").reverse().forEach((element,
                         index) => { %>
                         <a class="tags-internship" href="">
                             <%= element.split("=")[1] %>

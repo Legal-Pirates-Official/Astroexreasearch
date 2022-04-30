@@ -47,7 +47,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% trainingArray.forEach(training => { %>
+                    <% trainingArray.reverse().forEach(training => { %>
                     <tr>
                         <td>
                             <span class="first-column"
@@ -55,7 +55,8 @@
                             >
                         </td>
                         <td class="mobile-view">
-                            <%- training.paragraph_training.trim().slice(0, 50) %>...
+                            <%- training.paragraph_training.trim().slice(0, 50)
+                            %>...
                         </td>
                         <td class="mobile-view">
                             <%- training.batch_training %>
