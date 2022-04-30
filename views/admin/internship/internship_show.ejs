@@ -45,7 +45,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <% internshipArray.forEach(internship => { %>
+                        <% internshipArray.reverse().forEach(internship => { %>
                         <tr>
                             <td>
                                 <span class="first-column"
@@ -62,7 +62,7 @@
                             <td class="mobile-view">
                                 <ul>
                                     <%
-                                    internship.tag_internship.split(",").forEach((element,
+                                    internship.tag_internship.split(",").reverse().forEach((element,
                                     index) => { %>
                                     <li><%= element.split("=")[1] %></li>
                                     <% }); %>

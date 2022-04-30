@@ -46,7 +46,7 @@
                         <h3>Tag Line:</h3>
                         <p>
                             <ul>
-                                <%internship.tag_internship.split(",").forEach((element, index) => { %>
+                                <%internship.tag_internship.split(",").reverse().forEach((element, index) => { %>
                                 <li><%= element.split("=")[1] %></li>
                                 <% }); %>
                             </ul>

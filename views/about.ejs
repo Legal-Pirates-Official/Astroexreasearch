@@ -148,7 +148,7 @@
             <div class="partners-main-div">
                 <marquee direction="right" height="350" width="350">
                     <div class="partners-div">
-                        <% partners.forEach(element => { %>
+                        <% partners.reverse().forEach(element => { %>
                         <img
                             src="<%= element.image_partners %>"
                             alt="<%= element.name_partners %>"
@@ -163,7 +163,7 @@
             <div class="partners-main-div">
                 <marquee direction="left" height="350" width="350">
                     <div class="partners-div">
-                        <% collaborators.forEach(element => { %>
+                        <% collaborators.reverse().forEach(element => { %>
                         <img
                             src="<%= element.image_collaborators %>"
                             alt="<%= element.name_collaborators %>"

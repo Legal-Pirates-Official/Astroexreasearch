@@ -18,7 +18,7 @@
     <body>
         <%- include("./partials/navbar.ejs") %>
         <section class="training-section">
-            <% training.forEach(element => { %>
+            <% training.reverse().forEach(element => { %>
             <div class="training-main-div">
                 <div class="heading-section">
                     <h1><%- element.batch_training %></h1>
