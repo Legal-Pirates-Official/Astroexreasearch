@@ -12,7 +12,7 @@ body {
 .nav {
     height: 5rem;
     width: 100%;
-    background-color: #fff;
+    background: #FA8C43;
     position: relative;
     z-index: 100;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -55,7 +55,17 @@ body {
     float: right;
     font-size: 18px;
 }
-
+.title h1 {
+    font-size: 1.5rem;
+    color: rgb(255, 255, 255);
+    /* padding: 10px 10px 10px 10px; */
+}
+.nav2 {
+    justify-content: space-around;
+    background-color: #fff;
+    height: 4rem;
+    
+}
 .nav > .nav-links > a {
     display: inline-block;
     padding: 13px 10px 13px 10px;
@@ -63,8 +73,12 @@ body {
     color: #000;
     transition: all 0.3s ease-in-out;
 }
-
-.nav > .nav-links > a:hover {
+.nav-links-2 {
+    width: 60%;
+    display: flex !important;
+    justify-content: space-around;
+}
+.nav > .nav-links > .nav-a:hover {
     background: #FA8C43;
     color: white;
 }
