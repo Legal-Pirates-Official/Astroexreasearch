@@ -146,31 +146,35 @@
         <section class="section-partners">
             <h1>Partners</h1>
             <div class="partners-main-div">
-                <marquee direction="right" height="350" width="350">
+                <div class="marquee-main-div">
+                    <marquee direction="right">
                     <div class="partners-div">
-                        <% partners.reverse().forEach(element => { %>
+                        <% partners.forEach(element => { %>
                         <img
-                            src="<%= element.image_partners %>"
-                            alt="<%= element.name_partners %>"
+                            src="<%- element.image_partners %>"
+                            alt="<%- element.name_partners %>"
                         />
                         <% }) %>
                     </div>
+                </div>
                 </marquee>
             </div>
         </section>
         <section class="section-partners">
             <h1>Collaborators</h1>
             <div class="partners-main-div">
-                <marquee direction="left" height="350" width="350">
+                <div class="marquee-main-div">
+                    <marquee direction="left">
                     <div class="partners-div">
-                        <% collaborators.reverse().forEach(element => { %>
+                        <% collaborators.forEach(element => { %>
                         <img
-                            src="<%= element.image_collaborators %>"
-                            alt="<%= element.name_collaborators %>"
+                            src="<%- element.image_collaborators %>"
+                            alt="<%- element.name_collaborators %>"
                         />
                         <% }) %>
                     </div>
-                </marquee>
+                    </marquee>
+                </div>
             </div>
         </section>
 
