@@ -4,8 +4,6 @@ const db = require("../database");
 
 const router = express.Router();
 
-
-
 router.get("/about", (req, res) => {
     db.query("SELECT * FROM partners", (err, result) => {
         if (!err) {
@@ -27,11 +25,12 @@ router.get("/about", (req, res) => {
     });
 });
 
-
 router.get("/partners", (req, res) => {
     res.render("partners");
 });
 
-;
+router.get("/publications", (req, res) => {
+    res.render("publications");
+});
 
 module.exports = router;

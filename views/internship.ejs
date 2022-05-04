@@ -12,11 +12,14 @@
             href="images/favicon.ico"
             type="image/x-icon"
         />
+        <link rel="stylesheet" href="./stylesheets/loading.css" />
         <link rel="stylesheet" href="./stylesheets/navbar.css" />
         <title>Internship</title>
     </head>
     <body>
         <%- include("./partials/navbar.ejs") %>
+
+        <div class="loader"></div>
 
         <section class="main-section">
             <section class="internship-section">
@@ -44,9 +47,9 @@
                         <%
                         internship.tag_internship.split(",").reverse().forEach((element,
                         index) => { %>
-                        <a class="tags-internship" href="">
+                        <p class="tags-internship">
                             <%= element.split("=")[1] %>
-                        </a>
+                        </p>
                         <% }); %>
                     </div>
                     <div class="poster_image_div">
@@ -72,8 +75,20 @@
             </div>
         </section>
 
-
         <%- include("./partials/footer.ejs") %>
+
+        <script>
+            var myVar;
+
+            function myFunction() {
+                myVar = setTimeout(showPage, 3000);
+            }
+
+            function showPage() {
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("img01").style.display = "block";
+            }
+        </script>
 
         <script src="../javascripts/internship.js"></script>
         <script src="../javascripts/navbar.js"></script>
