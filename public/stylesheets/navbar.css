@@ -112,6 +112,10 @@ body {
 }
 
 @media (max-width: 600px) {
+    .nav
+    {
+        justify-content: space-around;
+    }
     .nav > .nav-btn {
         display: inline-block;
         position: absolute;
@@ -182,5 +186,9 @@ body {
     }
     .dropdown-navbar a {
         padding: 0px 10px 13px 10px;
+    }
+    .nav > .nav-header > .nav-title
+    {
+        padding: 0;
     }
 }
