@@ -4,6 +4,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
     --button: #fa8c43;
     --black: #000;
@@ -46,7 +47,7 @@
     align-items: center;
     padding: 5%;
     color: #000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -58,7 +59,7 @@
     justify-content: center;
     align-items: flex-start;
     padding: 5%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
     color: #fff;
 }
@@ -70,11 +71,11 @@
     justify-content: center;
     align-items: center;
     padding: 5%;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     z-index: 2;
 }
 .main-content h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: "Kaushan Script", cursive;
     text-align: center;
     color: var(--button);
@@ -92,7 +93,7 @@
 }
 
 .team-section-h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: "Kaushan Script", cursive;
     text-align: center;
     color: var(--button);
@@ -114,7 +115,7 @@
     justify-content: center;
     align-items: center;
     padding: 1%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     background: #1e1e1e;
@@ -132,7 +133,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 2%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     background: #fff;
@@ -166,7 +167,7 @@
 }
 
 .one_team h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-family: "Kaushan Script", cursive;
     text-align: center;
     color: var(--text);

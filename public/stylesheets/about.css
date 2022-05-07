@@ -63,7 +63,7 @@
 .about-right-side h1 {
     position: relative;
     font-family: "Kaushan Script", cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--button);
     margin-bottom: 1rem;
 }
@@ -71,7 +71,7 @@
 .about-right-side p {
     position: relative;
     width: 80%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--white);
     margin-bottom: 1rem;
     text-align: right;
@@ -87,7 +87,7 @@
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: 1rem;
     text-decoration: none;
     z-index: 2;
@@ -106,13 +106,13 @@
 
 .pop-up-social h2 {
     font-family: "Kaushan Script", cursive;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--button);
     margin-bottom: 1rem;
 }
 
 .pop-up-social p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--black);
     margin-bottom: 1rem;
     text-align: left;
@@ -173,13 +173,13 @@
 
 .image-div h1 {
     margin: 2% 0;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     text-align: center;
 }
 
 .image-div p {
     font-family: "Kaushan Script", cursive;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .right-card-div {
@@ -278,7 +278,7 @@
 .quotes-section p {
     font-family: "Kaushan Script", cursive;
     width: 75%;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: var(--white);
     text-align: center;
     margin-bottom: 1rem;
@@ -330,13 +330,13 @@
 
 .mission-div h1 {
     font-family: "Kaushan Script", cursive;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: var(--text);
     text-align: center;
     margin-bottom: 1rem;
 }
 .mission-div p {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--black);
     text-align: center;
     margin-bottom: 1rem;
@@ -374,13 +374,13 @@
 
 .vision-div h1 {
     font-family: "Kaushan Script", cursive;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: var(--text);
     text-align: center;
     margin-bottom: 1rem;
 }
 .vision-div p {
-    font-size: 1.3rem;
+    font-size: 1rem;
     color: var(--black);
     text-align: center;
     margin-bottom: 1rem;
@@ -537,7 +537,7 @@
 
 .section-partners h1 {
     font-family: "Kaushan Script", cursive;
-    font-size: 2.5rem;
+    font-size: 2.3rem;
     color: var(--text);
     text-align: center;
     margin-bottom: 1rem;
@@ -618,10 +618,10 @@
         width: 100%;
     }
     .grid-box:hover::after {
-        font-size: 18px;
+        font-size: 15px;
     }
     .quotes-section p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .mission-vision-section {
         height: fit-content;
@@ -685,10 +685,10 @@
         width: 100%;
     }
     .grid-box:hover::after {
-        font-size: 18px;
+        font-size: 15px;
     }
     .quotes-section p {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
     .mission-vision-section {
         height: fit-content;

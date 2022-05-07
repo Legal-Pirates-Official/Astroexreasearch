@@ -34,20 +34,21 @@
 }
 
 .floating_container {
-    position: absolute;
-    bottom: 0%;
-    left: 10%;
-    width: 30%;
-    height: 50%;
+    position: fixed;
+    bottom: 5%;
+    right: 10%;
+    width: 25%;
+    height: 40%;
     background: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display: flex;
-    z-index: 2;
+    z-index: 1;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 5%;
+    padding: 3%;
     color: #000;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -57,9 +58,9 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: flex-start;
     padding: 5%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: left;
     color: #fff;
 }
@@ -70,12 +71,12 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 1.1rem;
-    text-align: right;
+    font-size: 1rem;
+    text-align: left;
     z-index: 2;
 }
 .main-content h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-family: "Kaushan Script", cursive;
     text-align: right;
     color: var(--button);
@@ -89,7 +90,7 @@
 .main-section {
     position: relative;
     min-height: 100vh;
-    height: 100vh;
+    /* height: 100vh; */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -109,14 +110,14 @@
 
 .left-div {
     position: relative;
-    width: 50%;
-    height: 85%;
+    width: 100%;
+    /* height: 85%; */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .left-div::-webkit-scrollbar {
@@ -173,12 +174,12 @@
 .content-div {
     position: relative;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    margin-top: 15%;
+    margin: 5% 0;
 }
 
 .image-div {
@@ -202,39 +203,40 @@
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
-    align-items: center;
-    font-size: 1.2rem;
+    /* align-items: center; */
+    font-size: 1rem;
 }
 
 .all-contents ul
 {
-    list-style-type: none;
+    /* list-style-type: none; */
     display: flex;
     width: 50%;
+    padding-left: 10%;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .all-contents ul li
 {
     margin: 2%;
-    padding: 5%;
-    background: var(--bg);
-    width: 100%;
-    display: flex;
+    padding: 1%;
+    /* background: var(--bg); */
+    width: 50%;
+    /* display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center; */
     border-radius: 30px;
     transition: all 0.3s ease-in-out;
 }
-.all-contents ul li:hover
+/* .all-contents ul li:hover
 {
     background: var(--grey);
     color: #fff;
-}
+} */
 
 
 @media (max-width: 400px) {

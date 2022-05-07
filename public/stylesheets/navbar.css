@@ -12,7 +12,7 @@ body {
 .nav {
     height: 5rem;
     width: 100%;
-    background: #FA8C43;
+    background: #fa8c43;
     position: relative;
     z-index: 100;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -39,11 +39,34 @@ body {
     height: 50px;
 } */
 
-.image-logo
-{
-    width: 130px;
+.image-logo {
+    /* width: 90px; */
+    width: 75px;
     height: 75px;
-    background: url("../images/NavBarLogo.png") center/cover no-repeat;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+/* .image-logo svg {
+    width : 7rem;
+} */
+
+.logo_Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+
+.image-logo img {
+    width: 150%;
+    height: 130%;
+    /* background: url("../images/NavBarLogo.png") center/cover no-repeat; */
+    background: #fff;
 }
 
 .nav > .nav-btn {
@@ -55,6 +78,11 @@ body {
     float: right;
     font-size: 18px;
 }
+
+.title
+{
+    padding: 0 1rem;
+}
 .title h1 {
     font-size: 1.5rem;
     color: rgb(255, 255, 255);
@@ -64,7 +92,6 @@ body {
     justify-content: space-around;
     background-color: #fff;
     height: 4rem;
-    
 }
 .nav > .nav-links > a {
     display: inline-block;
@@ -79,7 +106,7 @@ body {
     justify-content: space-around;
 }
 .nav > .nav-links > .nav-a:hover {
-    background: #FA8C43;
+    background: #fa8c43;
     color: white;
 }
 
@@ -112,8 +139,7 @@ body {
 }
 
 @media (max-width: 600px) {
-    .nav
-    {
+    .nav {
         justify-content: space-around;
     }
     .nav > .nav-btn {
@@ -170,8 +196,7 @@ body {
     .main-a-dropdown {
         display: none !important;
     }
-    .dropdown-atag
-    {
+    .dropdown-atag {
         display: none;
     }
     .dropdown-navbar {
@@ -187,8 +212,7 @@ body {
     .dropdown-navbar a {
         padding: 0px 10px 13px 10px;
     }
-    .nav > .nav-header > .nav-title
-    {
+    .nav > .nav-header > .nav-title {
         padding: 0;
     }
 }
