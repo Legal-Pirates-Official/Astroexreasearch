@@ -64,7 +64,7 @@
                             </textarea>
                         </div>
                         <div class="form-group">
-                            <label for="file_projects">Image</label>
+                            <label for="file_projects">File</label>
                             <input
                                 type="file"
                                 style="width: 50%"
@@ -92,11 +92,9 @@
                                 <option selected disabled>
                                     Select Project Type
                                 </option>
-                                <option value="publications">
-                                    Publications
-                                </option>
-                                <option value="projects">Projects</option>
-                                <option value="books">Books</option>
+                                <option selected="<%= projects.type_projects == "publications" ? true : false %>" value="publications" >Team 1</option>
+                                <option selected="<%= projects.type_projects == "projects" ? true : false %>" value="projects">Team 2</option>
+                                <option selected="<%= projects.type_projects == "books" ? true : false %>" value="books">Team 2</option>
                             </select>
                         </div>
                         <div>
