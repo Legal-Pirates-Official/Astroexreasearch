@@ -60,17 +60,17 @@
                                 id="description_projects"
                                 name="description_projects"
                             >
-<%= projects.description_projects %></textarea
-                            >
+                                <%= projects.description_projects %>
+                            </textarea>
                         </div>
                         <div class="form-group">
-                            <label for="image_projects">Image</label>
+                            <label for="file_projects">Image</label>
                             <input
                                 type="file"
                                 style="width: 50%"
                                 class="form-control"
-                                id="image_projects"
-                                name="image_projects"
+                                id="file_projects"
+                                name="file_projects"
                             />
                             <input
                                 checked
@@ -79,8 +79,25 @@
                                 type="checkbox"
                                 name="image_checkbox"
                                 id="image_checkbox"
-                                value="<%- projects.image_projects %>"
+                                value="<%- projects.file_projects %>"
                             />
+                        </div>
+                        <div class="form-group">
+                            <label for="type_projects">Link</label>
+                            <select
+                                class="form-select"
+                                name="type_projects"
+                                id="type_projects"
+                            >
+                                <option selected disabled>
+                                    Select Project Type
+                                </option>
+                                <option value="publications">
+                                    Publications
+                                </option>
+                                <option value="projects">Projects</option>
+                                <option value="books">Books</option>
+                            </select>
                         </div>
                         <div>
                             <button

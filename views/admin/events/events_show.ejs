@@ -43,9 +43,9 @@
                     <tr>
                         <th class="col-name">Name</th>
                         <th class="col-name mobile-view">Description</th>
-                        <th class="col-name mobile-view">Date</th>
-                        <th class="col-name mobile-view">Time</th>
-                        <th class="col-name mobile-view">Event Link</th>
+                        <!-- <th class="col-name mobile-view">Date</th> -->
+                        <!-- <th class="col-name mobile-view">Time</th> -->
+                        <!-- <th class="col-name mobile-view">Event Link</th> -->
                         <th class="col-name mobile-view">Image</th>
                         <th class="col-name">Operations</th>
                     </tr>
@@ -59,17 +59,12 @@
                                 <%- events.description_events %>
                             </span>
                         </td>
-                        <td class="mobile-view"><%- events.date_events %></td>
-                        <td class="mobile-view"><%- events.time_events %></td>
-                        <td class="mobile-view"><%- events.events_link %></td>
+                        <!-- <td class="mobile-view"><%#- events.date_events %></td> -->
+                        <!-- <td class="mobile-view"><%#- events.time_events %></td> -->
+                        <!-- <td class="mobile-view"><%#- events.events_link %></td> -->
                         <td class="mobile-view">
                             <img
                                 class="img-fluid"
-                                style="
-                                    width: 5rem;
-                                    height: 5rem;
-                                    object-fit: contain;
-                                "
                                 src="<%- events.image_events %>"
                                 alt="<%- events.image_events %>"
                             />

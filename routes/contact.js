@@ -25,15 +25,15 @@ router.post("/contact", (req, res) => {
 		service: 'Gmail',
 		host: 'smtp.gmail.com',
 		auth: {
-			user: 'geniuscriminaloffical@gmail.com',
-			pass: 'Latha13087280$#'
+			user: process.env.MAIL,
+			pass: 'Latha13087280$#'	
 		}
 	});
 
 	let mailOptions = {
-		from: 'geniuscriminaloffical@gmail.com',
-		to: 'prasannavelmurugan0200@gmail.com',
-		subject: 'Customer Contact Request',
+		from: process.env.MAIL,
+		to: process.env.MAIL,
+		subject: 'Message from Astroxresearch',
 		text: 'Hello world?',
 		html: output
 	};

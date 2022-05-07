@@ -11,7 +11,7 @@
     --white: #fff;
     --text: #333333;
     --grey: #808080;
-  }
+}
 
 .contact-section {
     width: 100%;
@@ -44,9 +44,8 @@
 .contact-title {
     text-transform: uppercase;
     margin-bottom: 2rem;
-   
 }
-.contact-title h1{
+.contact-title h1 {
     font-size: 2rem;
     font-weight: bold;
     color: #333333;
@@ -137,64 +136,55 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: url("https://images.pexels.com/photos/3127880/pexels-photo-3127880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat center ;
+    background: url("https://images.unsplash.com/photo-1586769852044-692d6e3703f0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80")
+        no-repeat center;
 }
 
-
 @media (max-width: 900px) {
-    .contact-section
-    {
+    .contact-section {
         flex-direction: column-reverse;
         height: fit-content;
     }
-    .contact-left-container
-    {
+    .contact-left-container {
         height: 20rem;
         width: 100%;
         margin-bottom: 5%;
     }
-    .contact-left
-    {
+    .contact-left {
         width: 55%;
         height: 95%;
     }
-    .contact-title
-    {
+    .contact-title {
         font-size: 1.3rem;
         text-align: center;
         margin-top: 10%;
     }
-    .contact-right-container{
+    .contact-right-container {
         width: 100%;
     }
-    .form-group
-    {
+    .form-group {
         width: 80%;
     }
 }
 @media (max-width: 400px) {
-    .contact-section
-    {
+    .contact-section {
         flex-direction: column-reverse;
         height: fit-content;
     }
-    .contact-left-container
-    {
+    .contact-left-container {
         height: 20rem;
         width: 100%;
         margin-bottom: 5%;
     }
-    .contact-title
-    {
+    .contact-title {
         font-size: 1.3rem;
         text-align: center;
         margin-top: 10%;
     }
-    .contact-right-container{
+    .contact-right-container {
         width: 100%;
     }
-    .form-group
-    {
+    .form-group {
         width: 80%;
     }
 }

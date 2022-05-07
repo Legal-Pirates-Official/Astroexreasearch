@@ -18,70 +18,27 @@
     <body>
         <%- include("./partials/navbar.ejs") %>
 
-        <!-- <section class="events-section">
-            <%# eventsArray.reverse().forEach(events => { %>
-            <div class="events-main-div">
-                <div class="image-events">
-                    <img src="<%#= events.image_events %> " alt="" />
-                </div>
-                <div class="content-events">
-                    <div class="event-name">
-                        <h1><%#= events.name_events %></h1>
-                    </div>
-                    <div class="event-button">
-                        <button>
-                            <div class="button-inside">
-                                <span class="button-inside-span"
-                                    ><a
-                                        target="_blank"
-                                        href="<%#= events.events_link %>"
-                                        >Register Now</a
-                                    ></span
-                                >
-                                <p>
-                                    <%#= events.date_events %> <br />
-                                    <%#= events.time_events %>
-                                </p>
-                            </div>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <%# }) %>
-        </section> -->
-
         <section class="eventsContainer">
             <div class="straightLine"></div>
+            <% eventsArray.reverse().forEach(events => { %>
             <div class="eventsDiv">
                 <span class="circleSpan"></span>
-                <div class="leftDiv"></div>
+                <div class="leftDiv">
+                    <p><%= events.description_events %></p>
+                </div>
                 <div class="rightDiv">
-                    <h1>04th May</h1>
-                    <h2>20 : 30</h2>
+                    <h1><%= events.date_events %></h1>
+                    <h2><%= events.time_events %></h2>
                     <div class="imageDiv">
                         <img
-                            src="https://res.cloudinary.com/dn3s6sgki/image/upload/v1651070977/Astroex_Research_Association/ywrpk5ltzduqp356spad.png"
-                            alt=""
+                            src="<%= events.image_events %>"
+                            alt="<%= events.name_events %>"
                         />
                     </div>
-                    <h1>Event Name 1</h1>
+                    <h1><%= events.name_events %></h1>
                 </div>
             </div>
-            <div class="eventsDiv">
-                <span class="circleSpan"></span>
-                <div class="leftDiv"></div>
-                <div class="rightDiv">
-                    <h1>04th May</h1>
-                    <h2>20 : 30</h2>
-                    <div class="imageDiv">
-                        <img
-                            src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-                            alt=""
-                        />
-                    </div>
-                    <h1>Event Name 2</h1>
-                </div>
-            </div>
+            <% }) %>
         </section>
 
         <%- include("./partials/footer.ejs") %>

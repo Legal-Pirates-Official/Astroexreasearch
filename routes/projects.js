@@ -43,15 +43,16 @@ router.get("/admin/projects/insert", isloggedin, async (req, res) => {
 
 router.post(
     "/admin/projects/insert",
-    upload.single("image_projects"),
+    upload.single("file_projects"),
     isloggedin,
     async (req, res) => {
         db.query(
-            `INSERT INTO projects (title_projects, description_projects, image_projects ) VALUES (?, ?, ?)`,
+            `INSERT INTO projects (title_projects, description_projects, file_projects, type_projects ) VALUES (?, ?, ?, ?)`,
             [
                 req.body.title_projects,
                 req.body.description_projects,
                 req.file.path,
+                req.body.type_projects,
             ],
             async (err, rows) => {
                 if (!err) {
@@ -99,20 +100,20 @@ router.get("/admin/projects/update/:id", isloggedin, async (req, res) => {
 
 router.post(
     "/admin/projects/update/:id",
-    upload.single("image_projects"),
+    upload.single("file_projects"),
     isloggedin,
     async (req, res) => {
         const oldimage = req.body.image_checkbox
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
 
-
         db.query(
-            `UPDATE projects SET title_projects = ?, description_projects = ?, image_projects = ? WHERE id_projects = ?`,
+            `UPDATE projects SET title_projects = ?, description_projects = ?, file_projects = ?, type_projects = ? WHERE id_projects = ?`,
             [
                 req.body.title_projects,
                 req.body.description_projects,
                 req.file ? req.file.path : req.body.image_checkbox,
+                req.body.type_projects,
                 req.params.id,
             ],
             async (err, rows) => {

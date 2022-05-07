@@ -86,7 +86,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    left: 50%;
+    right: 10px;
 }
 
 .dropdown-navbar.show {

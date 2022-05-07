@@ -127,7 +127,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    right: 10px;
+    left: 50%;
 }
 
 .show {
@@ -209,11 +209,12 @@ body {
         display: flex;
         border: none;
         width: 100%;
+        left: 0;
         box-shadow: none;
         text-align: left;
         align-items: flex-start;
-        padding-left: 10%;
-        margin-top: 3%;
+        padding-left: 8%;
+        margin-top: 12%;
     }
     .dropdown-navbar a {
         padding: 0px 10px 13px 10px;

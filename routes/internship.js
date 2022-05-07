@@ -35,7 +35,7 @@ router.get("/internship/:search", isloggedin, (req, res) => {
                     internshipArray.push(element);
                 }
             });
-            res.render("internship", {internshipArray});
+            res.render("./internship", {internshipArray});
         } else {
             res.status(500).send("Internal server error");
             console.log(err);

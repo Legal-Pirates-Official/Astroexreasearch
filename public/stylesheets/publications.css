@@ -60,6 +60,8 @@
     justify-content: center;
     align-items: center;
     background: rgb(45,125,164);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    border-radius: 10px;
 }
 
 .content-div {
@@ -73,6 +75,7 @@
     align-items: center;
     z-index: 1;
     padding: 2%;
+    border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -87,6 +90,7 @@
     background: #fff;
     z-index: 2;
     margin: 2%;
+    border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 

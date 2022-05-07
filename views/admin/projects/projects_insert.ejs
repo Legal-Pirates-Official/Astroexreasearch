@@ -62,14 +62,31 @@
                             ></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="image_projects">Image</label>
+                            <label for="file_projects">Image</label>
                             <input
                                 required
                                 type="file"
                                 class="form-control"
-                                id="image_projects"
-                                name="image_projects"
+                                id="file_projects"
+                                name="file_projects"
                             />
+                        </div>
+                        <div class="form-group">
+                            <label for="type_projects">Link</label>
+                            <select
+                            class="form-select"
+                            name="type_projects"
+                                id="type_projects"
+                            >
+                                <option selected disabled>
+                                    Select Project Type
+                                </option>
+                                <option value="publications">
+                                    Publications
+                                </option>
+                                <option value="projects">Projects</option>
+                                <option value="books">Books</option>
+                            </select>
                         </div>
                         <div>
                             <button

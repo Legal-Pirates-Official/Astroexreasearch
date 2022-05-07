@@ -43,7 +43,7 @@
                         <tr>
                             <th class="col-name">Name</th>
                             <th class="col-name mobile-view">Description</th>
-                            <th class="col-name mobile-view">Image</th>
+                            <!-- <th class="col-name mobile-view">Image</th> -->
                             <th class="col-name">Operations</th>
                         </tr>
                     </thead>
@@ -59,13 +59,13 @@
                                 <%- projects.description_projects.slice(0, 80)
                                 %>...
                             </td>
-                            <td class="mobile-view">
+                            <!-- <td class="mobile-view">
                                 <img
                                     class="img-fluid"
-                                    src="<%- projects.image_projects %>"
-                                    alt="<%- projects.image_projects %>"
+                                    src="<%#- projects.file_projects %>"
+                                    alt="<%#- projects.file_projects %>"
                                 />
-                            </td>
+                            </td> -->
                             <td class="operations-icons">
                                 <a
                                     href="/admin/projects/<%- projects.id_projects %>"
