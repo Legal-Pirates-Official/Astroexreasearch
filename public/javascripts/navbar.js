@@ -9,9 +9,9 @@ dropdownAtag.addEventListener("mouseover", () => {
     dropdownNavbarIsOpen = true;
 });
 
-navBtn.addEventListener("click", (event) => {
-    fullNav.classList.
-});
+// navBtn.addEventListener("click", (event) => {
+//     fullNav.classList.
+// });
 
 dropdownAtag.addEventListener("click", () => {
     dropdownNavbar.classList.remove("show");
