@@ -16,11 +16,12 @@ footer {
 .title-footer {
     color: #fff;
     width: 100%;
-    text-align: center;
+    text-align: left;
     font-size: 1.5rem;
     font-weight: bold;
     /* padding: 10px 10px 10px 10px; */
     padding-top: 2rem;
+    padding-left: 5rem;
 }
 .form-footer {
     display: flex;
