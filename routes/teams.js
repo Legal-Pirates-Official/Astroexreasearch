@@ -47,14 +47,13 @@ router.post(
     isloggedin,
     async (req, res) => {
         db.query(
-            `INSERT INTO teams (name_team, job_team, email_team, instagram_url, linkedIn_url, color_team, image_team, select_team ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO teams (name_team, job_team, email_team, instagram_url, linkedIn_url,  image_team, select_team ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
             [
                 req.body.name_team,
                 req.body.job_team,
                 req.body.email_team,
                 req.body.instagram_url,
                 req.body.linkedIn_url,
-                req.body.color_team,
                 req.file.path,
                 req.body.select_team,
             ],
@@ -109,16 +108,14 @@ router.post(
             .split("Astroex_Research_Association/")[1]
             .slice(0, -4);
 
-
         db.query(
-            `UPDATE teams SET name_team = ?, job_team = ?, email_team = ?, instagram_url = ?, linkedIn_url = ?, color_team = ?, select_team = ? , image_team = ? WHERE id_team = ?`,
+            `UPDATE teams SET name_team = ?, job_team = ?, email_team = ?, instagram_url = ?, linkedIn_url = ?, select_team = ? , image_team = ? WHERE id_team = ?`,
             [
                 req.body.name_team,
                 req.body.job_team,
                 req.body.email_team,
                 req.body.instagram_url,
                 req.body.linkedIn_url,
-                req.body.color_team,
                 req.body.select_team,
                 req.file ? req.file.path : req.body.image_checkbox,
                 req.params.id,
