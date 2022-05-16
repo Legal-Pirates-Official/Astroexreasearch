@@ -13,7 +13,7 @@
     <section class="container">
         <!-- <%#- include('../partials/admin-login-header.ejs') %> -->
 
-            <!-- <div class="main-div-login">
+        <!-- <div class="main-div-login">
                 <div class="flash-div-ptag">
                     <%# if (error.length> 0) { %>
                         <p>
@@ -21,21 +21,22 @@
                         </p>
                         <%# } %>
                 </div> -->
-                <form action="/admin/login" method="post">
-                    <div class="login-main">
-                        <div class="form-group">
-                            <label for="username">Enter your Username</label><br>
-                            <input type="text" name="username" class="form-control" id="username" placeholder="Username" required autofocus>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Enter your password</label><br>
-                            <input type="password" name="password" class="form-control" id="password"
-                                placeholder="Password" required>
-                        </div>
-                        <input type="submit" class="btn"></input>
-                    </div>
-                </form>
+        <form action="/admin/login" method="post">
+            <div class="login-main">
+                <div class="form-group">
+                    <label for="username">Enter your Username</label><br>
+                    <input type="text" name="username" class="form-control" id="username" placeholder="Username"
+                        required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="password">Enter your password</label><br>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+                        required>
+                </div>
+                <input type="submit" class="btn"></input>
             </div>
+        </form>
+        </div>
     </section>
 
 
