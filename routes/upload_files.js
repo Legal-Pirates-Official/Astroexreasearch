@@ -1,12 +1,9 @@
 const express = require('express');
-const app = express();
 const db = require('../database');
 const multer = require('multer');
-const path = require('path');
 const { storage, cloudinary } = require('../cloudinary');
 const upload = multer({ storage });
 const { isloggedin } = require('../middleware');
-const fs = require('fs');
 
 const router = express.Router();
 
