@@ -1,0 +1,28 @@
+<% if(message.length>0){ %>
+<p
+	class="message"
+	style="
+		padding: 2rem 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: all 0.3s ease-in-out;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 10000;
+		background-color: white;
+		box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		margin: 2rem;
+	"
+>
+	<%= message %>
+</p>
+<% } %>
+
+<script>
+	const p = document.querySelector('.message');
+	setTimeout(() => {
+		p.style.transform = 'translateX(200%)';
+	}, 5000);
+</script>
