@@ -46,7 +46,7 @@
     margin-bottom: 2rem;
 }
 .contact-title h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
     color: #333333;
     font-family: "Kaushan Script", cursive;
@@ -58,7 +58,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     /* align-items: center; */
 }
 
@@ -86,7 +86,7 @@
     border: none;
     background: rgba(0, 0, 0, 0.1);
     margin: 0.4rem 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     padding: 0.5rem;
 }
 
@@ -104,7 +104,7 @@
     border: none;
     background: rgba(0, 0, 0, 0.1);
 
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin: 0.4rem 0;
     padding: 0.5rem;
 }
@@ -113,7 +113,7 @@
     width: 100%;
     height: 3rem;
     border: none;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-bottom: 1rem;
     padding: 0.5rem;
     background: var(--text);
@@ -155,7 +155,7 @@
         height: 95%;
     }
     .contact-title {
-        font-size: 1.3rem;
+        font-size: 1.1rem;
         text-align: center;
         margin-top: 10%;
     }
@@ -177,7 +177,7 @@
         margin-bottom: 5%;
     }
     .contact-title {
-        font-size: 1.3rem;
+        font-size: 1rem;
         text-align: center;
         margin-top: 10%;
     }
