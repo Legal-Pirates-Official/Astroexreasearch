@@ -79,11 +79,11 @@ router.post("/login", async (req, res) => {
             // req.flash("error", "Missing username or password!");
             res.redirect("/admin/login");
         }
-        mysqlConnection.query(
+        await mysqlConnection.query(
             `SELECT * FROM login where username = ?`,
             [username],
             async (err, rows, fields) => {
-                if (!err) {
+                if (!err && rows.length > 0) {
                     const user = rows[0];
                     const isMatch = await bcrypt.compare(
                         password,
@@ -100,13 +100,15 @@ router.post("/login", async (req, res) => {
                     }
                 } else {
                     console.log(err);
+                    res.redirect("/admin/login");
                 }
             }
         );
     } catch (e) {
         // req.flash("error", "Incorrect username or password!");
         console.log(e);
-        res.status(400).json("Something broke!");
+        // res.status(400).json("Something broke!");
+        res.redirect("/admin/login");
     }
 });
 
