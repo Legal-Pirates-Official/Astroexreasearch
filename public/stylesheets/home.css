@@ -348,7 +348,7 @@
 
 @media (max-width: 400px) {
     .quote h1 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
     .topics {
         height: 140vh;
@@ -371,7 +371,7 @@
 }
 @media (max-width: 400px) {
     .wrapquote p {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     .grid {
         height: 62vh;

@@ -54,8 +54,8 @@
             <!-- <h1 class="team-section-h1">Me<span>et The Te</span>am</h1> -->
             <h1 class="team-section-h1">Teams</h1>
             <div class="our-teams">
-                <% teamArray.reverse().forEach(teams => { %> <% if (teams.select_team ==
-                "team_a") { %>
+                <% teamArray.reverse().forEach(teams => { %> <% if
+                (teams.select_team == "team_a") { %>
                 <div class="one_team_top">
                     <div class="one_team">
                         <img
@@ -78,10 +78,10 @@
                                     src="https://img.icons8.com/ios/40/linkedin.png"
                                 />
                             </a>
-                            <a href="<%= teams.email_team %>">
+                            <a href="mailto:<%= teams.email_team %>">
                                 <img
                                     class="social_icons_img"
-                                    src="https://img.icons8.com/ios/40/whatsapp--v1.png"
+                                    src="https://img.icons8.com/ios/50/000000/new-post.png"
                                 />
                             </a>
                         </div>
@@ -92,8 +92,8 @@
 
             <h1 class="team-section-h1">Research Advisors</h1>
             <div class="our-teams">
-                <% teamArray.reverse().forEach(teams => { %> <% if (teams.select_team ==
-                "team_b") { %>
+                <% teamArray.reverse().forEach(teams => { %> <% if
+                (teams.select_team == "team_b") { %>
                 <div class="one_team_top">
                     <div class="one_team">
                         <img

@@ -63,6 +63,8 @@
   justify-content: center;
   align-items: center;
   font-family: "Kaushan Script", cursive;
+  top: 0;
+  left: 0;
 }
 .wrapslide2 {
   width: 60%;
@@ -164,10 +166,10 @@
     font-size: 12px;
   }
   .swiper-slide .title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   .subtitle {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
   .btnforslider {
     padding: 12px 20px;

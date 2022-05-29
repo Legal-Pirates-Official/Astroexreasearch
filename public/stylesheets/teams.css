@@ -71,7 +71,7 @@
     justify-content: center;
     align-items: center;
     padding: 5%;
-    font-size: 1.2rem;
+    font-size: 1rem;
     z-index: 2;
 }
 .main-content h1 {
@@ -184,6 +184,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    min-height: 50vh;
 }
 
 .team-div {

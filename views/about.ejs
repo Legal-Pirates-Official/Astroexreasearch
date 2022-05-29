@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="stylesheets/about.css" />
-        <link rel="stylesheet" href="stylesheets/footer.css" />
-        <link rel="stylesheet" href="stylesheets/navbar.css" />
-        <link
-            rel="shortcut icon"
-            href="images/favicon.ico"
-            type="image/x-icon"
-        />
-        <title>About</title>
-    </head>
 
-    <style>
-        .about-nav {
-            background: #fa8c43;
-            color: white !important;
-        }
-    </style>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/about.css" />
+    <link rel="stylesheet" href="stylesheets/footer.css" />
+    <link rel="stylesheet" href="stylesheets/navbar.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>About</title>
+</head>
 
-    <body>
-        <%- include("./partials/navbar.ejs") %>
+<style>
+    .about-nav {
+        background: #fa8c43;
+        color: white !important;
+    }
+</style>
+
+<body>
+    <%- include("./partials/navbar.ejs") %>
 
         <section class="section-about">
             <div class="about-left-side about-side"></div>
@@ -53,22 +50,13 @@
                     perspiciatis autem obcaecati blanditiis.
                 </p>
                 <div class="social-pop-icons">
-                    <a
-                        target="_blank"
-                        href="https://www.linkedin.com/company/research-astroex"
-                        ><img
-                            src="https://img.icons8.com/ios/40/000000/linkedin.png"
-                    /></a>
-                    <a
-                        target="_blank"
-                        href="https://www.instagram.com/invites/contact/?i=ui21og1voljo&utm_content=ntvp6om"
-                        ><img
-                            src="https://img.icons8.com/ios/40/000000/instagram-new--v1.png"
-                    /></a>
-                    <a target="_blank" href=""
-                        ><img
-                            src="https://img.icons8.com/ios/40/000000/youtube-play--v1.png"
-                    /></a>
+                    <a target="_blank" href="https://www.linkedin.com/company/research-astroex"><img
+                            src="https://img.icons8.com/ios/40/000000/linkedin.png" /></a>
+                    <a target="_blank"
+                        href="https://www.instagram.com/invites/contact/?i=ui21og1voljo&utm_content=ntvp6om"><img
+                            src="https://img.icons8.com/ios/40/000000/instagram-new--v1.png" /></a>
+                    <a target="_blank" href=""><img
+                            src="https://img.icons8.com/ios/40/000000/youtube-play--v1.png" /></a>
                 </div>
             </div>
         </section>
@@ -143,19 +131,64 @@
             </div>
         </section>
 
+        <section class="services-section">
+            <h1>Our services</h1>
+            <div class="main-services">
+                <div class="services" style="--content: 'Mentoring';">
+                    <p>
+                        <b><u>Mentoring</u></b><br>
+                        We provide mentoring to school,
+                        undergraduate and postgraduate students. Mentoring helps
+                        in enhancing the students by helping them to identify
+                        their talent and focus on improving the same. This can
+                        help the students to gain success later in their career.
+                    </p>
+                </div>
+                <div class="services" style="--content: 'Publishing Papers';">
+                    <p>
+                        <b><u>Publishing Papers</u></b><br>
+                        Guidance is
+                        provided to students willing to publish research papers.
+                        We help them in formulating the research objective in
+                        such a way that the work they do can be converted to
+                        paper which can then be published in a reputed journal.
+                    </p>
+                </div>
+                <div class="services" style="--content: 'Career Consulting';">
+                    <p>
+                        <b><u>Career Consulting</u></b><br>
+                        Many a times
+                        students who have interests in various fields have
+                        difficulty in determining their career path. Career
+                        counseling helps them to identify their major interest
+                        and choose a career in the same while taking up other
+                        interests as hobbies and using them as extracurricular
+                        activities.
+                    </p>
+                </div>
+                <div class="services" style="--content: 'Webinars and Workshops';">
+                    <p>
+                        <b><u>Webinars and Workshops</u></b><br>
+                        Along with all of the above we conduct various webinars
+                        and workshops wherein we invite highly qualified
+                        industry professionals to deliver the content to
+                        students. This can help the students in enhancing their
+                        skillset.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <section class="section-partners">
             <h1>Partners</h1>
             <div class="partners-main-div">
                 <div class="marquee-main-div">
                     <marquee direction="right">
-                    <div class="partners-div">
-                        <% partners.forEach(element => { %>
-                        <img
-                            src="<%- element.image_partners %>"
-                            alt="<%- element.name_partners %>"
-                        />
-                        <% }) %>
-                    </div>
+                        <div class="partners-div">
+                            <% partners.forEach(element=> { %>
+                                <img src="<%- element.image_partners %>" alt="<%- element.name_partners %>" />
+                                <% }) %>
+                        </div>
                 </div>
                 </marquee>
             </div>
@@ -165,14 +198,11 @@
             <div class="partners-main-div">
                 <div class="marquee-main-div">
                     <marquee direction="left">
-                    <div class="partners-div">
-                        <% collaborators.forEach(element => { %>
-                        <img
-                            src="<%- element.image_collaborators %>"
-                            alt="<%- element.name_collaborators %>"
-                        />
-                        <% }) %>
-                    </div>
+                        <div class="partners-div">
+                            <% collaborators.forEach(element=> { %>
+                                <img src="<%- element.image_collaborators %>" alt="<%- element.name_collaborators %>" />
+                                <% }) %>
+                        </div>
                     </marquee>
                 </div>
             </div>
@@ -180,6 +210,7 @@
 
         <%- include("./partials/footer.ejs") %>
 
-        <script src="javascripts/navbar.js"></script>
-    </body>
+            <script src="javascripts/navbar.js"></script>
+</body>
+
 </html>
