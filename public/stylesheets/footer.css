@@ -32,7 +32,10 @@ footer {
     padding: 1rem;
 }
 .form-footer input {
-    border-radius: 20px;
+    border-radius: 10px;
+    border: none;
+    padding: 0rem .5rem;
+    outline: none;
     height: 30px;
     margin: 1rem;
 }
