@@ -229,7 +229,7 @@ footer {
     color: white;
     font-family: "Poppins", sans-serif;
     font-size: 0.8rem;
-    background: var(--dark);
+    background: #1e1e1e;
 }
 
 @media (max-width: 740px) {

@@ -66,6 +66,7 @@ body {
     margin: 0 2%;
     text-decoration: none;
     color: var(--black);
+    border: 2px solid var(--black);
 }
 
 .nav > .nav-links > a:hover {
