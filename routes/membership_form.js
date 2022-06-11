@@ -53,36 +53,36 @@ router.post("/becomeamember/insert", async (req, res) => {
             if (err) {
                 console.log(err);
             } else {
-                res.redirect("/");
+                res.redirect("/becomeamember");
             }
         }
     );
-
-
 });
 
-router.get('/becomeamember/show', async (req, res) => {
-    await db.query('SELECT * FROM membership_join', (err, result) => {
+router.get("/admin/becomeamember_show", async (req, res) => {
+    await db.query("SELECT * FROM membership_join", (err, result) => {
         if (err) {
             console.log(err);
         } else {
-            res.render('membership-show', {
-                membership_join: result
+            res.render("./admin/membership_form/membership_form_show.ejs", {
+                membership_join: result,
             });
         }
     });
+});
 
-})
-
-router.get('/becomeamember/delete/:id', async (req, res) => {
-    await db.query('DELETE FROM membership_join WHERE id = ?', [req.params.id], (err, result) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.redirect('/membership-show');
+router.get("/admin/becomeamember/delete/:id", async (req, res) => {
+    await db.query(
+        "DELETE FROM membership_join WHERE membership_join_id = ?",
+        [req.params.id],
+        (err, result) => {
+            if (err) {
+                console.log(err);
+            } else {
+                res.redirect("/admin/becomeamember_show");
+            }
         }
-    });
-}
-)
+    );
+});
 
 module.exports = router;

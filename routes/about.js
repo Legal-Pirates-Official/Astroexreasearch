@@ -20,7 +20,6 @@ router.get("/about", (req, res) => {
                     //     collaborators: result1,
                     // });
                     db.query("SELECT * FROM services", (err, result2) => {
-                        console.log(result2);
                         if (!err) {
                             res.render("about", {
                                 partners: result,

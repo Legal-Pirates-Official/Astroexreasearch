@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #1e1e1e;
+}
+
 .training-section {
     position: relative;
     width: 100%;

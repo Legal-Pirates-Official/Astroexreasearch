@@ -15,6 +15,10 @@
     --font: #fefefe;
 }
 
+body {
+    background: var(--dark);
+}
+
 /* Top Section - Start */
 .top-section {
     width: 100%;

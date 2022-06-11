@@ -144,4 +144,42 @@ body {
     font-size: 18px;
     border: none;
     outline: none;
+    cursor: pointer;
+}
+
+
+@media (max-width: 500px) {
+    .membership-form-section
+    {
+        font-size: 1.5rem;
+        height: fit-content;
+    }
+    .left-membership-div h1
+    {
+        font-size: 1.5rem;
+    }
+    .left-membership-div a
+    {
+        font-size: 1.2rem;
+    }
+    .membership-form-main-div {
+        flex-direction: column;
+    }
+    .left-membership-div
+    {
+        width: 100%;
+    }
+    .right-membership-div
+    {
+        width: 100%;
+        margin: 10% 0;
+    }
+    .membership-form form h1 {
+        font-size: 1.5rem;
+        margin: 5%;
+    }
+    .membership-form
+    {
+        width: 95%;
+    }
 }

@@ -33,7 +33,6 @@ router.post(
 	isloggedin,
 	upload.single('file_upload_files'),
 	async (req, res) => {
-		console.log(req.file);
 		await db.query(
 			'INSERT INTO upload_files SET name_upload_files = ?, file_upload_files = ?',
 			[req.body.name_upload_files, req.file.path]

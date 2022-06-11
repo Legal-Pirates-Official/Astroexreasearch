@@ -9,6 +9,10 @@
     --font: #fefefe;
 }
 
+body {
+    background: var(--dark);
+}
+
 .internship-section {
     width: 80%;
     /* height: 10vh; */
