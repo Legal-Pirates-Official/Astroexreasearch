@@ -5,12 +5,21 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 :root {
-  --black:#000;
-  --white:#fff;
-  --text:#333333;
-  --button: #fa8c43;
+    --dark: #1e1e1e;
+    --black: #000;
+    --white: #fff;
+    --text: #333333;
+    --button: #fa8c43;
+    --font: #fefefe
 }
+
+body {
+    background: var(--dark);
+    color: var(--font);
+}
+
 /* Topics */
 .topics {
     width: 100%;
@@ -38,9 +47,8 @@
     align-items: center;
 }
 .quote h1 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2rem;
-    color: var(--black);
     /* text-align: center; */
 }
 .Marqueetext {
@@ -61,7 +69,6 @@
     align-items: center;
 }
 .Marqueetext ul li {
-    color: var(--black);
     list-style: none;
     padding: 18px;
     display: flex;
@@ -71,12 +78,12 @@
     width: 100%;
 }
 .Marqueetext ul li a {
-    color: #5A5B6C;
+    color: #5a5b6c;
     text-decoration: none;
     cursor: pointer;
 }
 .Marqueetext ul li a:hover {
-    color: #FA8C43;
+    color: #fa8c43;
 }
 .container {
     width: 50%;
@@ -186,13 +193,14 @@
     width: 100%;
     padding: 2% 0;
     margin: 1% 0;
-    background: #cbcbcb;
+    /* background: #cbcbcb; */
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
 }
+
 .wrapquote {
     width: 85%;
     height: 70%;
@@ -204,13 +212,13 @@
 }
 .wrapquote p {
     font-weight: 500;
-    color: var(--black);
     text-align: center;
 }
 .wrapquote h3 {
     font-weight: 700;
-    color: var(--text);
-    font-family: "Kaushan Script", cursive;
+    /* color: var(--text); */
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 @media screen and (max-width: 1300px) {

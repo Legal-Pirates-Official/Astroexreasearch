@@ -5,24 +5,13 @@
 }
 
 :root {
-    --font: #1e1e1e;
+    --font: #fefefe;
+    --dark: #1e1e1e;
 }
 
 body {
-    /* /* background-color: #ff99d8; */
-    background-image: radial-gradient(
-            at 2% 73%,
-            hsla(241, 93%, 68%, 1) 0px,
-            transparent 50%
-        ),
-        radial-gradient(at 16% 92%, hsla(342, 69%, 63%, 1) 0px, transparent 50%),
-        radial-gradient(at 27% 46%, hsla(174, 96%, 63%, 1) 0px, transparent 50%),
-        radial-gradient(at 17% 50%, hsla(83, 76%, 74%, 1) 0px, transparent 50%),
-        radial-gradient(at 55% 43%, hsla(87, 60%, 65%, 1) 0px, transparent 50%),
-        radial-gradient(at 91% 70%, hsla(359, 99%, 75%, 1) 0px, transparent 50%),
-        radial-gradient(at 17% 63%, hsla(149, 98%, 71%, 1) 0px, transparent 50%);
-    /* background-color: #c5d5cb; */
-    /* background: linear-gradient(135deg, #F3A32B, #fa8c43); */
+    background: var(--dark);
+    color: var(--font);
 }
 
 .membership-section {

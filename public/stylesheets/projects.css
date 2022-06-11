@@ -22,7 +22,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background: #fff;
+    background: #1e1e1e;
     margin-top: 25vh;
 }
 
@@ -51,7 +51,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    /* background: #fff; */
 }
 
 .project-div {

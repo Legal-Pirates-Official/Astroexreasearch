@@ -1,191 +1,190 @@
 :root {
-  --black:#000;
-  --white:#fff;
-  --text:#333333;
-  --button: #fa8c43;
+    --black: #000;
+    --white: #fff;
+    --text: #333333;
+    --button: #fa8c43;
 }
 
 /* Swiper */
 .slider {
-  width: 100%;
-  height: 80vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 80vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .swiper {
-  width: 100%;
-  height: 100%;
-  background: var(--black);
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--black);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .swiper-slide {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 40px 60px;
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 40px 60px;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
 }
 .content {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .parallax-bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 130%;
-  height: 100%;
-  -webkit-background-size: cover;
-  background-size: cover;
-  background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 130%;
+    height: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
 }
 
 .swiper-slide .title {
-  font-size: 4rem;
-  font-weight: 300;
-  color: var(--text);
-  display: flex;
-  text-align: center;
-  word-wrap: break-word;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  font-family: "Kaushan Script", cursive;
-  top: 0;
-  left: 0;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--text);
+    display: flex;
+    text-align: center;
+    word-wrap: break-word;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-family: "Kaushan Script", cursive;
+    /* font-family: Georgia, "Times New Roman", Times, serif; */
+    top: 0;
+    left: 0;
 }
 .wrapslide2 {
-  width: 60%;
-  height: 70%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    width: 60%;
+    height: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .subtitle {
-  width: 100%;
-  height: 60%;
-  font-size: 4rem;
-  font-weight: 300;
-  color: var(--text);
-  text-align: center;
-  display: flex;
-  word-wrap: break-word;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  font-family: "Kaushan Script", cursive;
+    width: 100%;
+    height: 60%;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--text);
+    text-align: center;
+    display: flex;
+    word-wrap: break-word;
+    position: relative;
+    justify-content: center;
+    font-family: "Kaushan Script", cursive;
+    align-items: center;
+    /* font-family: Georgia, "Times New Roman", Times, serif; */
 }
 .btnforslider {
-  padding: 12px 33px;
-  background: var(--button);
-  display: flex;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  border:  var(--button) 1px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: var(--white);
+    padding: 12px 33px;
+    background: var(--button);
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border: var(--button) 1px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--white);
 }
 
-.btnforslider:hover
-{
-  background: #fa8c43af;
-  color: var(--white);
+.btnforslider:hover {
+    background: #fa8c43af;
+    color: var(--white);
 }
 
 /* .btnforslider a {
 } */
 .swiper-button-next,
 .swiper-rtl .swiper-button-prev {
-  right: 10px;
-  left: auto;
-  color: var(--button);
+    right: 10px;
+    left: auto;
+    color: var(--button);
 }
 .swiper-button-prev::after,
 .swiper-rtl .swiper-button-next::after {
-  content: "prev";
-  color: var(--button);
+    content: "prev";
+    color: var(--button);
 }
 @media screen and (max-width: 1300px) {
-
-  .swiper-slide .title {
-    font-size: 3rem;
-  }
-  .subtitle {
-    font-size: 3rem;
-  }
-  .btnforslider {
-    padding: 10px 30px;
-  }
+    .swiper-slide .title {
+        font-size: 3rem;
+    }
+    .subtitle {
+        font-size: 3rem;
+    }
+    .btnforslider {
+        padding: 10px 30px;
+    }
 }
 
-@media(max-width: 800px) {
-
-  .swiper-slide .title {
-    font-size: 2.5rem;
-  }
-  .subtitle {
-    font-size: 2.5rem;
-  }
-  .btnforslider {
-    padding: 10px 25px;
-  }
+@media (max-width: 800px) {
+    .swiper-slide .title {
+        font-size: 2.5rem;
+    }
+    .subtitle {
+        font-size: 2.5rem;
+    }
+    .btnforslider {
+        padding: 10px 25px;
+    }
 }
-@media(max-width: 700px) {
-  .swiper-slide .title {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 2rem;
-  }
-  .btnforslider {
-    padding: 10px 15px;
-  }
-  .btnforslider a {
-    font-size: 1rem;
-  }
+@media (max-width: 700px) {
+    .swiper-slide .title {
+        font-size: 2rem;
+    }
+    .subtitle {
+        font-size: 2rem;
+    }
+    .btnforslider {
+        padding: 10px 15px;
+    }
+    .btnforslider a {
+        font-size: 1rem;
+    }
 }
-@media(max-width: 500px) {
-  .swiper-slide {
-    font-size: 12px;
-  }
-  .swiper-slide .title {
-    font-size: 1.6rem;
-  }
-  .subtitle {
-    font-size: 1.6rem;
-  }
-  .btnforslider {
-    padding: 12px 20px;
-  }
+@media (max-width: 500px) {
+    .swiper-slide {
+        font-size: 12px;
+    }
+    .swiper-slide .title {
+        font-size: 1.6rem;
+    }
+    .subtitle {
+        font-size: 1.6rem;
+    }
+    .btnforslider {
+        padding: 12px 20px;
+    }
 }
-@media(max-width: 400px) {
-  .swiper-slide .title {
-    font-size: 1.5rem;
-  }
-  .subtitle {
-    font-size: 1.5rem;
-  }
-  .btnforslider {
-    padding: 10px 33px;
-  }
-  .wrapslide2 {
-    height: 90%;
-  }
+@media (max-width: 400px) {
+    .swiper-slide .title {
+        font-size: 1.5rem;
+    }
+    .subtitle {
+        font-size: 1.5rem;
+    }
+    .btnforslider {
+        padding: 10px 33px;
+    }
+    .wrapslide2 {
+        height: 90%;
+    }
 }

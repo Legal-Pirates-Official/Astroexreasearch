@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background: #1e1e1e;
+}
+
 .main-section {
     margin: 2% 0;
     width: 100%;
@@ -36,7 +40,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    /* background: #fff; */
 }
 
 .main-div {

@@ -7,17 +7,18 @@
 }
 
 :root {
+    --dark: #1e1e1e;
     --black: #000;
     --white: #fff;
     --grey: #808080;
     --button: #fa8c43;
+    --font: #fefefe;
     --text: #333333;
 }
 
-/* body
-{
-    background: linear-gradient(to right, #a1c4fd, #c2e9fb) !important;
-} */
+body {
+    background: var(--dark);
+}
 
 .section-about {
     position: relative;
@@ -68,7 +69,8 @@
 
 .about-right-side h1 {
     position: relative;
-    font-family: "Kaushan Script", cursive;
+    /* font-family: "Kaushan Script", cursive; */
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.3rem;
     color: var(--button);
     margin-bottom: 1rem;
@@ -103,7 +105,8 @@
     position: absolute;
     width: 30%;
     height: 50%;
-    background-color: var(--white);
+    /* background-color: var(--white); */
+    background-color: var(--dark);
     bottom: 0%;
     left: 10%;
     padding: 3%;
@@ -111,7 +114,7 @@
 }
 
 .pop-up-social h2 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1.6rem;
     color: var(--button);
     margin-bottom: 1rem;
@@ -119,7 +122,7 @@
 
 .pop-up-social p {
     font-size: 1rem;
-    color: var(--black);
+    color: var(--font);
     margin-bottom: 1rem;
     text-align: left;
 }
@@ -184,7 +187,7 @@
 }
 
 .image-div p {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 1rem;
 }
 
@@ -282,7 +285,7 @@
 }
 
 .quotes-section p {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     width: 75%;
     font-size: 1.5rem;
     color: var(--white);
@@ -299,24 +302,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    color: var(--font);
 }
 
 .quotes-author-section h1 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     width: 75%;
     font-size: 1.5rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 .quotes-author-section p {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     width: 75%;
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 1rem;
 }
 .quotes-author-section h1 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     width: 75%;
     font-size: 1.5rem;
     text-align: center;
@@ -329,7 +333,8 @@
     position: relative;
     width: 100%;
     height: fit-content;
-    background-color: var(--white);
+    background-color: var(--dark);
+    color: var(--font);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -368,15 +373,17 @@
 }
 
 .mission-div h1 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.1rem;
-    color: var(--text);
+    /* color: var(--text); */
     text-align: center;
+    color: var(--button);
     margin-bottom: 1rem;
 }
 .mission-div p {
     font-size: 1rem;
-    color: var(--black);
+    /* color: var(--black); */
+    color: var(--font);
     text-align: center;
     margin-bottom: 1rem;
     width: 75%;
@@ -412,15 +419,17 @@
 }
 
 .vision-div h1 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.1rem;
-    color: var(--text);
+    /* color: var(--text); */
+    color: var(--button);
     text-align: center;
     margin-bottom: 1rem;
 }
 .vision-div p {
     font-size: 1rem;
-    color: var(--black);
+    /* color: var(--black); */
+    color: var(--font);
     text-align: center;
     margin-bottom: 1rem;
     width: 75%;
@@ -570,14 +579,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: #f5f5f5;
+    background: var(--dark);
     padding: 3%;
 }
 
 .section-partners h1 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.1rem;
-    color: var(--text);
+    color: var(--button);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -630,15 +639,16 @@
 /* services */
 
 .services-section {
-    background: #f5f5f5;
+    background: var(--dark);
+    color: var(--font);
 }
 
 .services-section h1 {
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.1rem;
-    color: var(--text);
+    color: var(--button);
     text-align: center;
-    padding-top: 4%;
+    padding: 2% 0;
 }
 
 .main-services {
@@ -650,8 +660,13 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    padding: 3%;
+    /* padding: 3%; */
     margin-bottom: 5%;
+}
+
+.swiper-slide {
+    background: var(--dark) !important;
+    box-shadow: 2px 12px 40px -15px rgba(0,0,0,0.75);
 }
 
 .services {
@@ -663,7 +678,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* background: rgb(255, 255, 255); */
     padding: 3%;
     font-size: 1rem;
     overflow: hidden;
@@ -675,7 +689,7 @@
 
 .services h1 {
     font-size: 1.5rem;
-    color: var(--text);
+    color: var(--button);
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -687,7 +701,7 @@
     height: 5px;
     background: #fa8c43;
     bottom: 0;
-    transition: all .2s ease-in-out;
+    transition: all 0.2s ease-in-out;
 }
 
 .swiper-slide:hover .hover-effect-swiper {

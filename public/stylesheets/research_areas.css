@@ -11,6 +11,8 @@
     --text: #333333;
     --grey: #808080;
     --bg: #c8c9d1;
+    --dark: #1e1e1e;
+    --font: #fefefe;
 }
 
 /* Top Section - Start */
@@ -39,7 +41,7 @@
     right: 10%;
     width: 25%;
     height: 40%;
-    background: #fff;
+    background: var(--dark);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     display: flex;
     z-index: 1;
@@ -47,7 +49,7 @@
     justify-content: center;
     align-items: center;
     padding: 3%;
-    color: #000;
+    color: var(--font);
     font-size: 1rem;
     text-align: center;
 }
@@ -77,7 +79,7 @@
 }
 .main-content h1 {
     font-size: 2.8rem;
-    font-family: "Kaushan Script", cursive;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: right;
     color: var(--button);
 }
@@ -96,6 +98,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: var(--dark);
+    color: var(--font);
 }
 
 .main-section-div {
