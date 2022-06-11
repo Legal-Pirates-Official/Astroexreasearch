@@ -16,8 +16,7 @@
 </head>
 
 <style>
-	.home-nav
-	{
+	.home-nav {
 		background: #FA8C43;
 		color: white !important;
 	}
@@ -36,7 +35,7 @@
 					<div class="swiper-slide">
 						<div class="content">
 							<div class="wrapslide2">
-								<div class="subtitle" data-swiper-parallax="-200">Enhance Your Knowledge with us</div>
+								<div class="subtitle" data-swiper-parallax="-200">Enhance Your Association with us</div>
 								<a class="btnforslider" href="/contact">Join Us</a>
 							</div>
 						</div>
@@ -64,29 +63,22 @@
 			<div class="wraptopics">
 				<div class="quote">
 					<h1 class="div-2-title">LATEST UPDATES</h1>
-					<marquee 
-						class="Marqueetext" 
-						direction="up" 
-						height="350" 
-						width="350" 
-						scrollamount="5" 
-						onmousedown='' 
-						onmouseup='' 
-						onmouseover="this.stop();"
-						onmouseout="this.start();" 
-						onmouseout="this.start();" 
-						ontouchstart="this.stop()"
-						ontouchend="this.start()"
-						>
+					<marquee class="Marqueetext" direction="up" height="350" width="350" scrollamount="5" onmousedown=''
+						onmouseup='' onmouseover="this.stop();" onmouseout="this.start();" onmouseout="this.start();"
+						ontouchstart="this.stop()" ontouchend="this.start()">
 
 						<ul>
-							<% eventsArray.reverse().forEach(events => { %>
-							<li>
-								<h1><%= events.name_events %> </h1>
-								<p><%= events.description_events %> </p>
-								<a target="_blank" href="<%= events.events_link %> ">Click Here</a>
-							</li>
-							<% }) %>
+							<% eventsArray.reverse().forEach(events=> { %>
+								<li>
+									<h1>
+										<%= events.name_events %>
+									</h1>
+									<p>
+										<%= events.description_events %>
+									</p>
+									<a target="_blank" href="<%= events.events_link %> ">Click Here</a>
+								</li>
+								<% }) %>
 						</ul>
 
 					</marquee>

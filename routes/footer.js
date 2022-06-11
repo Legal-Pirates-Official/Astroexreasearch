@@ -34,7 +34,7 @@ router.post("/admin/footer_contact/insert", isloggedin, (req, res) => {
     );
 });
 
-router.get("/admin/footer_contact/message", isloggedin.apply, (req, res) => {
+router.get("/admin/footer_contact/message", isloggedin, (req, res) => {
     db.query("SELECT * FROM footer_contact", (err, rows) => {
         if (!err) {
             res.render("./admin/footer_contact/footer_message", {

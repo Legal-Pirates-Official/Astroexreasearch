@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -12,6 +13,11 @@
     --button: #fa8c43;
     --text: #333333;
 }
+
+/* body
+{
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb) !important;
+} */
 
 .section-about {
     position: relative;
@@ -232,7 +238,7 @@
     transition: all 0.5s ease-in-out;
 }
 
-.grid-box:hover::after {
+/* .grid-box:hover::after {
     content: "";
     position: absolute;
     top: 0;
@@ -249,8 +255,8 @@
     color: var(--white);
     font-family: "Poppins", sans-serif;
     text-align: center;
-}
-
+} */
+/* 
 .grid-box1:hover::after {
     content: "Group Meeting";
 }
@@ -262,12 +268,12 @@
 }
 .grid-box4:hover::after {
     content: "writing and publishing research";
-}
+} */
 
 .quotes-section {
     position: relative;
     width: 100%;
-    height: 20vh;
+    padding: 2% 0;
     background-color: #f3a32b;
     display: flex;
     flex-direction: row;
@@ -278,8 +284,41 @@
 .quotes-section p {
     font-family: "Kaushan Script", cursive;
     width: 75%;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: var(--white);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.quotes-author-section {
+    position: relative;
+    width: 100%;
+    padding: 2% 0;
+    background-color: #f3a32b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quotes-author-section h1 {
+    font-family: "Kaushan Script", cursive;
+    width: 75%;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.quotes-author-section p {
+    font-family: "Kaushan Script", cursive;
+    width: 75%;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.quotes-author-section h1 {
+    font-family: "Kaushan Script", cursive;
+    width: 75%;
+    font-size: 1.5rem;
     text-align: center;
     margin-bottom: 1rem;
 }
@@ -590,15 +629,11 @@
 
 /* services */
 
-
-.services-section
-{
+.services-section {
     background: #f5f5f5;
-
 }
 
-.services-section h1
-{
+.services-section h1 {
     font-family: "Kaushan Script", cursive;
     font-size: 2.1rem;
     color: var(--text);
@@ -606,8 +641,7 @@
     padding-top: 4%;
 }
 
-.main-services
-{
+.main-services {
     position: relative;
     width: 100%;
     height: fit-content;
@@ -620,26 +654,47 @@
     margin-bottom: 5%;
 }
 
-.services
-{
+.services {
     margin: 2%;
     position: relative;
     width: 20rem;
     height: fit-content;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgb(255, 255, 255);
+    /* background: rgb(255, 255, 255); */
     padding: 3%;
     font-size: 1rem;
     overflow: hidden;
     transition: all 0.5s ease;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 10px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    /* border-radius: 10px; */
+    z-index: 10000;
 }
 
-.services::after
+.services h1 {
+    font-size: 1.5rem;
+    color: var(--text);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.hover-effect-swiper {
+    position: absolute;
+    width: 0%;
+    /* display: none; */
+    height: 5px;
+    background: #fa8c43;
+    bottom: 0;
+    transition: all .2s ease-in-out;
+}
+
+.swiper-slide:hover .hover-effect-swiper {
+    width: 100%;
+}
+
+/* .services::after
 {
     content: var(--content);
     position: absolute;
@@ -657,14 +712,11 @@
     z-index: 1;
     transition: all 0.5s ease;
     color: white;
-}
+} */
 
-.services:hover::after
-{
+.services:hover::after {
     opacity: 0;
 }
-
-
 
 @media (max-width: 800px) {
     .pop-up-social {

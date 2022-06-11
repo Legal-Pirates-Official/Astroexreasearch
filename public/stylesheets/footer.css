@@ -13,15 +13,22 @@ footer {
     background-color: #222222;
     font-family: "Poppins", sans-serif;
 }
+
+.heading-tags
+{
+    display: flex;
+    flex-direction: row;
+}
+
 .title-footer {
     color: #fff;
-    width: 100%;
-    text-align: left;
+    width: 50%;
+
+    text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
     /* padding: 10px 10px 10px 10px; */
     padding-top: 2rem;
-    padding-left: 5rem;
 }
 .form-footer {
     display: flex;

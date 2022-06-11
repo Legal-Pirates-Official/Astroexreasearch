@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="stylesheets/about.css" />
+    <link rel="stylesheet" href="stylesheets/about-swiper.css" />
     <link rel="stylesheet" href="stylesheets/footer.css" />
     <link rel="stylesheet" href="stylesheets/navbar.css" />
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <title>About</title>
 </head>
 
@@ -39,7 +41,7 @@
                     to identify their interest and later pursue their career in
                     the same
                 </p>
-                <a class="about-know-more" href="#">Know More</a>
+                <a class="about-know-more" href="#services">Know More</a>
             </div>
             <div class="pop-up-social">
                 <h2>Follow us</h2>
@@ -65,13 +67,17 @@
             <div class="mission-vision-div">
                 <div class="mission-main-div">
                     <div class="mission-div">
-                        <h1>Mission</h1>
+                        <h1>How It Works</h1>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Laudantium, iste corrupti. Ut consectetur
-                            dolorem pariatur quisquam architecto placeat,
-                            exercitationem dolore odit similique error ratione
-                            commodi ipsum totam, possimus quos? Odit.
+                            Astroex Research Association have successfully organized large number of national and
+                            international conferences
+                            and presently the association is running six journals in different areas. The Journals are
+                            intended to provide perspectives on topics relevant to research in the field of business,
+                            management, information technology, engineering and education. The pedagogic society under
+                            the banner of Astroex Research Association has taken up the pious, legitimate and noble task
+                            of guiding the large
+                            segment of teacher educators in its proper prospective before them join the perspective
+                            field.
                         </p>
                     </div>
                     <!-- <div class="images-mission-div">
@@ -89,13 +95,14 @@
                         </div>
                     </div> -->
                     <div class="vision-div">
-                        <h1>Vision</h1>
+                        <h1>Mission</h1>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Laborum sequi quaerat minima reiciendis esse
-                            veritatis aliquid laboriosam itaque quis
-                            necessitatibus assumenda reprehenderit accusantium
-                            nihil illum dolor accusamus, recusandae modi odit.
+                            At Astroex, our mission is to promote
+                            research based environment among
+                            students which may help by
+                            motivating them to identify their
+                            interest and later pursue their career
+                            in the same.
                         </p>
                     </div>
                 </div>
@@ -109,7 +116,7 @@
             </p>
         </section>
 
-        <section class="cards-section">
+        <!-- <section class="cards-section">
             <div class="section-cards">
                 <div class="left-card-div">
                     <div class="image-div">
@@ -129,54 +136,83 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
-        <section class="services-section">
+        <section class="services-section" id="services">
             <h1>Our services</h1>
             <div class="main-services">
-                <div class="services" style="--content: 'Mentoring';">
-                    <p>
-                        <b><u>Mentoring</u></b><br>
-                        We provide mentoring to school,
-                        undergraduate and postgraduate students. Mentoring helps
-                        in enhancing the students by helping them to identify
-                        their talent and focus on improving the same. This can
-                        help the students to gain success later in their career.
-                    </p>
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="services" style="--content: 'Mentoring';">
+                                <p>
+                                    <h1>Mentoring</h1>
+                                    We provide mentoring to school,
+                                    undergraduate and postgraduate students. Mentoring helps
+                                    in enhancing the students by helping them to identify
+                                    their talent and focus on improving the same. This can
+                                    help the students to gain success later in their career.
+                                </p>
+                            </div>
+                            <span class="hover-effect-swiper"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="services" style="--content: 'Publishing Papers';">
+                                <p>
+                                    <h1>Publishing Papers</h1>
+                                    Guidance is
+                                    provided to students willing to publish research papers.
+                                    We help them in formulating the research objective in
+                                    such a way that the work they do can be converted to
+                                    paper which can then be published in a reputed journal.
+                                </p>
+                            </div>
+                            <span class="hover-effect-swiper"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="services" style="--content: 'Career Consulting';">
+                                <p>
+                                    <h1>Career Consulting</h1>
+                                    Many a times
+                                    students who have interests in various fields have
+                                    difficulty in determining their career path. Career
+                                    counseling helps them to identify their major interest
+                                    and choose a career in the same while taking up other
+                                    interests as hobbies and using them as extracurricular
+                                    activities.
+                                </p>
+                            </div>
+                            <span class="hover-effect-swiper"></span>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="services" style="--content: 'Webinars and Workshops';">
+                                <p>
+                                    <h1>Webinars and Workshops</h1>
+                                    Along with all of the above we conduct various webinars
+                                    and workshops wherein we invite highly qualified
+                                    industry professionals to deliver the content to
+                                    students. This can help the students in enhancing their
+                                    skillset.
+                                </p>
+                            </div>
+                            <span class="hover-effect-swiper"></span>
+                        </div>
+                    </div>
+                    <!-- <div class="swiper-pagination"></div> -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <!-- <div class="swiper-pagination"></div> -->
                 </div>
-                <div class="services" style="--content: 'Publishing Papers';">
-                    <p>
-                        <b><u>Publishing Papers</u></b><br>
-                        Guidance is
-                        provided to students willing to publish research papers.
-                        We help them in formulating the research objective in
-                        such a way that the work they do can be converted to
-                        paper which can then be published in a reputed journal.
-                    </p>
-                </div>
-                <div class="services" style="--content: 'Career Consulting';">
-                    <p>
-                        <b><u>Career Consulting</u></b><br>
-                        Many a times
-                        students who have interests in various fields have
-                        difficulty in determining their career path. Career
-                        counseling helps them to identify their major interest
-                        and choose a career in the same while taking up other
-                        interests as hobbies and using them as extracurricular
-                        activities.
-                    </p>
-                </div>
-                <div class="services" style="--content: 'Webinars and Workshops';">
-                    <p>
-                        <b><u>Webinars and Workshops</u></b><br>
-                        Along with all of the above we conduct various webinars
-                        and workshops wherein we invite highly qualified
-                        industry professionals to deliver the content to
-                        students. This can help the students in enhancing their
-                        skillset.
-                    </p>
-                </div>
+
             </div>
+        </section>
+
+        <section class="quotes-author-section">
+            <h1>
+                Research is to see what everybody else has been
+                seen, and to think what nobody else has thought.
+            </h1>
+            <p>-Albert Szent Györgyi</p>
         </section>
 
         <section class="section-partners">
@@ -210,6 +246,43 @@
 
         <%- include("./partials/footer.ejs") %>
 
+
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    loop: true,
+                    autoplay: {
+                        delay: 2500,
+                        disableOnInteraction: false,
+                    },
+                    // pagination: {
+                    //     el: ".swiper-pagination",
+                    //     clickable: true,
+                    // },
+                    breakpoints: {
+                        640: {
+                            slidesPerView: 2,
+                            spaceBetween: 20,
+                        },
+                        768: {
+                            slidesPerView: 4,
+                            spaceBetween: 40,
+                        },
+                        1024: {
+                            slidesPerView: 3,
+                            spaceBetween: 50,
+                        },
+                    },
+                });
+            </script>
             <script src="javascripts/navbar.js"></script>
 </body>
 

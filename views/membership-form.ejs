@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="stylesheets/membership-form.css" />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
+        <link rel="stylesheet" href="stylesheets/navbar.css" />
+        <link
+            rel="shortcut icon"
+            href="images/favicon.ico"
+            type="image/x-icon"
+        />
+        <title>Become a Member</title>
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+
+        <div class="membership-form-section">
+            <div class="membership-form-main-div">
+                <div class="left-membership-div">
+                    <h1>For Membership</h1>
+                    <a href=""
+                        >Download Astroex Research Association Membership form
+                    </a>
+                </div>
+                <div class="right-membership-div">
+                    <div class="membership-form">
+                        <form action="">
+                            <h1>Send Your Query</h1>
+                            <div class="input-box">
+                                <label for="member-name">Name</label>
+                                <input
+                                    type="text"
+                                    name="member-name"
+                                    id="member-name"
+                                />
+                            </div>
+                            <div class="input-box">
+                                <label for="member-email">Email</label>
+                                <input
+                                    type="text"
+                                    name="member-email"
+                                    id="member-email"
+                                />
+                            </div>
+                            <div class="input-box">
+                                <label for="member-email">Comment</label>
+                                <textarea
+                                    name="member-comment"
+                                    id="member-comment"
+                                ></textarea>
+                            </div>
+                            <div class="input-box">
+                                <button type="submit">Subscribe Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include("./partials/footer.ejs") %>
+
+        <script src="javascripts/navbar.js"></script>
+    </body>
+</html>

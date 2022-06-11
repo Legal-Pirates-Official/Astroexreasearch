@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="stylesheets/membership.css" />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
+        <link rel="stylesheet" href="stylesheets/navbar.css" />
+        <link
+            rel="shortcut icon"
+            href="images/favicon.ico"
+            type="image/x-icon"
+        />
+        <title>Membership</title>
+    </head>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+
+        <section class="membership-section">
+            <div class="membership-main-div">
+                <h1>Membership</h1>
+                <p>
+                    GE&RA is the emerging association for the educational
+                    development as well as social welfare. We would like to
+                    invite everyone to join with us and let bring the
+                    technological, educational and social revolutions. GE&RA
+                    works in all the areas through Global Membership. Members
+                    rely on GE&RA as a source of information, resources and
+                    services. GE&RA also serves members of various sectors
+                    around the world for the welfare of the society as a whole.
+                </p>
+            </div>
+            <div class="membership-table-top">
+                <table>
+                    <tr>
+                        <th>Membership</th>
+                        <th>Golden Membership</th>
+                        <th>Silver Membership</th>
+                        <th>Bronze Membership</th>
+                        <th>Institutional Membership</th>
+                    </tr>
+                    <tr>
+                        <td>INDIA (INR)</td>
+                        <td>4000/-</td>
+                        <td>2000/-</td>
+                        <td>1000/-</td>
+                        <td>5000/-</td>
+                    </tr>
+                    <tr>
+                        <td>REST OF INDIA (USD)</td>
+                        <td>4000/-</td>
+                        <td>2000/-</td>
+                        <td>1000/-</td>
+                        <td>5000/-</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="membership-table-next">
+                <table>
+                    <tr>
+                        <th rowspan="2">Benefits</th>
+                        <th colspan="2">Student Membership</th>
+                        <th colspan="2">1234</th>
+                    </tr>
+                <tr>
+                        <th>1 Year</th>
+                        <th>Life time</th>
+                        <th>Bronze Membership</th>
+                        <th>Institutional Membership</th>
+                    </tr>
+                    <tr>
+                        <td>Article Submission</td>
+                        <td>Y</td>
+                        <td>Y</td>
+                        <td>Y</td>
+                        <td>Y</td>
+                    </tr>
+                    <tr>
+                        <td>To Review Article</td>
+                        <td>Y</td>
+                        <td>Y</td>
+                        <td>Y</td>
+                        <td>Y</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="membership-button">
+                <a href="/becomeamember">Become a member</a>
+            </div>
+        </section>
+
+        <%- include("./partials/footer.ejs") %>
+
+        <script src="javascripts/navbar.js"></script>
+    </body>
+</html>

@@ -22,7 +22,7 @@
 
 	<%- include("../../partials/teams.ejs") %>
 
-	<body style="overflow: hidden">
+	<body>
 		<%- include("../../partials/admin_nav.ejs") %> <%-
 		include("../../partials/flash.ejs") %>
 		<div class="container">
@@ -44,7 +44,7 @@
 							<th class="col-name mobile-view">Job Title</th>
 							<th class="col-name mobile-view">Email</th>
 							<th class="col-name mobile-view">Instagram URL</th>
-							<th class="col-name mobile-view">Image</th>
+							<!-- <th class="col-name mobile-view">Image</th> -->
 							<th class="col-name">Operations</th>
 						</tr>
 					</thead>
@@ -57,13 +57,13 @@
 							<td class="mobile-view"><%- team.job_team %></td>
 							<td class="mobile-view"><%- team.email_team %></td>
 							<td class="mobile-view"><%- team.instagram_url %></td>
-							<td class="mobile-view">
+							<!-- <td class="mobile-view">
 								<img
 									class="img-fluid"
 									src="<%- team.image_team %>"
 									alt=""
 								/>
-							</td>
+							</td> -->
 							<td class="operations-icons">
 								<a
 									href="/admin/teams/<%- team.id_team %>"
