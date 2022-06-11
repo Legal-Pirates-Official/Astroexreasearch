@@ -30,14 +30,13 @@ body {
 
 .membership-main-div {
     font-size: 1rem;
-    color: var(--font);
+    color: var(--dark);
 }
 
 .membership-main-div h1 {
     text-align: center;
     font-size: 2rem;
     padding: 1% 0;
-    margin-bottom: 1rem;
 }
 
 .membership-table-top {
@@ -131,3 +130,55 @@ body {
     background: rgba(250, 140, 67, 0.8);
 }
 
+.membership-section-textarea
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.membership-section-textarea form
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.membership-section-textarea form textarea
+{
+    width: 100%;
+    height: 8rem;
+    resize: none;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.membership-main-div-textarea
+{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
