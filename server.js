@@ -24,6 +24,7 @@ const research_areas = require('./routes/research_areas');
 const internship = require('./routes/internship');
 const upload_files = require('./routes/upload_files');
 const membership = require('./routes/membership');
+const membership_form = require('./routes/membership_form');
 const about = require('./routes/about');
 
 app.use(express.static('public'));
@@ -63,6 +64,7 @@ app.use('/', internship);
 app.use('/', upload_files);
 app.use('/', membership);
 app.use('/', about);
+app.use('/', membership_form);
 
 app.get('*', (req, res) => {
 	res.render('404');

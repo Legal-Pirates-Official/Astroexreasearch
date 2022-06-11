@@ -8,10 +8,6 @@ router.get('/partners', (req, res) => {
 	res.render('partners');
 });
 
-router.get('/becomeamember', (req, res) => {
-	res.render('membership-form');
-});
-
 // router.get("/publications", (req, res) => {
 //     res.render("publications");
 // });

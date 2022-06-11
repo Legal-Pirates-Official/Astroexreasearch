@@ -6,7 +6,7 @@ require("dotenv").config();
 const router = express.Router();
 
 router.get("/becomeamember", (req, res) => {
-    res.render("./admin/membership-form");
+    res.render("membership-form");
 });
 
 router.post("/becomeamember", (req, res) => {
