@@ -24,6 +24,7 @@ const research_areas = require('./routes/research_areas');
 const internship = require('./routes/internship');
 const upload_files = require('./routes/upload_files');
 const membership = require('./routes/membership');
+const about = require('./routes/about');
 
 app.use(express.static('public'));
 app.engine('ejs', ejsMate);
@@ -59,8 +60,9 @@ app.use('/', projects);
 app.use('/', events);
 app.use('/', research_areas);
 app.use('/', internship);
-app.use('/', membership);
 app.use('/', upload_files);
+app.use('/', membership);
+app.use('/', about);
 
 app.get('*', (req, res) => {
 	res.render('404');

@@ -143,7 +143,18 @@
             <div class="main-services">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
+                        <% services.forEach(element=> { %>
+                            <div class="swiper-slide">
+                                <div class="services">
+                                    <p>
+                                        <h1><%= element.name_services %> </h1>
+                                        <p><%= element.textarea_services %> </p>
+                                    </p>
+                                </div>
+                                <span class="hover-effect-swiper"></span>
+                            </div>
+                            <% }) %>
+                        <!-- <div class="swiper-slide">
                             <div class="services" style="--content: 'Mentoring';">
                                 <p>
                                     <h1>Mentoring</h1>
@@ -155,8 +166,8 @@
                                 </p>
                             </div>
                             <span class="hover-effect-swiper"></span>
-                        </div>
-                        <div class="swiper-slide">
+                        </div> -->
+                        <!-- <div class="swiper-slide">
                             <div class="services" style="--content: 'Publishing Papers';">
                                 <p>
                                     <h1>Publishing Papers</h1>
@@ -196,7 +207,7 @@
                                 </p>
                             </div>
                             <span class="hover-effect-swiper"></span>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- <div class="swiper-pagination"></div> -->
                     <div class="swiper-button-next"></div>

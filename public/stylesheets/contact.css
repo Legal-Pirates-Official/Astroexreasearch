@@ -88,6 +88,7 @@
     margin: 0.4rem 0;
     font-size: 1.1rem;
     padding: 0.5rem;
+    outline: none;
 }
 
 .contact-form form input::placeholder {
@@ -103,7 +104,7 @@
     height: 10rem;
     border: none;
     background: rgba(0, 0, 0, 0.1);
-
+    outline: none;
     font-size: 1.1rem;
     margin: 0.4rem 0;
     padding: 0.5rem;
