@@ -63,29 +63,6 @@
             </section>
         </div>
 
-        <div class="main-section">
-            <h1 class="main-section-h1">Books</h1>
-            <section class="publications-section">
-                <div class="main-div">
-                    <% projectsArray.reverse().forEach(projects => { %>
-                        <% if (projects.type_projects == "books") { %>
-                    <div class="all-div">
-                        <div class="content-div">
-                            <h1><%= projects.title_projects %></h1>
-                            <p>
-                                <%= projects.description_projects %>
-                            </p>
-                        </div>
-                        <div class="download-div">
-                            <a href="<%= projects.file_projects %>" target="_blank" download="<%= projects.title_projects %>">Download</a>
-                        </div>
-                    </div>
-                    <% } %>
-                    <% }) %>
-                </div>
-            </div>
-        </section>
-
         <%- include("./partials/footer.ejs") %>
 
         <script src="javascripts/navbar.js"></script>

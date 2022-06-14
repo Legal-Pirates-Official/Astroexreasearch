@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="stylesheets/training.css" />
+        <link rel="stylesheet" href="./stylesheets/internship.css" />
+        <link rel="stylesheet" href="./stylesheets/internship_animation.css" />
         <link rel="stylesheet" href="stylesheets/footer.css" />
         <link
             rel="shortcut icon"
@@ -15,9 +17,16 @@
         <title>Training</title>
     </head>
 
+    <style>
+        .heading_page{
+            color: white;
+        }
+    </style>
+
     <body>
         <%- include("./partials/navbar.ejs") %>
         <section class="training-section">
+                <h1 class="heading_page">Training</h1>
             <% training.reverse().forEach(element => { %>
             <div class="training-main-div">
                 <div class="heading-section">
@@ -33,6 +42,55 @@
                 </div>
             </div>
             <% }) %>
+        </section>
+
+        <section class="main-section">
+            <h1 class="heading_page">Internship</h1>
+            <div class="main-div-intership">
+                <% internshipArray.reverse().forEach(internship => { %>
+                <div class="div-internship">
+                    <h1><%= internship.heading_internship %></h1>
+                    <h2 style="font-weight: 400">
+                        <%= internship.subheading_internship %>
+                    </h2>
+                    <!-- <div class="tags-internship-div">
+                        <%#
+                        internship.tag_internship.split(",").reverse().forEach((element,
+                        index) => { %>
+                        <p class="tags-internship">
+                            <%#= element.split("=")[1] %>
+                        </p>
+                        <%# }); %>
+                    </div> -->
+                    <div class="tags-internship-div">
+                        <p class="tags-internship">
+                            <%= internship.phone_internship %>
+                        </p>
+                        <p class="tags-internship">
+                            <%= internship.email_internship %>
+                        </p>
+                    </div>
+                    <div class="poster_image_div">
+                        <p id="myImg" class="myImg form_link">Poster</p>
+                        <a
+                            class="form_link"
+                            target="_blank"
+                            href="<%= internship.form_internship %>"
+                            >Forms
+                        </a>
+                    </div>
+                    <p><%= internship.description_internship %></p>
+                </div>
+                <div id="myModal" class="modal myModal">
+                    <span class="close">&times;</span>
+                    <img
+                        class="modal-content img01"
+                        id="img01"
+                        src="<%= internship.image_internship %>"
+                    />
+                </div>
+                <% }) %>
+            </div>
         </section>
 
         <%- include("./partials/footer.ejs") %>
