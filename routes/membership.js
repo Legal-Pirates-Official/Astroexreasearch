@@ -42,7 +42,7 @@ router.get("/membership", async (req, res) => {
 router.get("/membership-professional", async (req, res) => {
     try {
         await db.query(
-            "SELECT * FROM membership_join",
+            "SELECT * FROM membership",
             async (err, results) => {
                 if (err) throw err;
                 const para = results[0];
