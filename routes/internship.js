@@ -3,16 +3,16 @@ const app = express();
 const db = require("../database");
 const multer = require("multer");
 const path = require("path");
-const {storage, cloudinary} = require("../cloudinary");
-const upload = multer({storage});
-const {isloggedin} = require("../middleware");
+const { storage, cloudinary } = require("../cloudinary");
+const upload = multer({ storage });
+const { isloggedin } = require("../middleware");
 
 const router = express.Router();
 
 router.get("/internship", (req, res) => {
     db.query("SELECT * FROM internship", (err, rows) => {
         if (!err) {
-            res.render("internship", {internshipArray: rows});
+            res.render("internship", { internshipArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -35,7 +35,7 @@ router.get("/internship/:search", isloggedin, (req, res) => {
                     internshipArray.push(element);
                 }
             });
-            res.render("./internship", {internshipArray});
+            res.render("./internship", { internshipArray });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -71,27 +71,29 @@ router.post(
     upload.single("image_internship"),
     isloggedin,
     async (req, res) => {
-        let data;
+        // let data;
 
-        Object.keys(req.body).forEach((key, index) => {
-            if (key.includes("tag_internship")) {
-                data = !data
-                    ? `${key}=${req.body[key]},`
-                    : Object.keys(req.body).length - 1 == index
-                    ? data + `${key}=${req.body[key]}`
-                    : data + `${key}=${req.body[key]},`;
-            }
-        });
+        // Object.keys(req.body).forEach((key, index) => {
+        //     if (key.includes("tag_internship")) {
+        //         data = !data
+        //             ? `${key}=${req.body[key]},`
+        //             : Object.keys(req.body).length - 1 == index
+        //             ? data + `${key}=${req.body[key]}`
+        //             : data + `${key}=${req.body[key]},`;
+        //     }
+        // });
 
         await db.query(
-            `INSERT INTO internship (heading_internship, subheading_internship, description_internship, form_internship, image_internship, tag_internship) VALUES (?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO internship (heading_internship, subheading_internship, description_internship, form_internship, image_internship, phone_internship, email_internship) VALUES (?, ?, ?, ?, ?, ?, ?)`,
             [
                 req.body.heading_internship,
                 req.body.subheading_internship,
                 req.body.description_internship,
                 req.body.form_internship,
                 req.file.path,
-                data,
+                req.body.phone_internship,
+                req.body.email_internship,
+                // data,
             ],
             async (err, rows) => {
                 if (!err) {
@@ -166,14 +168,16 @@ router.post(
         });
 
         db.query(
-            `UPDATE internship SET heading_internship = ?, subheading_internship = ?, description_internship = ?, form_internship = ?, image_internship = ? , tag_internship = ?  WHERE id_internship = ?`,
+            `UPDATE internship SET heading_internship = ?, subheading_internship = ?, description_internship = ?, form_internship = ?, image_internship = ? , phone_internship = ?, email_internship = ? WHERE id_internship = ?`,
             [
                 req.body.heading_internship,
                 req.body.subheading_internship,
                 req.body.description_internship,
                 req.body.form_internship,
                 req.file ? req.file.path : req.body.image_checkbox,
-                data,
+                req.body.phone_internship,
+                req.body.email_internship,
+                // data,
                 req.params.id,
             ],
             async (err, rows) => {

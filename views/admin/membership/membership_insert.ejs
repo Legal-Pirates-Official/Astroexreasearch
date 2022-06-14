@@ -25,7 +25,8 @@
                     <h1>Membership</h1>
                     <textarea name="paragraph" id="membership_textarea">
 						<%= para && para.paragraph %>
-					</textarea>
+					</textarea
+                    >
                 </div>
                 <button class="btn btn-primary">Submit</button>
             </form>
@@ -58,8 +59,9 @@
                         <th>Membership</th>
                         <th>Golden Membership</th>
                         <th>Silver Membership</th>
-                        <th>Bronze Membership</th>
-                        <th>Institutional Membership</th>
+                        <th>Operations</th>
+                        <!-- <th>Bronze Membership</th>
+                        <th>Institutional Membership</th> -->
                     </tr>
                     <form action="/admin/membership/table1" method="post">
                         <tr class="form-group-container">
@@ -72,12 +74,12 @@
                             <td>
                                 <input type="text" name="input3_membership" />
                             </td>
-                            <td>
+                            <!-- <td>
                                 <input type="text" name="input4_membership" />
                             </td>
                             <td>
                                 <input type="text" name="input5_membership" />
-                            </td>
+                            </td> -->
                             <td>
                                 <button class="btn btn-primary">Submit</button>
                             </td>
@@ -88,8 +90,8 @@
                         <td><%=tab.input1_membership%></td>
                         <td><%=tab.input2_membership%></td>
                         <td><%=tab.input3_membership%></td>
-                        <td><%=tab.input4_membership%></td>
-                        <td><%=tab.input5_membership%></td>
+                        <!-- <td><%#=tab.input4_membership%></td>
+                        <td><%#=tab.input5_membership%></td> -->
                         <td>
                             <a
                                 class="btn btn-danger"
@@ -106,14 +108,14 @@
                 <table>
                     <tr>
                         <th rowspan="2">Benefits</th>
-                        <th colspan="2">Student Membership</th>
-                        <th colspan="2">1234</th>
+                        <th colspan="2">Student</th>
+                        <th colspan="2">Professional</th>
                     </tr>
                     <tr>
                         <th>1 Year</th>
                         <th>Life time</th>
-                        <th>Bronze Membership</th>
-                        <th>Institutional Membership</th>
+                        <th>1 Year</th>
+                        <th>Life time</th>
                     </tr>
                     <form action="/admin/membership/table2" method="post">
                         <tr class="form-group-container">
@@ -125,7 +127,7 @@
                             </td>
                             <td>
                                 <input type="text" name="input3_membership" />
-                            </td>
+                            </td> 
                             <td>
                                 <input type="text" name="input4_membership" />
                             </td>

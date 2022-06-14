@@ -17,8 +17,12 @@
 
     <%- include("../../partials/internship.ejs") %>
     <body>
-	<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
-    <%- include("../../partials/admin_nav.ejs") %>
+        <link
+            rel="shortcut icon"
+            href="../../images/favicon.ico"
+            type="image/x-icon"
+        />
+        <%- include("../../partials/admin_nav.ejs") %>
 
         <div class="container">
             <div class="row">
@@ -40,7 +44,8 @@
                             <th class="col-name">Title</th>
                             <th class="col-name mobile-view">Sub Heading</th>
                             <th class="col-name mobile-view">Description</th>
-                            <th class="col-name mobile-view">tag Line</th>
+                            <th class="col-name mobile-view">Phone</th>
+                            <th class="col-name mobile-view">Email</th>
                             <th class="col-name">Operations</th>
                         </tr>
                     </thead>
@@ -53,39 +58,51 @@
                                 >
                             </td>
                             <td class="mobile-view">
-                                <%- internship.subheading_internship.slice(0, 10) %>...
+                                <%- internship.subheading_internship.slice(0,
+                                10) %>...
                             </td>
                             <td class="mobile-view">
-                                <%- internship.description_internship.slice(0, 50) %>...
+                                <%- internship.description_internship.slice(0,
+                                50) %>...
                             </td>
-                            <td class="mobile-view">
+                            <!-- <td class="mobile-view">
                                 <ul>
-                                    <%
+                                    <%#
                                     internship.tag_internship.split(",").reverse().forEach((element,
                                     index) => { %>
-                                    <li><%= element.split("=")[1] %></li>
-                                    <% }); %>
+                                    <li><%#= element.split("=")[1] %></li>
+                                    <%# }); %>
                                 </ul>
+                            </td> -->
+                            <td>
+                                <span class="first-column"
+                                    ><%- internship.phone_internship %></span
+                                >
+                            </td>
+                            <td>
+                                <span class="first-column"
+                                    ><%- internship.email_internship %></span
+                                >
                             </td>
                             <td class="operations-icons">
                                 <a
                                     href="/admin/internship/<%- internship.id_internship %>"
                                     class="btn btn-primary"
                                     style="margin-bottom: 10%"
-                                    >View</a
-                                >
+                                    >View
+                                </a>
                                 <a
                                     href="/admin/internship/update/<%- internship.id_internship %>"
                                     class="btn btn-warning"
                                     style="margin-bottom: 10%"
-                                    >Edit</a
-                                >
+                                    >Edit
+                                </a>
                                 <a
                                     href="/admin/internship/delete/<%- internship.id_internship %>"
                                     class="btn btn-danger"
                                     style="margin-bottom: 10%"
-                                    >Delete</a
-                                >
+                                    >Delete
+                                </a>
                             </td>
                         </tr>
                         <% }) %>

@@ -43,14 +43,22 @@
                     <h2 style="font-weight: 400">
                         <%= internship.subheading_internship %>
                     </h2>
-                    <div class="tags-internship-div">
-                        <%
+                    <!-- <div class="tags-internship-div">
+                        <%#
                         internship.tag_internship.split(",").reverse().forEach((element,
                         index) => { %>
                         <p class="tags-internship">
-                            <%= element.split("=")[1] %>
+                            <%#= element.split("=")[1] %>
                         </p>
-                        <% }); %>
+                        <%# }); %>
+                    </div> -->
+                    <div class="tags-internship-div">
+                        <p class="tags-internship">
+                            <%= internship.phone_internship %>
+                        </p>
+                        <p class="tags-internship">
+                            <%= internship.email_internship %>
+                        </p>
                     </div>
                     <div class="poster_image_div">
                         <p id="myImg" class="myImg form_link">Poster</p>

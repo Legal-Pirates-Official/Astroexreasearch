@@ -116,7 +116,6 @@ body {
 }
 
 .tags-internship {
-    width: 15%;
     height: fit-content;
     display: flex;
     flex-direction: row;
