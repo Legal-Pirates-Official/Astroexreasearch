@@ -14,9 +14,16 @@ router.get("/training", (req, res) => {
         if (!err) {
             db.query("SELECT * FROM internship", (err, results) => {
                 if (!err) {
-                    res.render("training", {
-                        internshipArray: results,
-                        training: rows,
+                    db.query("SELECT * FROM services", (err, result2) => {
+                        if (!err) {
+                            res.render("training", {
+                                training: rows,
+                                internshipArray: results,
+                                services: result2,
+                            });
+                        } else {
+                            res.send(err);
+                        }
                     });
                 } else {
                     res.status(500).send("Internal server error");

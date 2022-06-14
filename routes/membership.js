@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get("/membership", async (req, res) => {
     try {
-        await db.query("SELECT * FROM membership_join", async (err, results) => {
+        await db.query("SELECT * FROM membership", async (err, results) => {
             if (err) throw err;
             const para = results[0];
             await db.query(
@@ -41,29 +41,32 @@ router.get("/membership", async (req, res) => {
 
 router.get("/membership-professional", async (req, res) => {
     try {
-        await db.query("SELECT * FROM membership_join", async (err, results) => {
-            if (err) throw err;
-            const para = results[0];
-            await db.query(
-                "SELECT * FROM membership_table1",
-                async (err, results1) => {
-                    if (err) throw err;
-                    const table1 = results1;
-                    await db.query(
-                        "SELECT * FROM membership_table2",
-                        async (err, results2) => {
-                            if (err) throw err;
-                            const table2 = results2;
-                            await res.render("membership_professional", {
-                                para,
-                                table1,
-                                table2,
-                            });
-                        }
-                    );
-                }
-            );
-        });
+        await db.query(
+            "SELECT * FROM membership_join",
+            async (err, results) => {
+                if (err) throw err;
+                const para = results[0];
+                await db.query(
+                    "SELECT * FROM membership_table1",
+                    async (err, results1) => {
+                        if (err) throw err;
+                        const table1 = results1;
+                        await db.query(
+                            "SELECT * FROM membership_table2",
+                            async (err, results2) => {
+                                if (err) throw err;
+                                const table2 = results2;
+                                await res.render("membership_professional", {
+                                    para,
+                                    table1,
+                                    table2,
+                                });
+                            }
+                        );
+                    }
+                );
+            }
+        );
     } catch (error) {
         console.log(error);
     }
@@ -71,7 +74,7 @@ router.get("/membership-professional", async (req, res) => {
 
 router.get("/admin/membership", isloggedin, async (req, res) => {
     try {
-        await db.query("SELECT * FROM membership_join", async (err, results) => {
+        await db.query("SELECT * FROM membership", async (err, results) => {
             if (err) throw err;
             const para = results[0];
             await db.query(
@@ -116,7 +119,7 @@ router.get("/admin/membership/insert", isloggedin, async (req, res) => {
     });
 
     try {
-        await db.query("SELECT * FROM membership_join", async (err, results) => {
+        await db.query("SELECT * FROM membership", async (err, results) => {
             if (err) throw err;
             const para = results[0];
             await db.query(
@@ -149,7 +152,7 @@ router.get("/admin/membership/insert", isloggedin, async (req, res) => {
 
 router.get("/admin/membership/para", async (req, res) => {
     try {
-        await db.query(`SELECT * FROM membership_join`, (err, result) => {
+        await db.query(`SELECT * FROM membership`, (err, result) => {
             if (err) throw err;
             res.json(result);
         });
@@ -178,7 +181,7 @@ router.post("/admin/membership/para", async (req, res) => {
 router.post("/admin/membership/para/delete", async (req, res) => {
     try {
         await db.query(
-            "DELETE FROM membership_join where membership_id = ?",
+            "DELETE FROM membership where membership_id = ?",
             [req.body.membership_id],
             req.body,
             (err, result) => {

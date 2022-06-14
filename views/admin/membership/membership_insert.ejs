@@ -20,10 +20,10 @@
         <%- include("../../partials/admin_nav.ejs") %>
 
         <section class="membership-section-textarea">
-            <form action="/admin/membership/para" method="post">
+            <form action="/admin/membership/para" method="POST">
                 <div class="membership-main-div-textarea">
                     <h1>Membership</h1>
-                    <textarea name="paragraph" id="membership_textarea">
+                    <textarea name="paragraph" id="paragraph">
 						<%= para && para.paragraph %>
 					</textarea
                     >
