@@ -20,6 +20,17 @@ router.get("/events", (req, res) => {
     });
 });
 
+router.get("/events-competition", (req, res) => {
+    db.query("SELECT * FROM events", (err, rows) => {
+        if (!err) {
+            res.render("events_competition", {eventsArray: rows});
+        } else {
+            res.status(500).send("Internal server error");
+            console.log(err);
+        }
+    });
+});
+
 router.get("/admin/events", isloggedin, (req, res) => {
     db.query("SELECT * FROM events", (err, rows) => {
         if (!err) {
@@ -47,7 +58,7 @@ router.post(
     isloggedin,
     async (req, res) => {
         db.query(
-            `INSERT INTO events (name_events, description_events, date_events, time_events, events_link, image_events) VALUES (?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO events (name_events, description_events, date_events, time_events, events_link, image_events, category_events) VALUES (?, ?, ?, ?, ?, ?, ?)`,
             [
                 req.body.name_events,
                 req.body.description_events,
@@ -55,6 +66,7 @@ router.post(
                 req.body.time_events,
                 req.body.events_link,
                 req.file.path,
+                req.body.category_events,
             ],
             async (err, rows) => {
                 if (!err) {
@@ -109,7 +121,7 @@ router.post(
 
 
         db.query(
-            `UPDATE events SET name_events = ?, description_events = ?, date_events = ?, time_events = ?, events_link = ?, image_events = ? WHERE id_events = ?`,
+            `UPDATE events SET name_events = ?, description_events = ?, date_events = ?, time_events = ?, events_link = ?, image_events = ?, category_events = ? WHERE id_events = ?`,
             [
                 req.body.name_events,
                 req.body.description_events,
@@ -117,6 +129,7 @@ router.post(
                 req.body.time_events,
                 req.body.events_link,
                 req.file ? req.file.path : req.body.image_checkbox,
+                req.body.category_events,
                 req.params.id,
             ],
             async (err, rows) => {

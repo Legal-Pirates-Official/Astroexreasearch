@@ -39,38 +39,11 @@
         </section> -->
 
         <div>
-            <h1 class="heading_events">Workshops</h1>
+            <h1 class="heading_events">Competitions</h1>
             <section>
                 <div class="main-div">
                     <% eventsArray.reverse().forEach(events => { %> 
-                    <% if (events.category_events == "workshops_events") { %>
-                    <div class="all-div">
-                        `
-                        <div class="content-div">
-                            <h1><%= events.date_events %></h1>
-                            <h2><%= events.time_events %></h2>
-                            <p><%= events.description_events %></p>
-                            <div class="imageDiv">
-                                <img src="<%= events.image_events %>" />
-                            </div>
-                        </div>
-                        <div class="download-div">
-                            <a href="<%= events.events_link %>"
-                                >Click to continue</a
-                            >
-                        </div>
-                    </div>
-                    <% } %> <% }) %>
-                </div>
-            </section>
-        </div>
-
-        <div>
-            <h1 class="heading_events">Webinars</h1>
-            <section>
-                <div class="main-div">
-                    <% eventsArray.reverse().forEach(events => { %> 
-                    <% if (events.category_events == "webinars_events") { %>
+                    <% if (events.category_events == "competitions_events") { %>
                     <div class="all-div">
                         `
                         <div class="content-div">

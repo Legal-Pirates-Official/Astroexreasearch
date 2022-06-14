@@ -22,16 +22,16 @@
 				<table>
 					<tr>
 						<th>Membership</th>
-						<th>Student</th>
-						<!-- <th>Professional</th> -->
+						<!-- <th>Student</th> -->
+						<th>Professional</th>
 						<!-- <th>Silver Membership</th>
 						<th>Institutional Membership</th> -->
 					</tr>
 					<% table1.forEach(tab => {%>
 					<tr>
 						<td><%=tab.input1_membership%></td>
-						<td><%=tab.input2_membership%></td>
-						<!-- <td><%#=tab.input3_membership%></td> -->
+						<!-- <td><%#=tab.input2_membership%></td> -->
+						<td><%=tab.input3_membership%></td>
 						<!-- <td><%#=tab.input4_membership%></td>
 						<td><%#=tab.input5_membership%></td> -->
 					</tr>
@@ -43,22 +43,22 @@
 				<table>
 					<tr>
 						<th rowspan="2">Benefits</th>
-						<th colspan="2">Student</th>
-						<!-- <th colspan="2">Professional</th> -->
+						<!-- <th colspan="2">Student</th> -->
+						<th colspan="2">Professional</th>
 					</tr>
 					<tr>
-						<th>1 Year</th>
-						<th>Life time</th>
 						<!-- <th>1 Year</th>
 						<th>Life time</th> -->
+						<th>1 Year</th>
+						<th>Life time</th>
 					</tr>
 					<% table2.forEach(tab => {%>
 					<tr>
 						<td><%=tab.input1_membership%></td>
-						<td><%=tab.input2_membership%></td>
-						<td><%=tab.input3_membership%></td>
-						<!-- <td><%#=tab.input4_membership%></td> -->
-						<!-- <td><%#=tab.input5_membership%></td> -->
+						<!-- <td><%#=tab.input2_membership%></td> -->
+						<!-- <td><%#=tab.input3_membership%></td> -->
+						<td><%=tab.input4_membership%></td>
+						<td><%=tab.input5_membership%></td>
 					</tr>
 					<% }); %>
 				</table>

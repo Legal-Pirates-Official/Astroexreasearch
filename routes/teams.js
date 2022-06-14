@@ -22,6 +22,19 @@ router.get('/teams', (req, res) => {
 	});
 });
 
+router.get('/teams-advisior', (req, res) => {
+	db.query('SELECT * FROM teams', (err, rows) => {
+		if (!err) {
+			res.render('teams_advisior', {
+				teamArray: rows
+			});
+		} else {
+			res.status(500).send('Internal server error');
+			console.log(err);
+		}
+	});
+});
+
 router.get('/admin/teams', isloggedin, (req, res) => {
 	const message = req.flash('success');
 	db.query('SELECT * FROM teams', (err, rows) => {
