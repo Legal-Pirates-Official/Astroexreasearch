@@ -5,8 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="stylesheets/training.css" />
-        <link rel="stylesheet" href="./stylesheets/internship.css" />
-        <link rel="stylesheet" href="./stylesheets/internship_animation.css" />
+        <link rel="stylesheet" href="stylesheets/internship.css" />
+        <link rel="stylesheet" href="stylesheets/internship_animation.css" />
         <link rel="stylesheet" href="stylesheets/footer.css" />
         <link
             rel="shortcut icon"
@@ -18,15 +18,27 @@
     </head>
 
     <style>
-        .heading_page{
+        .heading_page {
             color: white;
         }
     </style>
 
     <body>
         <%- include("./partials/navbar.ejs") %>
+
+        <section class="toggler">
+            <div class="toggler-div">
+                <div class="toggler-button toggler-button-training">
+                    <h1>Training</h1>
+                </div>
+                <div class="toggler-button toggler-button-internship">
+                    <h1>Internship</h1>
+                </div>
+            </div>
+        </section>
+
         <section class="training-section">
-                <h1 class="heading_page">Training</h1>
+            <h1 class="heading_page">Training</h1>
             <% training.reverse().forEach(element => { %>
             <div class="training-main-div">
                 <div class="heading-section">
@@ -96,5 +108,32 @@
         <%- include("./partials/footer.ejs") %>
 
         <script src="javascripts/navbar.js"></script>
+
+        <script>
+            const trainingSection = document.querySelector(".training-section");
+            const mainSection = document.querySelector(".main-section");
+
+            const togglerTraining = document.querySelector(
+                ".toggler-button-training"
+            );
+            const togglerInternship = document.querySelector(
+                ".toggler-button-internship"
+            );
+
+            togglerTraining.addEventListener("click", () => {
+                trainingSection.style.display = "flex";
+                mainSection.style.display = "none";
+                togglerTraining.style.backgroundColor = "#F3A32B";
+                togglerInternship.style.backgroundColor = "#1e1e1e";
+            });
+
+            togglerInternship.addEventListener("click", () => {
+                trainingSection.style.display = "none";
+                mainSection.style.display = "flex";
+                togglerInternship.style.backgroundColor = "#F3A32B";
+                togglerTraining.style.backgroundColor = "#1e1e1e";
+
+            });
+        </script>
     </body>
 </html>
