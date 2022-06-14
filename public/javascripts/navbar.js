@@ -5,17 +5,19 @@ const dropdown = document.querySelectorAll(".dropdown");
 const dropdownContent = document.querySelector(".dropdown-content");
 const fullNav = document.querySelector(".nav-links-2");
 let dropdownNavbarIsOpen = false;
-
-dropdown.forEach((dropdown) => {
-  dropdown.addEventListener("click", (e) => {
-    document.querySelectorAll(`.mobiledrop`).forEach((dropdownContent) => {
-        dropdownContent.style.display = "none";
+if(window.innerWidth < 600){ 
+  dropdown.forEach((dropdown) => {
+    dropdown.addEventListener("click", (e) => {
+      document.querySelectorAll(`.mobiledrop`).forEach((dropdownContent) => {
+          dropdownContent.style.display = "none";
+      })
+      console.log("clicked",dropdown.getAttribute('data-attr'));
+     const name = dropdown.getAttribute('data-attr')
+      document.querySelector(`.${name}`).style.display = "flex";
     })
-    console.log("clicked",dropdown.getAttribute('data-attr'));
-   const name = dropdown.getAttribute('data-attr')
-    document.querySelector(`.${name}`).style.display = "flex";
-  })
-});
+  });
+}
+
 dropdownAtag.addEventListener("mouseover", () => {
   dropdownNavbar.classList.add("show");
   dropdownNavbarIsOpen = true;
