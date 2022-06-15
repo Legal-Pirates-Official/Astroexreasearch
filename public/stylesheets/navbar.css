@@ -61,6 +61,12 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+
+.title a {
+    color: white;
+    text-decoration: none;
+}
+
 /* .nav-title img
 {
     width: 50px;
