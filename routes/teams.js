@@ -124,9 +124,10 @@ router.post(
 	isloggedin,
 	upload.single('image_team'),
 	async (req, res) => {
+		console.log(req.body);
 		const oldimage = req.body.image_checkbox
-			.split('Astroex_Research_Association/')[1]
-			.slice(0, -4);
+		.split('Astroex_Research_Association/')[1]
+		.slice(0, -4);
 
 		db.query(
 			`UPDATE teams SET name_team = ?, job_team = ?, email_team = ?, instagram_url = ?, linkedIn_url = ?, select_team = ? , image_team = ? WHERE id_team = ?`,
