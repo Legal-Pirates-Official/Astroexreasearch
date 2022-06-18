@@ -47,10 +47,10 @@ router.get(
 	async (req, res) => {
 		const { filename } = req.params;
 		await cloudinary.uploader.destroy(
-			'Astroex_Research_Association/' + filename
+			'AsteroexResearch/' + filename
 		);
 		await db.query('DELETE FROM upload_files WHERE name_upload_files = ?', [
-			'Astroex_Research_Association/' + filename
+			'AsteroexResearch/' + filename
 		]);
 		res.redirect('/admin/upload_files');
 	}

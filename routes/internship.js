@@ -136,7 +136,7 @@ router.get("/admin/internship/update/:id", isloggedin, async (req, res) => {
                 //     tagArray.push(tag);
                 // });
                 res.render("./admin/internship/internship_update", {
-                    internship: rows[0]
+                    internship: rows[0],
                     // tag_internship: tagArray,
                     // tag_length: tagArray.length,
                 });
@@ -153,7 +153,7 @@ router.post(
     isloggedin,
     async (req, res) => {
         const oldimage = req.body.image_checkbox
-            .split("Astroex_Research_Association/")[1]
+            .split("AsteroexResearch/")[1]
             .slice(0, -4);
         let data;
 
@@ -183,7 +183,7 @@ router.post(
             async (err, rows) => {
                 if (!err) {
                     await cloudinary.uploader.destroy(
-                        "Astroex_Research_Association/" + oldimage
+                        "AsteroexResearch/" + oldimage
                     );
                     res.redirect("/admin/internship");
                 } else {

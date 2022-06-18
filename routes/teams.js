@@ -144,7 +144,7 @@ router.post(
 			async (err, rows) => {
 				if (!err) {
 					await cloudinary.uploader.destroy(
-						'Astroex_Research_Association/' + oldimage
+						'AsteroexResearch/' + oldimage
 					);
 					await req.flash('success', 'Team updated successfully');
 					res.redirect('/admin/teams');
