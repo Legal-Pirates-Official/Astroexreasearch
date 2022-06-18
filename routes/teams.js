@@ -126,7 +126,7 @@ router.post(
 	async (req, res) => {
 		console.log(req.body);
 		const oldimage = req.body.image_checkbox
-		.split('Astroex_Research_Association/')[1]
+		.split('AsteroexResearch/')[1]
 		.slice(0, -4);
 
 		db.query(
