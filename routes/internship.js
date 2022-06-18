@@ -129,16 +129,16 @@ router.get("/admin/internship/update/:id", isloggedin, async (req, res) => {
         [req.params.id],
         async (err, rows) => {
             if (!err) {
-                const taglines = rows[0].tag_internship.split(",");
-                const tagArray = [];
-                taglines.forEach((element) => {
-                    const tag = element.split("=")[1];
-                    tagArray.push(tag);
-                });
+                // const taglines = rows[0].tag_internship.split(",");
+                // const tagArray = [];
+                // taglines.forEach((element) => {
+                //     const tag = element.split("=")[1];
+                //     tagArray.push(tag);
+                // });
                 res.render("./admin/internship/internship_update", {
-                    internship: rows[0],
-                    tag_internship: tagArray,
-                    tag_length: tagArray.length,
+                    internship: rows[0]
+                    // tag_internship: tagArray,
+                    // tag_length: tagArray.length,
                 });
             } else {
                 console.log(err);

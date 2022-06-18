@@ -112,9 +112,31 @@
                                     value="<%- internship.image_internship %>"
                                 />
                             </div>
-                            <div
+                            <div class="form-group">
+                                <label for="phone_internship"
+                                    >Phone Number</label
+                                >
+                                <input
+                                    required
+                                    type="text"
+                                    class="form-control"
+                                    id="phone_internship"
+                                    name="phone_internship"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone_internship">Email</label>
+                                <input
+                                    required
+                                    type="email"
+                                    class="form-control"
+                                    id="email_internship"
+                                    name="email_internship"
+                                />
+                            </div>
+                            <!-- <div
                                 class="plus-container"
-                                data-target="<%=tag_length %>"
+                                data-target="<%#=tag_length %>"
                             >
                                 <label for="description_internship"
                                     >Add Tag</label
@@ -122,29 +144,29 @@
                                 <div class="plus-icon">
                                     <p
                                         class="plusIcon"
-                                        data-target="<%=tag_length %>"
+                                        data-target="<%#=tag_length %>"
                                     >
                                         <img
                                             src="https://img.icons8.com/ios-filled/50/000000/add--v1.png"
                                         />
                                     </p>
                                 </div>
-                            </div>
-                            <% tag_internship.reverse().forEach((tag,index) => { %>
+                            </div> -->
+                            <!-- <%# tag_internship.reverse().forEach((tag,index) => { %>
                             <div class="form-group">
-                                <label for="tag_internship_<%= index+1 %>"
-                                    >Tag Line <%= index+1 %>
+                                <label for="tag_internship_<%#= index+1 %>"
+                                    >Tag Line <%#= index+1 %>
                                 </label>
                                 <input
                                     type="text"
                                     style="width: 50%"
                                     class="form-control mb-3"
-                                    id="tag_internship_<%= index+1 %>"
-                                    name="tag_internship<%= index+1 %>"
-                                    value="<%= tag %>"
+                                    id="tag_internship_<%#= index+1 %>"
+                                    name="tag_internship<%#= index+1 %>"
+                                    value="<%#= tag %>"
                                 />
                             </div>
-                            <% }) %>
+                            <%# }) %> -->
                         </div>
                         <div>
                             <button type="submit" class="btn btn-primary">
@@ -162,7 +184,7 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"
         ></script>
-        <script>
+        <!-- <script>
             const plusIcon = document.querySelector(".plusIcon");
             const formGroupContainer = document.querySelector(
                 ".form-group-container"
@@ -186,6 +208,6 @@
                 );
                 count++;
             });
-        </script>
+        </script> -->
     </body>
 </html>
