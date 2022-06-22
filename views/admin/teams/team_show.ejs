@@ -46,48 +46,22 @@
 							<th class="col-name mobile-view">Instagram URL</th>
 							<!-- <th class="col-name mobile-view">Image</th> -->
 							<th class="col-name">Operations</th>
+							<th class="col-name">Order</th>
 						</tr>
 					</thead>
-					<tbody>
-						<% teamArray.reverse().forEach(team => { %>
-						<tr>
-							<td>
-								<span class="first-column"><%- team.name_team %></span>
-							</td>
-							<td class="mobile-view"><%- team.job_team %></td>
-							<td class="mobile-view"><%- team.email_team %></td>
-							<td class="mobile-view"><%- team.instagram_url %></td>
-							<!-- <td class="mobile-view">
-								<img
-									class="img-fluid"
-									src="<%- team.image_team %>"
-									alt=""
-								/>
-							</td> -->
-							<td class="operations-icons">
-								<a
-									href="/admin/teams/<%- team.id_team %>"
-									class="btn btn-primary"
-									style="margin-bottom: 10%"
-									>View</a
-								>
-								<a
-									href="/admin/teams/update/<%- team.id_team %>"
-									class="btn btn-warning"
-									style="margin-bottom: 10%"
-									>Edit</a
-								>
-								<a
-									href="/admin/teams/delete/<%- team.id_team %>"
-									class="btn btn-danger"
-									style="margin-bottom: 10%"
-									>Delete</a
-								>
-							</td>
-						</tr>
-						<% }) %>
-					</tbody>
+					<tbody></tbody>
 				</table>
+			</div>
+			<div class="save-sort" onclick="saveSort()">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					viewBox="0 0 20 20"
+					fill="white"
+				>
+					<path
+						d="M7.707 10.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V6h5a2 2 0 012 2v7a2 2 0 01-2 2H4a2 2 0 01-2-2V8a2 2 0 012-2h5v5.586l-1.293-1.293zM9 4a1 1 0 012 0v2H9V4z"
+					/>
+				</svg>
 			</div>
 		</div>
 		<%- include("../../partials/admin_footer.ejs") %>
@@ -97,5 +71,106 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+			integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script>
+			const tbody = document.querySelector('tbody');
+			let fetchTeam = () => axios('/admin/teamsarray').then((res) => res.data);
+			let fetchTeamId = () =>
+				axios('/admin/teamsidsarray').then((res) => res.data);
+			let flag = 1;
+
+			const alterTbody = (team) => {
+				tbody.innerHTML = '';
+				team.forEach((member, index) => {
+					tbody.innerHTML += `<tr>
+							<td>
+								<span class="first-column">${member.name_team}</span>
+							</td>
+							<td class="mobile-view">${member.job_team}</td>
+							<td class="mobile-view">${member.email_team}</td>
+							<td class="mobile-view">${member.instagram_url}</td>
+							<!-- <td class="mobile-view">
+								<img
+									class="img-fluid"
+									src=" team.image_team"
+									alt=""
+								/>
+							</td> -->
+							<td class="operations-icons">
+								<a
+									href="/admin/teams /${member.id_team}"
+									class="btn btn-primary"
+									style="margin-bottom: 10%"
+									>View</a
+								>
+								<a
+									href="/admin/teams/update/${member.id_team}"
+									class="btn btn-warning"
+									style="margin-bottom: 10%"
+									>Edit</a
+								>
+								<a
+									href="/admin/teams/delete/${member.id_team}"
+									class="btn btn-danger"
+									style="margin-bottom: 10%"
+									>Delete</a
+								>
+							</td>
+							<td class="mobile-view checkbox-container" onclick=orderMember(${
+								member.id_team
+							},${index})>
+								<div class="checkbox">${index + 1}</div>
+							</td>
+						</tr>`;
+				});
+			};
+			window.addEventListener('load', async () => {
+				const teamIDArr = await axios('/admin/teamsidarray');
+				const team = await fetchTeam();
+				alterTbody(team);
+				tbody.setAttribute('data-order', JSON.stringify(teamIDArr.data));
+				tbody.setAttribute('data-num', 0);
+			});
+			orderMember = async (id, index) => {
+				document.querySelector('.container').classList.add('save');
+				if (flag) {
+					if (parseInt(tbody.getAttribute('data-num')) > 3) {
+						tbody.setAttribute('data-num', 0);
+					}
+					const num = parseInt(tbody.getAttribute('data-num'));
+					let order = JSON.parse(tbody.getAttribute('data-order'));
+
+					let filtered = order.filter((a) => a != id);
+					filtered.splice(num, 0, id);
+					const team = await fetchTeam();
+					let filteredOut = team.filter((member) => member.id_team != id);
+					const filteredIn = team.filter((member) => member.id_team == id);
+
+					team.forEach((member, index1) => {
+						filtered.forEach((id, index2) => {
+							if (member.id_team == id) {
+								alterTbody([...filteredIn, ...filteredOut]);
+							}
+						});
+					});
+
+					tbody.setAttribute('data-order', JSON.stringify(filtered));
+					tbody.setAttribute('data-num', num + 1);
+				}
+			};
+
+			const saveSort = async () => {
+				const tbody = document.querySelector('tbody');
+				await axios.post('/admin/save-sort', {
+					order: JSON.parse(tbody.getAttribute('data-order'))
+				});
+			};
+		</script>
 	</body>
 </html>

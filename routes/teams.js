@@ -37,12 +37,16 @@ router.get('/teams-advisior', (req, res) => {
 
 router.get('/admin/teams', isloggedin, (req, res) => {
 	const message = req.flash('success');
-	db.query('SELECT * FROM teams', (err, rows) => {
+	res.render('./admin/teams/team_show', {
+		message
+	});
+
+});
+
+router.get('/admin/teamsarray', isloggedin, (req, res) => {
+	db.query('SELECT * FROM teams ORDER BY order_team', (err, rows) => {
 		if (!err) {
-			res.render('./admin/teams/team_show', {
-				teamArray: rows,
-				message
-			});
+			return res.json(rows)
 		} else {
 			res.status(500).send('Internal server error');
 			console.log(err);
@@ -50,8 +54,35 @@ router.get('/admin/teams', isloggedin, (req, res) => {
 	});
 });
 
+router.get('/admin/teamsidarray', isloggedin, (req, res) => {
+	db.query('SELECT id_team FROM teams ORDER BY order_team', (err, rows) => {
+		if (!err) {
+			let arr = []
+			rows.forEach(row => {
+				arr.push(Object.values(row)[0])
+			});
+			res.json(arr);
+		} else {
+			res.status(500).send('Internal server error');
+			console.log(err);
+		}
+	});
+});
+router.post('/admin/save-sort', (req, res) => {
+	req.body.order.forEach(async (o, index) => {
+		await db.query('UPDATE teams SET order_team = ? WHERE id_team = ?', [index + 1, o], async (err, response) => {
+			if (!err) {
+				await req.flash('success', 'Team sorted successfully');
+				return res.redirect('/admin/teams')
+			} else {
+				console.log(err);
+			}
+		})
+	})
+})
+
 router.get('/admin/teams/insert', isloggedin, async (req, res) => {
-	db.query('SELECT * FROM teams', async (err, rows) => {
+	db.query('SELECT * FROM teams ORDER', async (err, rows) => {
 		if (!err) {
 			res.render('./admin/teams/team_insert');
 		} else {
@@ -126,8 +157,8 @@ router.post(
 	async (req, res) => {
 		console.log(req.body);
 		const oldimage = req.body.image_checkbox
-		.split('AsteroexResearch/')[1]
-		.slice(0, -4);
+			.split('AsteroexResearch/')[1]
+			.slice(0, -4);
 
 		db.query(
 			`UPDATE teams SET name_team = ?, job_team = ?, email_team = ?, instagram_url = ?, linkedIn_url = ?, select_team = ? , image_team = ? WHERE id_team = ?`,
