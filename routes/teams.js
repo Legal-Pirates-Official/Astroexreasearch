@@ -9,6 +9,16 @@ const { isloggedin } = require('../middleware');
 
 const router = express.Router();
 
+
+router.get('/admin/teams', isloggedin, (req, res) => {
+	const message = req.flash('success');
+	res.render('./admin/teams/team_show', {
+		message
+	});
+
+});
+
+
 router.get('/teams', (req, res) => {
 	db.query('SELECT * FROM teams', (err, rows) => {
 		if (!err) {
@@ -33,14 +43,6 @@ router.get('/teams-advisior', (req, res) => {
 			console.log(err);
 		}
 	});
-});
-
-router.get('/admin/teams', isloggedin, (req, res) => {
-	const message = req.flash('success');
-	res.render('./admin/teams/team_show', {
-		message
-	});
-
 });
 
 router.get('/admin/teamsarray', isloggedin, (req, res) => {
@@ -68,16 +70,27 @@ router.get('/admin/teamsidarray', isloggedin, (req, res) => {
 		}
 	});
 });
-router.post('/admin/save-sort', (req, res) => {
-	req.body.order.forEach(async (o, index) => {
-		await db.query('UPDATE teams SET order_team = ? WHERE id_team = ?', [index + 1, o], async (err, response) => {
-			if (!err) {
-				await req.flash('success', 'Team sorted successfully');
-				return res.redirect('/admin/teams')
-			} else {
-				console.log(err);
-			}
-		})
+router.post('/admin/save-sort', async (req, res) => {
+	const { order } = req.body
+	new Promise(async (myResolve, myReject) => {
+
+		await order.forEach(async (o, index) =>
+			await db.query('UPDATE teams SET order_team = ? WHERE id_team = ?', [index + 1, o], async (err, response) => {
+				if (err)
+					console.log(err);
+				if (order.length <= index + 1) {
+					myResolve('done')
+				}
+			})
+		)
+	}).then(async value => {
+		await req.flash('success', 'Team sorted Successfully');
+		res.json(value)
+	}, async (err) => {
+		await req.flash('error', 'Team sort failed');
+		console.log(err)
+		res.json(err)
+
 	})
 })
 

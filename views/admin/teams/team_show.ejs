@@ -167,9 +167,15 @@
 
 			const saveSort = async () => {
 				const tbody = document.querySelector('tbody');
-				await axios.post('/admin/save-sort', {
-					order: JSON.parse(tbody.getAttribute('data-order'))
-				});
+				await axios
+					.post('/admin/save-sort', {
+						order: JSON.parse(tbody.getAttribute('data-order'))
+					})
+					.then((res) => {
+						if (res.data === 'done') {
+							window.location.href = '/admin/teams';
+						}
+					});
 			};
 		</script>
 	</body>
