@@ -13,7 +13,7 @@ router.get("/projects", (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
             res.render("projects", {projectsArray: rows});
-            console.log(rows);
+            // console.log(rows);
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -25,7 +25,7 @@ router.get("/publications", (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
             res.render("publications", {projectsArray: rows});
-            console.log(rows);
+            // console.log(rows);
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -37,7 +37,7 @@ router.get("/books", (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
             res.render("books", {projectsArray: rows});
-            console.log(rows);
+            // console.log(rows);
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
