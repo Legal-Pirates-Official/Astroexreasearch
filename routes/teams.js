@@ -20,7 +20,7 @@ router.get('/admin/teams', isloggedin, (req, res) => {
 
 
 router.get('/teams', (req, res) => {
-	db.query('SELECT * FROM teams', (err, rows) => {
+	db.query('SELECT * FROM teams ORDER BY order_team', (err, rows) => {
 		if (!err) {
 			res.render('teams', {
 				teamArray: rows
