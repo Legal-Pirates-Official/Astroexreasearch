@@ -9,15 +9,20 @@ const { isloggedin } = require('../middleware');
 
 const router = express.Router();
 
-
 router.get('/admin/teams', isloggedin, (req, res) => {
 	const message = req.flash('success');
-	res.render('./admin/teams/team_show', {
-		message
+	db.query('SELECT * FROM teams', (err, rows) => {
+		if (!err) {
+			res.render('./admin/teams/team_show', {
+				teamArray: rows,
+				message
+			});
+		} else {
+			res.status(500).send('Internal server error');
+			console.log(err);
+		}
 	});
-
 });
-
 
 router.get('/teams', (req, res) => {
 	db.query('SELECT * FROM teams', (err, rows) => {
@@ -74,16 +79,17 @@ router.post('/admin/save-sort', async (req, res) => {
 	const { order } = req.body
 	new Promise(async (myResolve, myReject) => {
 
-		await order.forEach(async (o, index) =>
-			await db.query('UPDATE teams SET order_team = ? WHERE id_team = ?', [index + 1, o], async (err, response) => {
+		await order.split(",").forEach(async (o, index) =>
+			await db.query('UPDATE teams SET order_team = ? WHERE id_team = ?', [index + 1, parseInt(o)], async (err, response) => {
 				if (err)
 					console.log(err);
-				if (order.length <= index + 1) {
+				if (order.split(",").length <= index + 1) {
 					myResolve('done')
 				}
 			})
 		)
 	}).then(async value => {
+		console.log(value);
 		await req.flash('success', 'Team sorted Successfully');
 		res.json(value)
 	}, async (err) => {

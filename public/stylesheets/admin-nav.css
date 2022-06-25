@@ -7,7 +7,7 @@
 body {
 	margin: 0px;
 	font-family: 'segoe ui';
-	overflow: hidden;
+	overflow-x: hidden;
 }
 :root {
 	--black: #000;
