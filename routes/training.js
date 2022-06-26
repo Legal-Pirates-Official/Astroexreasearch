@@ -39,6 +39,7 @@ router.get("/training", (req, res) => {
 
 router.get("/admin/training", isloggedin, (req, res) => {
     db.query("SELECT * FROM training ORDER BY order_training ASC", (err, rows) => {
+        console.log(rows);
         if (!err) {
             res.render("./admin/training/training_show", {
                 trainingArray: rows,
@@ -143,8 +144,6 @@ router.get("/admin/training/delete/:id", isloggedin, async (req, res) => {
         }
     );
 });
-
-
 router.post("/admin/training/save-sort", async (req, res) => {
     const { order } = req.body;
     new Promise(async (myResolve, myReject) => {
@@ -154,9 +153,6 @@ router.post("/admin/training/save-sort", async (req, res) => {
                     "UPDATE training SET order_training = ? WHERE id_training = ?",
                     [index + 1, parseInt(o)],
                     async (err, response) => {
-                        console.log('====================================');
-                        console.log(order);
-                        console.log('====================================');
                         if (err) console.log(err);
                         if (order.split(",").length <= index + 1) {
                             myResolve("done");
@@ -178,3 +174,5 @@ router.post("/admin/training/save-sort", async (req, res) => {
 });
 
 module.exports = router;
+
+

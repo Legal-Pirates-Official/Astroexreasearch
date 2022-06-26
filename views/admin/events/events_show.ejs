@@ -52,7 +52,7 @@
 				</thead>
 				<tbody>
 					<% eventsArray.forEach(events => { %>
-					<tr>
+					<tr data-id="<%= team.id_events %>">
 						<td><%- events.name_events %></td>
 						<td class="mobile-view">
 							<span class="first-column">
