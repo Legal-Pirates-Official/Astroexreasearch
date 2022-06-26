@@ -48,7 +48,7 @@
 					</thead>
 					<tbody>
 						<% projectsArray.forEach(projects => { %>
-						<tr>
+						<tr data-id="<%= team.id_projects %>">
 							<td>
 								<span class="first-column"><%- projects.title_projects %></span>
 							</td>

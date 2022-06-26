@@ -52,7 +52,7 @@
 					</thead>
 					<tbody>
 						<% internshipArray.forEach(internship => { %>
-						<tr>
+						<tr data-id="<%= team.id_internship %>">
 							<td>
 								<span class="first-column"
 									><%- internship.heading_internship %></span

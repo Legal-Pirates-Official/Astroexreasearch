@@ -47,7 +47,7 @@
 				</thead>
 				<tbody>
 					<% trainingArray.forEach(training => { %>
-					<tr>
+					<tr data-id="<%= team.id_training %>">
 						<td>
 							<span class="first-column"><%- training.title_training %></span>
 						</td>
@@ -115,7 +115,6 @@
 						order: tbody.getAttribute('sort')
 					})
 					.then((res) => {
-						console.log("sdjhb");
 						if (res.data === 'done') {
 							window.location.href = '/admin/training';
 						}
