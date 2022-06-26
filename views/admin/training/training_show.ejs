@@ -46,7 +46,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<% trainingArray.reverse().forEach(training => { %>
+					<% trainingArray.forEach(training => { %>
 					<tr>
 						<td>
 							<span class="first-column"><%- training.title_training %></span>
@@ -99,6 +99,12 @@
 			integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 			crossorigin="anonymous"
 		></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"
+			integrity="sha512-xIPqqrfvUAc/Cspuj7Bq0UtHNo/5qkdyngx6Vwt+tmbvTLDszzXM0G6c91LXmGrRx8KEPulT+AfOOez+TeVylg=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
 		<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 
 		<script src="../../javascripts/sortable.js"></script>
@@ -109,6 +115,7 @@
 						order: tbody.getAttribute('sort')
 					})
 					.then((res) => {
+						console.log("sdjhb");
 						if (res.data === 'done') {
 							window.location.href = '/admin/training';
 						}
