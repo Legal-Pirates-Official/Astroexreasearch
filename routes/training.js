@@ -10,7 +10,7 @@ const { isloggedin } = require("../middleware");
 const router = express.Router();
 
 router.get("/training", (req, res) => {
-    db.query("SELECT * FROM training", (err, rows) => {
+    db.query("SELECT * FROM training ORDER BY order_training ASC", (err, rows) => {
         if (!err) {
             db.query("SELECT * FROM internship", (err, results) => {
                 if (!err) {
@@ -38,7 +38,7 @@ router.get("/training", (req, res) => {
 });
 
 router.get("/admin/training", isloggedin, (req, res) => {
-    db.query("SELECT * FROM training", (err, rows) => {
+    db.query("SELECT * FROM training ORDER BY order_training ASC", (err, rows) => {
         if (!err) {
             res.render("./admin/training/training_show", {
                 trainingArray: rows,
@@ -147,7 +147,7 @@ router.get("/admin/training/delete/:id", isloggedin, async (req, res) => {
 module.exports = router;
 
 
-router.post("/admin/tranining/save-sort", async (req, res) => {
+router.post("/admin/training/save-sort", async (req, res) => {
     const { order } = req.body;
     new Promise(async (myResolve, myReject) => {
         await order.split(",").forEach(

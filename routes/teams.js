@@ -11,7 +11,7 @@ const router = express.Router();
 
 router.get("/admin/teams", isloggedin, (req, res) => {
     const message = req.flash("success");
-    db.query("SELECT * FROM teams", (err, rows) => {
+    db.query("SELECT * FROM teams ORDER BY order_team ASC", (err, rows) => {
         if (!err) {
             res.render("./admin/teams/team_show", {
                 teamArray: rows,
