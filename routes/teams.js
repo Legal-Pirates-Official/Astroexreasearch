@@ -76,7 +76,7 @@ router.get("/admin/teamsidarray", isloggedin, (req, res) => {
         }
     });
 });
-router.post("/admin/save-sort", async (req, res) => {
+router.post("/admin/teams/save-sort", async (req, res) => {
     const { order } = req.body;
     new Promise(async (myResolve, myReject) => {
         await order.split(",").forEach(

@@ -3,16 +3,16 @@ const app = express();
 const db = require("../database");
 const multer = require("multer");
 const path = require("path");
-const {storage, cloudinary} = require("../cloudinary");
-const upload = multer({storage});
-const {isloggedin} = require("../middleware");
+const { storage, cloudinary } = require("../cloudinary");
+const upload = multer({ storage });
+const { isloggedin } = require("../middleware");
 
 const router = express.Router();
 
 router.get("/projects", (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
-            res.render("projects", {projectsArray: rows});
+            res.render("projects", { projectsArray: rows });
             // console.log(rows);
         } else {
             res.status(500).send("Internal server error");
@@ -24,7 +24,7 @@ router.get("/projects", (req, res) => {
 router.get("/publications", (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
-            res.render("publications", {projectsArray: rows});
+            res.render("publications", { projectsArray: rows });
             // console.log(rows);
         } else {
             res.status(500).send("Internal server error");
@@ -36,7 +36,7 @@ router.get("/publications", (req, res) => {
 router.get("/books", (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
-            res.render("books", {projectsArray: rows});
+            res.render("books", { projectsArray: rows });
             // console.log(rows);
         } else {
             res.status(500).send("Internal server error");
@@ -48,7 +48,7 @@ router.get("/books", (req, res) => {
 router.get("/admin/projects", isloggedin, (req, res) => {
     db.query("SELECT * FROM projects", (err, rows) => {
         if (!err) {
-            res.render("./admin/projects/projects_show", {projectsArray: rows});
+            res.render("./admin/projects/projects_show", { projectsArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -165,6 +165,35 @@ router.get("/admin/projects/delete/:id", isloggedin, async (req, res) => {
             } else {
                 console.log(err);
             }
+        }
+    );
+});
+
+router.post("/admin/projects/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE projects SET order_projects = ? WHERE id_projects = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Projects sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Projects sort failed");
+            console.log(err);
+            res.json(err);
         }
     );
 });

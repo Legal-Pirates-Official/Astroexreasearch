@@ -145,3 +145,33 @@ router.get("/admin/training/delete/:id", isloggedin, async (req, res) => {
 });
 
 module.exports = router;
+
+
+router.post("/admin/tranining/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE training SET order_training = ? WHERE id_training = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Training sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Training sort failed");
+            console.log(err);
+            res.json(err);
+        }
+    );
+});

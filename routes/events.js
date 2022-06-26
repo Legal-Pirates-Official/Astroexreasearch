@@ -3,16 +3,16 @@ const app = express();
 const db = require("../database");
 const multer = require("multer");
 const path = require("path");
-const {storage, cloudinary} = require("../cloudinary");
-const upload = multer({storage});
-const {isloggedin} = require("../middleware");
+const { storage, cloudinary } = require("../cloudinary");
+const upload = multer({ storage });
+const { isloggedin } = require("../middleware");
 
 const router = express.Router();
 
 router.get("/events", (req, res) => {
     db.query("SELECT * FROM events", (err, rows) => {
         if (!err) {
-            res.render("events", {eventsArray: rows});
+            res.render("events", { eventsArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -23,7 +23,7 @@ router.get("/events", (req, res) => {
 router.get("/events-competition", (req, res) => {
     db.query("SELECT * FROM events", (err, rows) => {
         if (!err) {
-            res.render("events_competition", {eventsArray: rows});
+            res.render("events_competition", { eventsArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -34,7 +34,7 @@ router.get("/events-competition", (req, res) => {
 router.get("/admin/events", isloggedin, (req, res) => {
     db.query("SELECT * FROM events", (err, rows) => {
         if (!err) {
-            res.render("./admin/events/events_show", {eventsArray: rows});
+            res.render("./admin/events/events_show", { eventsArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -85,7 +85,7 @@ router.get("/admin/events/:id", isloggedin, (req, res) => {
         [req.params.id],
         (err, rows) => {
             if (!err) {
-                res.render("./admin/events/events_view", {events: rows[0]});
+                res.render("./admin/events/events_view", { events: rows[0] });
             } else {
                 res.status(500).send("Internal server error");
                 console.log(err);
@@ -156,6 +156,35 @@ router.get("/admin/events/delete/:id", isloggedin, async (req, res) => {
             } else {
                 console.log(err);
             }
+        }
+    );
+});
+
+router.post("/admin/events/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE events SET order_events = ? WHERE id_events = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Events sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Events sort failed");
+            console.log(err);
+            res.json(err);
         }
     );
 });

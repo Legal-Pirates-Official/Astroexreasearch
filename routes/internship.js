@@ -162,8 +162,8 @@ router.post(
                 data = !data
                     ? `${key}=${req.body[key]},`
                     : Object.keys(req.body).length - 1 == index
-                    ? data + `${key}=${req.body[key]}`
-                    : data + `${key}=${req.body[key]},`;
+                        ? data + `${key}=${req.body[key]}`
+                        : data + `${key}=${req.body[key]},`;
             }
         });
 
@@ -204,6 +204,35 @@ router.get("/admin/internship/delete/:id", isloggedin, async (req, res) => {
             } else {
                 console.log(err);
             }
+        }
+    );
+});
+
+router.post("/admin/internship/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE internship SET order_internship = ? WHERE id_inernship = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Internship sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Internship sort failed");
+            console.log(err);
+            res.json(err);
         }
     );
 });
