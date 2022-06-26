@@ -10,7 +10,7 @@ const { isloggedin } = require("../middleware");
 const router = express.Router();
 
 router.get("/internship", (req, res) => {
-    db.query("SELECT * FROM internship", (err, rows) => {
+    db.query("SELECT * FROM internship ORDER BY order_internship", (err, rows) => {
         if (!err) {
             res.render("internship", { internshipArray: rows });
         } else {
@@ -44,7 +44,7 @@ router.get("/internship/:search", isloggedin, (req, res) => {
 });
 
 router.get("/admin/internship", isloggedin, (req, res) => {
-    db.query("SELECT * FROM internship", (err, rows) => {
+    db.query("SELECT * FROM internship ORDER BY order_internship", (err, rows) => {
         if (!err) {
             res.render("./admin/internship/internship_show", {
                 internshipArray: rows,
@@ -214,7 +214,7 @@ router.post("/admin/internship/save-sort", async (req, res) => {
         await order.split(",").forEach(
             async (o, index) =>
                 await db.query(
-                    "UPDATE internship SET order_internship = ? WHERE id_inernship = ?",
+                    "UPDATE internship SET order_internship = ? WHERE id_internship = ?",
                     [index + 1, parseInt(o)],
                     async (err, response) => {
                         if (err) console.log(err);

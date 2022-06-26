@@ -10,7 +10,7 @@ const { isloggedin } = require("../middleware");
 const router = express.Router();
 
 router.get("/events", (req, res) => {
-    db.query("SELECT * FROM events", (err, rows) => {
+    db.query("SELECT * FROM events ORDER BY order_events", (err, rows) => {
         if (!err) {
             res.render("events", { eventsArray: rows });
         } else {
@@ -32,7 +32,7 @@ router.get("/events-competition", (req, res) => {
 });
 
 router.get("/admin/events", isloggedin, (req, res) => {
-    db.query("SELECT * FROM events", (err, rows) => {
+    db.query("SELECT * FROM events ORDER BY order_events", (err, rows) => {
         if (!err) {
             res.render("./admin/events/events_show", { eventsArray: rows });
         } else {

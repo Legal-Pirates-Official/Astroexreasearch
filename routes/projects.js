@@ -10,7 +10,7 @@ const { isloggedin } = require("../middleware");
 const router = express.Router();
 
 router.get("/projects", (req, res) => {
-    db.query("SELECT * FROM projects", (err, rows) => {
+    db.query("SELECT * FROM projects ORDER BY order_projects", (err, rows) => {
         if (!err) {
             res.render("projects", { projectsArray: rows });
             // console.log(rows);
@@ -22,7 +22,7 @@ router.get("/projects", (req, res) => {
 });
 
 router.get("/publications", (req, res) => {
-    db.query("SELECT * FROM projects", (err, rows) => {
+    db.query("SELECT * FROM projects ORDER BY order_projects", (err, rows) => {
         if (!err) {
             res.render("publications", { projectsArray: rows });
             // console.log(rows);
@@ -34,7 +34,7 @@ router.get("/publications", (req, res) => {
 });
 
 router.get("/books", (req, res) => {
-    db.query("SELECT * FROM projects", (err, rows) => {
+    db.query("SELECT * FROM projects ORDER BY order_projects", (err, rows) => {
         if (!err) {
             res.render("books", { projectsArray: rows });
             // console.log(rows);
@@ -46,7 +46,7 @@ router.get("/books", (req, res) => {
 });
 
 router.get("/admin/projects", isloggedin, (req, res) => {
-    db.query("SELECT * FROM projects", (err, rows) => {
+    db.query("SELECT * FROM projects ORDER BY order_projects", (err, rows) => {
         if (!err) {
             res.render("./admin/projects/projects_show", { projectsArray: rows });
         } else {
