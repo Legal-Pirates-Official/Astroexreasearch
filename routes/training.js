@@ -144,8 +144,6 @@ router.get("/admin/training/delete/:id", isloggedin, async (req, res) => {
     );
 });
 
-module.exports = router;
-
 
 router.post("/admin/training/save-sort", async (req, res) => {
     const { order } = req.body;
@@ -178,3 +176,5 @@ router.post("/admin/training/save-sort", async (req, res) => {
         }
     );
 });
+
+module.exports = router;
