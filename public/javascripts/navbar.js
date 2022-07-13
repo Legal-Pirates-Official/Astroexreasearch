@@ -11,7 +11,7 @@ if(window.innerWidth < 600){
       document.querySelectorAll(`.mobiledrop`).forEach((dropdownContent) => {
           dropdownContent.style.display = "none";
       })
-      console.log("clicked",dropdown.getAttribute('data-attr'));
+      // console.log("clicked",dropdown.getAttribute('data-attr'));
      const name = dropdown.getAttribute('data-attr')
       document.querySelector(`.${name}`).style.display = "flex";
     })

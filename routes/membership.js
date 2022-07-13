@@ -223,7 +223,7 @@ router.post("/admin/membership/table1", async (req, res) => {
 
 router.get("/admin/membership/table1/:id/delete", async (req, res) => {
     try {
-        console.log(req.params.id);
+        // console.log(req.params.id);
 
         await db.query(
             "DELETE FROM membership_table1 where membership_table1_id = ?",

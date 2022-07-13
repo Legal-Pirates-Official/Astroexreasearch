@@ -179,7 +179,7 @@ router.post(
     isloggedin,
     upload.single("image_team"),
     async (req, res) => {
-        console.log(req.body);
+        // console.log(req.body);
         const oldimage = req.body.image_checkbox
             .split("AsteroexResearch/")[1]
             .slice(0, -4);
