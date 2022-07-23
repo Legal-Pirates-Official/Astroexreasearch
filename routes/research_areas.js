@@ -10,7 +10,7 @@ const { isloggedin } = require("../middleware");
 const router = express.Router();
 
 router.get("/research_areas", (req, res) => {
-    db.query("SELECT * FROM research_areas", (err, rows) => {
+    db.query("SELECT * FROM research_areas ORDER BY order_research_areas desc", (err, rows) => {
         if (!err) {
             res.render("research_areas", { research_areasArray: rows });
         } else {
@@ -21,7 +21,7 @@ router.get("/research_areas", (req, res) => {
 });
 
 router.get("/admin/research_areas", isloggedin, (req, res) => {
-    db.query("SELECT * FROM research_areas", (err, rows) => {
+    db.query("SELECT * FROM research_areas ORDER BY order_research_areas desc", (err, rows) => {
         if (!err) {
             res.render("./admin/research_areas/research_areas_show", {
                 research_areasArray: rows,
@@ -34,7 +34,7 @@ router.get("/admin/research_areas", isloggedin, (req, res) => {
 });
 
 router.get("/admin/research_areas/insert", isloggedin, async (req, res) => {
-    db.query("SELECT * FROM research_areas", async (err, rows) => {
+    db.query("SELECT * FROM research_areas ORDER BY order_research_areas desc", async (err, rows) => {
         if (!err) {
             res.render("./admin/research_areas/research_areas_insert");
         } else {

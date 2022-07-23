@@ -10,7 +10,7 @@ const { isloggedin } = require("../middleware");
 const router = express.Router();
 
 router.get("/partners", (req, res) => {
-    db.query("SELECT * FROM partners", (err, rows) => {
+    db.query("SELECT * FROM partners ORDER BY order_partners desc", (err, rows) => {
         if (!err) {
             // console.log(rows);
             res.render("partners", { partnersArray: rows });
@@ -22,7 +22,7 @@ router.get("/partners", (req, res) => {
 });
 
 router.get("/admin/partners", isloggedin, (req, res) => {
-    db.query("SELECT * FROM partners", (err, rows) => {
+    db.query("SELECT * FROM partners ORDER BY order_partners desc", (err, rows) => {
         if (!err) {
             res.render("./admin/partners/partners_show", { partnersArray: rows });
         } else {
@@ -33,7 +33,7 @@ router.get("/admin/partners", isloggedin, (req, res) => {
 });
 
 router.get("/admin/partners/insert", isloggedin, async (req, res) => {
-    db.query("SELECT * FROM partners", async (err, rows) => {
+    db.query("SELECT * FROM partners ORDER BY order_partners desc", async (err, rows) => {
         if (!err) {
             res.render("./admin/partners/partners_insert");
         } else {

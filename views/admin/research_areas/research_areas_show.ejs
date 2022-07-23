@@ -48,7 +48,7 @@
 					</thead>
 					<tbody>
 						<% research_areasArray.reverse().forEach(research_areas => { %>
-						<tr>
+						<tr data-id="<%= research_areas.id_research_areas %>">
 							<td>
 								<span class="first-column"
 									><%- research_areas.text_research_areas %></span
@@ -91,6 +91,7 @@
 					</tbody>
 				</table>
 			</div>
+			<%- include("../../partials/saveSort.ejs") %>
 		</div>
 		<%- include("../../partials/admin_footer.ejs") %>
 

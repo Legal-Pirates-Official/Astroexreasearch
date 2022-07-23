@@ -48,7 +48,7 @@ router.get("/about", (req, res) => {
 // });
 
 router.get("/admin/services", isloggedin, (req, res) => {
-    db.query("SELECT * FROM services", (err, rows) => {
+    db.query("SELECT * FROM services ORDER BY order_services desc", (err, rows) => {
         if (!err) {
             res.render("./admin/services/services_show", {
                 servicesArray: rows,
@@ -61,7 +61,7 @@ router.get("/admin/services", isloggedin, (req, res) => {
 });
 
 router.get("/admin/services/insert", isloggedin, async (req, res) => {
-    db.query("SELECT * FROM services", async (err, rows) => {
+    db.query("SELECT * FROM services ORDER BY order_services desc", async (err, rows) => {
         if (!err) {
             res.render("./admin/services/services_insert");
         } else {
@@ -72,9 +72,10 @@ router.get("/admin/services/insert", isloggedin, async (req, res) => {
 
 router.post("/admin/services/save-sort", async (req, res) => {
     const { order } = req.body;
+
     new Promise(async (myResolve, myReject) => {
         await order.split(",").forEach(
-            async (o, index) =>
+            async (o, index) => {
                 await db.query(
                     "UPDATE services SET order_services = ? WHERE services_id = ?",
                     [index + 1, parseInt(o)],
@@ -85,6 +86,7 @@ router.post("/admin/services/save-sort", async (req, res) => {
                         }
                     }
                 )
+            }
         );
     }).then(
         async (value) => {

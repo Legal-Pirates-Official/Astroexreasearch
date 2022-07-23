@@ -11,7 +11,7 @@ const router = express.Router();
 
 
 router.get("/admin/collaborators", isloggedin, (req, res) => {
-    db.query("SELECT * FROM collaborators", (err, rows) => {
+    db.query("SELECT * FROM collaborators ORDER BY order_collaborators desc", (err, rows) => {
         if (!err) {
             res.render("./admin/collaborators/collaborators_show", { collaboratorsArray: rows });
         } else {
@@ -22,7 +22,7 @@ router.get("/admin/collaborators", isloggedin, (req, res) => {
 });
 
 router.get("/admin/collaborators/insert", isloggedin, async (req, res) => {
-    db.query("SELECT * FROM collaborators", async (err, rows) => {
+    db.query("SELECT * FROM collaborators ORDER BY order_collaborators desc", async (err, rows) => {
         if (!err) {
             res.render("./admin/collaborators/collaborators_insert");
         } else {

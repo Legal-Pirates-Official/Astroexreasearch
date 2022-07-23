@@ -47,7 +47,7 @@
 					</thead>
 					<tbody>
 						<% servicesArray.reverse().forEach(services => { %>
-						<tr>
+						<tr data-id="<%= services.services_id %>">
 							<td>
 								<span class="first-column"><%- services.name_services %></span>
 							</td>
