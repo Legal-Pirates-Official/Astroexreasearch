@@ -3,9 +3,9 @@ const app = express();
 const db = require("../database");
 const multer = require("multer");
 const path = require("path");
-const {storage, cloudinary} = require("../cloudinary");
-const upload = multer({storage});
-const {isloggedin} = require("../middleware");
+const { storage, cloudinary } = require("../cloudinary");
+const upload = multer({ storage });
+const { isloggedin } = require("../middleware");
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ router.get("/partners", (req, res) => {
     db.query("SELECT * FROM partners", (err, rows) => {
         if (!err) {
             // console.log(rows);
-            res.render("partners", {partnersArray: rows});
+            res.render("partners", { partnersArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -24,7 +24,7 @@ router.get("/partners", (req, res) => {
 router.get("/admin/partners", isloggedin, (req, res) => {
     db.query("SELECT * FROM partners", (err, rows) => {
         if (!err) {
-            res.render("./admin/partners/partners_show", {partnersArray: rows});
+            res.render("./admin/partners/partners_show", { partnersArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -41,6 +41,36 @@ router.get("/admin/partners/insert", isloggedin, async (req, res) => {
         }
     });
 });
+
+router.post("/admin/partners/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE partners SET order_partners = ? WHERE id_partners = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Partners sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Partners sort failed");
+            console.log(err);
+            res.json(err);
+        }
+    );
+});
+
 
 router.post(
     "/admin/partners/insert",

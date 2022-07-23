@@ -70,6 +70,36 @@ router.get("/admin/services/insert", isloggedin, async (req, res) => {
     });
 });
 
+router.post("/admin/services/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE services SET order_services = ? WHERE services_id = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Services sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Services sort failed");
+            console.log(err);
+            res.json(err);
+        }
+    );
+});
+
+
 router.post("/admin/services/insert", isloggedin, async (req, res) => {
     db.query(
         `INSERT INTO services (name_services, textarea_services) VALUES (?, ?)`,

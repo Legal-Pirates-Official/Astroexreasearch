@@ -3,16 +3,16 @@ const app = express();
 const db = require("../database");
 const multer = require("multer");
 const path = require("path");
-const {storage, cloudinary} = require("../cloudinary");
-const upload = multer({storage});
-const {isloggedin} = require("../middleware");
+const { storage, cloudinary } = require("../cloudinary");
+const upload = multer({ storage });
+const { isloggedin } = require("../middleware");
 
 const router = express.Router();
 
 router.get("/research_areas", (req, res) => {
     db.query("SELECT * FROM research_areas", (err, rows) => {
         if (!err) {
-            res.render("research_areas", {research_areasArray: rows});
+            res.render("research_areas", { research_areasArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -42,6 +42,36 @@ router.get("/admin/research_areas/insert", isloggedin, async (req, res) => {
         }
     });
 });
+
+router.post("/admin/research_areas/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE research_areas SET order_research_areas = ? WHERE id_research_areas = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Research areas sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Research areas sort failed");
+            console.log(err);
+            res.json(err);
+        }
+    );
+});
+
 
 router.post("/admin/research_areas/insert", isloggedin, async (req, res) => {
     db.query(

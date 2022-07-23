@@ -3,9 +3,9 @@ const app = express();
 const db = require("../database");
 const multer = require("multer");
 const path = require("path");
-const {storage, cloudinary} = require("../cloudinary");
-const upload = multer({storage});
-const {isloggedin} = require("../middleware");
+const { storage, cloudinary } = require("../cloudinary");
+const upload = multer({ storage });
+const { isloggedin } = require("../middleware");
 
 const router = express.Router();
 
@@ -13,7 +13,7 @@ const router = express.Router();
 router.get("/admin/collaborators", isloggedin, (req, res) => {
     db.query("SELECT * FROM collaborators", (err, rows) => {
         if (!err) {
-            res.render("./admin/collaborators/collaborators_show", {collaboratorsArray: rows});
+            res.render("./admin/collaborators/collaborators_show", { collaboratorsArray: rows });
         } else {
             res.status(500).send("Internal server error");
             console.log(err);
@@ -30,6 +30,37 @@ router.get("/admin/collaborators/insert", isloggedin, async (req, res) => {
         }
     });
 });
+
+
+router.post("/admin/collaborators/save-sort", async (req, res) => {
+    const { order } = req.body;
+    new Promise(async (myResolve, myReject) => {
+        await order.split(",").forEach(
+            async (o, index) =>
+                await db.query(
+                    "UPDATE collaborators SET order_collaborators = ? WHERE id_collaborators = ?",
+                    [index + 1, parseInt(o)],
+                    async (err, response) => {
+                        if (err) console.log(err);
+                        if (order.split(",").length <= index + 1) {
+                            myResolve("done");
+                        }
+                    }
+                )
+        );
+    }).then(
+        async (value) => {
+            await req.flash("success", "Collaborators sorted Successfully");
+            res.json(value);
+        },
+        async (err) => {
+            await req.flash("error", "Collaborators sort failed");
+            console.log(err);
+            res.json(err);
+        }
+    );
+});
+
 
 router.post(
     "/admin/collaborators/insert",
