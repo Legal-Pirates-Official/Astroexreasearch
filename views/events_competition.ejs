@@ -49,6 +49,13 @@
             <h1 class="heading_events">Competitions</h1>
             <section>
                 <div class="main-div">
+                    <% if(eventsArray.length == 0) { %> 
+                        <div class="zerocontent"
+                        style="background-color: #1e1e1e; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
+                        <img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+                            see here...</h2>
+                    </div>
+                    <% } %>
                     <% eventsArray.forEach(events => { %> 
                     <% if (events.category_events == "competitions_events") { %>
                     <div class="all-div">

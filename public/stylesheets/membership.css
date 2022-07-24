@@ -41,6 +41,7 @@ body {
 }
 
 .membership-table-top {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;
@@ -74,6 +75,7 @@ body {
 }
 
 .membership-table-next {
+    position: relative;
     width: 100%;
     height: 100%;
     display: flex;

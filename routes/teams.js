@@ -106,7 +106,7 @@ router.post("/admin/teams/save-sort", async (req, res) => {
 });
 
 router.get("/admin/teams/insert", isloggedin, async (req, res) => {
-    db.query("SELECT * FROM teams ORDER", async (err, rows) => {
+    db.query("SELECT * FROM teams", async (err, rows) => {
         if (!err) {
             res.render("./admin/teams/team_insert");
         } else {

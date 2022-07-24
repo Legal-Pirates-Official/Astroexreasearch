@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="stylesheets/teams.css" />
-        <link rel="stylesheet" href="stylesheets/footer.css" />
-        <link
-            rel="shortcut icon"
-            href="images/favicon.ico"
-            type="image/x-icon"
-        />
-        <link rel="stylesheet" href="stylesheets/navbar.css" />
-        <title>Teams</title>
-    </head>
 
-    <style>
-        .team-nav {
-            background: #fa8c43;
-            color: white !important;
-        }
-    </style>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/teams.css" />
+    <link rel="stylesheet" href="stylesheets/footer.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="stylesheets/navbar.css" />
+    <title>Teams</title>
+</head>
 
-    <body>
-        <%- include("./partials/navbar.ejs") %>
+<style>
+    .team-nav {
+        background: #fa8c43;
+        color: white !important;
+    }
+</style>
+
+<body>
+    <%- include("./partials/navbar.ejs") %>
 
         <!-- Top Section - Start -->
         <section class="top-section">
@@ -55,7 +52,13 @@
 
             <h1 class="team-section-h1">Research Advisors</h1>
             <div class="our-teams">
-                <% teamArray.forEach(teams => { %> 
+                
+                
+
+                <% var count = 0 %> 
+                <% console.log(count) %> 
+                <% teamArray.length > 0 &&  teamArray.forEach(teams => { %> 
+                <%  teams.select_team == "team_b" ?  count++ : null %> 
                 <% if (teams.select_team == "team_b") { %>
                 <div class="one_team_top">
                     <div class="one_team">
@@ -89,11 +92,19 @@
                     </div>
                 </div>
                 <% } %> <% }) %>
+                <% if(teamArray.length == 0 || count == 0) { %> 
+                    <div class="zerocontent"
+                    style="background-color: #1e1e1e; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
+                    <img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+                        see here...</h2>
+                </div>
+                <% } %>
             </div>
         </section>
 
         <%- include("./partials/footer.ejs") %>
 
-        <script src="javascripts/navbar.js"></script>
-    </body>
+            <script src="javascripts/navbar.js"></script>
+</body>
+
 </html>

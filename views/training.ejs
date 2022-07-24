@@ -35,6 +35,13 @@
             <div class="main-services">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
+                        <% if(services.length == 0) { %> 
+                            <div class="zerocontent"
+                            style="background-color: #1e1e1e; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
+                            <img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+                                see here...</h2>
+                        </div>
+                        <% } else { %> 
                         <% services.forEach(element=> { %>
                             <div class="swiper-slide">
                                 <div class="services">
@@ -49,10 +56,12 @@
                                 </div>
                                 <span class="hover-effect-swiper"></span>
                             </div>
-                            <% }) %>
+                            <% }) %><% } %> 
                     </div>
+                    <% if(services.length != 0) { %> 
                     <div class="swiper-button-next"></div>
                     <div class="swiper-button-prev"></div>
+                    <% } %> 
                 </div>
             </div>
         </section>
@@ -73,6 +82,13 @@
 
         <section class="training-section">
             <h1 class="heading_page">Training</h1>
+            <% if(training.length == 0) { %> 
+                <div class="zerocontent"
+                style="background-color: #1e1e1e; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
+                <img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+                    see here...</h2>
+            </div>
+            <% } %>
             <% training.forEach(element=> { %>
                 <div class="training-main-div">
                     <div class="heading-section">
@@ -99,6 +115,13 @@
         <section class="main-section">
             <h1 class="heading_page">Internship</h1>
             <div class="main-div-intership">
+                <% if(internshipArray.length == 0) { %> 
+                    <div class="zerocontent"
+                    style="background-color: #1e1e1e; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
+                    <img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+                        see here...</h2>
+                </div>
+                <% } %>
                 <% internshipArray.forEach(internship=> { %>
                     <div class="div-internship">
                         <h1>

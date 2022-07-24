@@ -62,11 +62,18 @@
 		<section class="topics">
 			<div class="wraptopics">
 				<div class="quote">
-					<h1 class="div-2-title">LATEST UPDATES</h1>
+					<h1 class="div-2-title" style="z-index: 100;">LATEST UPDATES</h1>
+					<% if(eventsArray.length == 0) { %> 
+							<div class="zerocontent"
+							style="background-color: #1e1e1e; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
+							<img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+								see here...</h2>
+						</div>
+						<% } %>
 					<marquee class="Marqueetext" direction="up" height="350" width="350" scrollamount="5" onmousedown=''
 						onmouseup='' onmouseover="this.stop();" onmouseout="this.start();" onmouseout="this.start();"
 						ontouchstart="this.stop()" ontouchend="this.start()">
-
+						
 						<ul>
 							<% eventsArray.forEach(events=> { %>
 								<li>

@@ -27,6 +27,13 @@
 				<h1>Membership</h1>
 				<p><%= para && para.paragraph %></p>
 			</div>
+			<% if(table1.length == 0 && table2.length == 0) { %> 
+				<div class="zerocontent"
+				style="background-color: #1e1e1e; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
+				<img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+					see here...</h2>
+			</div>
+			<% } else {%>
 			<div class="membership-table-top">
 				<table>
 					<tr>
@@ -49,6 +56,7 @@
 			</div>
 
 			<div class="membership-table-next">
+				
 				<table>
 					<tr>
 						<th rowspan="2">Benefits</th>
@@ -72,6 +80,7 @@
 					<% }); %>
 				</table>
 			</div>
+			<% } %> 
 			<div class="membership-button">
 				<a href="/becomeamember">Become a member</a>
 			</div>
