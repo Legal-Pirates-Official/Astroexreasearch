@@ -76,8 +76,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #1e1e1e;
-    color: #fefefe;
+    /* background: #1e1e1e; */
+    background: var(--white);
+    color: var(--dark);
 }
 
 .membership-form form {
@@ -90,8 +91,7 @@ body {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
 }
 
-.input-box
-{
+.input-box {
     width: 100%;
     border-radius: 5px;
     padding: 10px;
@@ -102,8 +102,7 @@ body {
     align-items: center;
 }
 
-.input-box label
-{
+.input-box label {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -113,14 +112,15 @@ body {
     margin-bottom: 2%;
 }
 
-.input-box input
-{
+.input-box input {
     width: 80%;
     border: none;
     outline: none;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    /* box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5); */
+    border: 1px solid var(--dark);
 }
 
 .input-box textarea {
@@ -130,47 +130,47 @@ body {
     border-radius: 5px;
     resize: none;
     padding: 10px;
+    border: 1px solid var(--dark);
     margin-bottom: 10px;
 }
 
-.input-box button
-{
+.input-box button {
     width: 50%;
     border-radius: 5px;
     padding: 8px;
-    background: #fefefe;
-    color: #1e1e1e;
+    background: var(--dark);
+    color: var(--white);
     font-weight: bold;
     font-size: 18px;
-    border: none;
+    border: 1px solid var(--dark);
     outline: none;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
+.input-box button:hover {
+    background: var(--white);
+    color: var(--dark);
+}
 
 @media (max-width: 500px) {
-    .membership-form-section
-    {
+    .membership-form-section {
         font-size: 1.5rem;
         height: fit-content;
     }
-    .left-membership-div h1
-    {
+    .left-membership-div h1 {
         font-size: 1.5rem;
     }
-    .left-membership-div a
-    {
+    .left-membership-div a {
         font-size: 1.2rem;
     }
     .membership-form-main-div {
         flex-direction: column;
     }
-    .left-membership-div
-    {
+    .left-membership-div {
         width: 100%;
     }
-    .right-membership-div
-    {
+    .right-membership-div {
         width: 100%;
         margin: 10% 0;
     }
@@ -178,8 +178,7 @@ body {
         font-size: 1.5rem;
         margin: 5%;
     }
-    .membership-form
-    {
+    .membership-form {
         width: 95%;
     }
 }

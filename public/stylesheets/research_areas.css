@@ -222,9 +222,14 @@ body {
 
 .all-contents ul li {
     padding: 1%;
-    width: 50%;
+    /* width: 50%; */
     border-radius: 30px;
     transition: all 0.3s ease-in-out;
+}
+
+.all-contents ul li:hover
+{
+    transform: scale(1.1);
 }
 
 @media (max-width: 400px) {
