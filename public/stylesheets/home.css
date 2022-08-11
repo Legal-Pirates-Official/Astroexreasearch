@@ -168,7 +168,7 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    background: #f3a32b;
+    background: var(--purple);
     justify-content: space-evenly;
     align-items: center;
     left: 0;
