@@ -7,7 +7,7 @@
 
 :root {
     --font: #fefefe;
-    --white: #fefefe;
+    --white: #ffffff;
     --dark: #1e1e1e;
     --purple: #512efe;
     --color: #22ddd5;
@@ -21,8 +21,13 @@ body {
     margin: 0px;
     font-family: "segoe ui";
 }
+
+nav {
+    display: block;
+}
+
 .nav2 {
-    height: 5rem;
+    /* height: 5rem; */
     width: 100%;
     /* background-color: var(--color); */
     background: var(--color);
@@ -34,18 +39,36 @@ body {
     align-items: center;
     padding: 0 2rem;
 }
+
 .nav {
     height: 5rem;
     width: 100%;
-    background-color: var(--white);
+    background-color: var(--font);
     color: var(--dark);
     position: relative;
     z-index: 100;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
+}
+
+.social-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-nav a {
+    color: #c2dcff;
+    margin: 0.5rem;
+    text-decoration: none;
+}
+
+.social-nav a:hover {
+    text-decoration: underline;
 }
 
 .nav > .nav-header {
@@ -105,6 +128,26 @@ body {
     text-decoration: none;
 }
 
+.nav-logo-links {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-nav {
+    width: 100%;
+}
+
+.logo-nav h1 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* .nav-links {
+    width: 60%;
+} */
+
 .image-logo img {
     width: 150%;
     height: 130%;
@@ -124,7 +167,7 @@ body {
 
 .nav > .nav-links > div {
     display: inline-block;
-    padding: 13px 10px 13px 10px;
+    padding: 13px 0px;
     text-decoration: none;
     color: var(--dark);
     /* transition: all 0.3s ease-in-out; */
