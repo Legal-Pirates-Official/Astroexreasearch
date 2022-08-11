@@ -19,11 +19,11 @@
 
 <style>
     .heading_page {
-        color: white;
+        color: var(--dark);
     }
     .service-nav {
-        background: var(--purple);
-        color: white !important;
+        background: var(--color);
+        color: var(--dark) !important;
     }
 </style>
 
@@ -37,7 +37,7 @@
                     <div class="swiper-wrapper">
                         <% if(services.length == 0) { %> 
                             <div class="zerocontent"
-                            style="background-color: #1e1e1e; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--purple);">
+                            style="background-color: #ffffff; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
                             <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
                                 see here...</h2>
                         </div>
@@ -72,7 +72,7 @@
         <section class="toggler">
             <div class="toggler-div">
                 <div class="toggler-button toggler-button-training">
-                    <h1>Training</h1>
+                    <h1 class="toggler_button_h1">Training</h1>
                 </div>
                 <div class="toggler-button toggler-button-internship">
                     <h1>Internship</h1>
@@ -84,7 +84,7 @@
             <h1 class="heading_page">Training</h1>
             <% if(training.length == 0) { %> 
                 <div class="zerocontent"
-                style="background-color: #1e1e1e; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--purple);">
+                style="background-color: #ffffff; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
                 <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
                     see here...</h2>
             </div>
@@ -117,7 +117,7 @@
             <div class="main-div-intership">
                 <% if(internshipArray.length == 0) { %> 
                     <div class="zerocontent"
-                    style="background-color: #1e1e1e; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--purple);">
+                    style="background-color: #ffffff; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
                     <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
                         see here...</h2>
                 </div>
@@ -182,15 +182,19 @@
                 togglerTraining.addEventListener("click", () => {
                     trainingSection.style.display = "flex";
                     mainSection.style.display = "none";
-                    togglerTraining.style.backgroundColor = "var(--purple)";
-                    togglerInternship.style.backgroundColor = "#1e1e1e";
+                    togglerTraining.style.backgroundColor = "var(--color)";
+                    togglerTraining.style.color = "var(--white)";
+                    togglerInternship.style.backgroundColor = "#ffffff";
+                    togglerInternship.style.color = "#1e1e1e" ;
                 });
 
                 togglerInternship.addEventListener("click", () => {
                     trainingSection.style.display = "none";
                     mainSection.style.display = "flex";
-                    togglerInternship.style.backgroundColor = "var(--purple)";
-                    togglerTraining.style.backgroundColor = "#1e1e1e";
+                    togglerInternship.style.backgroundColor = "var(--color)";
+                    togglerInternship.style.color = "var(--white)";
+                    togglerTraining.style.backgroundColor = "#ffffff";
+                    togglerTraining.style.color = "#1e1e1e";
 
                 });
             </script>

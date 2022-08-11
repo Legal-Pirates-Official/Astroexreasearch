@@ -15,7 +15,7 @@ body {
 	--text: #333333;
 	--button: #fa8c43;
 	--purple: #512efe;
-    --aqua: #22ddd5;
+    --color: #22ddd5;
     --grey: #6e6d73;
     --orange : #fa8c43;
 }
@@ -75,7 +75,7 @@ body {
 }
 
 .nav > .nav-links > a:hover {
-	background: var(--purple);
+	background: var(--color);
 	color: #efefef;
 }
 

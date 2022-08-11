@@ -93,7 +93,7 @@
 }
 .btnforslider {
     padding: 12px 33px;
-    background: var(--button);
+    background: var(--color);
     display: flex;
     position: relative;
     justify-content: center;
@@ -106,8 +106,7 @@
 }
 
 .btnforslider:hover {
-    background: var(--purple)af;
-    color: var(--white);
+    opacity: .7;
 }
 
 /* .btnforslider a {

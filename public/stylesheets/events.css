@@ -5,8 +5,8 @@
 }
 
 body {
-    background: #1e1e1e;
-    color: #fefefe;
+    background: var(--white);
+    color: var(--dark);
 }
 
 .eventsContainer {
@@ -137,7 +137,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: var(--aqua);
+    color: var(--color);
     margin: 1%;
 }
 

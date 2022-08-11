@@ -16,8 +16,10 @@
 }
 
 body {
-    background: var(--dark);
-    color: var(--font);
+    background: var(--font);
+    color: var(--dark);
+    /* background: var(--dark);
+    color: var(--dark); */
 }
 
 /* Topics */
@@ -49,7 +51,7 @@ body {
 .quote h1 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 2rem;
-    color: var(--aqua);
+    color: var(--color);
     /* text-align: center; */
 }
 .Marqueetext {
@@ -59,8 +61,7 @@ body {
     /* border: 2px solid black; */
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.778);
     border-radius: 20px;
-
-    color: var(--white);
+    color: var(--dark);
     font-size: 20px;
 }
 .Marqueetext ul {
@@ -94,7 +95,7 @@ body {
     font-size: 1.1rem;
 }
 .Marqueetext ul li a:hover {
-    color: var(--purple);
+    color: var(--color);
 }
 .container {
     width: 50%;
@@ -169,7 +170,7 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    background: var(--purple);
+    background: var(--color);
     justify-content: space-evenly;
     align-items: center;
     left: 0;
@@ -228,7 +229,7 @@ body {
 .wrapquote h3 {
     font-weight: 700;
     /* color: var(--text); */
-    color: #fff;
+    color: var(--color);
     font-family: Georgia, "Times New Roman", Times, serif;
 }
 

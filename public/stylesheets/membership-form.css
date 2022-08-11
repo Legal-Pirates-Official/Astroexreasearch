@@ -10,8 +10,8 @@
 }
 
 body {
-    background: var(--dark);
-    color: var(--font);
+    background: var(--white);
+    color: var(--dark);
 }
 
 .membership-form-section {

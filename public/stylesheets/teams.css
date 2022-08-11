@@ -6,7 +6,6 @@
 }
 
 :root {
-    --button: var(--purple);
     --black: #000;
     --dark: #1e1e1e;
     --white: #fff;
@@ -17,7 +16,7 @@
 }
 
 body {
-    background: var(--dark);
+    background: var(--white);
 }
 
 /* Top Section - Start */
@@ -47,14 +46,14 @@ body {
     width: 30%;
     height: 50%;
     /* background: #fff; */
-    background: var(--dark);
+    background: var(--white);
     display: flex;
     z-index: 2;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 5%;
-    color: var(--font);
+    color: var(--dark);
     font-size: 1rem;
     text-align: center;
 }
@@ -86,7 +85,7 @@ body {
     font-size: 2.8rem;
     font-family: Georgia, "Times New Roman", Times, serif;
     text-align: center;
-    color: var(--aqua);
+    color: var(--color);
 }
 
 /* Top Section - End */
@@ -129,7 +128,7 @@ body {
     text-align: left;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     background: var(--dark);
-    color: var(--font);
+    color: var(--dark);
     border-radius: 10px;
     margin: 1%;
 }
@@ -147,7 +146,7 @@ body {
     text-align: left;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
     /* background: var(--dark);
-    color: var(--font); */
+    color: var(--dark); */
     background: var(--font);
     color: var(--dark);
     border-radius: 10px;
@@ -184,7 +183,7 @@ body {
 .social_icons_img {
     width: 2rem;
     height: 2rem;
-    color: var(--font);
+    color: var(--dark);
     fill: var(--font);
 }
 

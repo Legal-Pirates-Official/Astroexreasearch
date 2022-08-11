@@ -10,7 +10,8 @@
 }
 
 body {
-    background: var(--dark);
+    background: var(--white);
+    color: var(--dark);
 }
 
 .internship-section {
@@ -59,7 +60,7 @@ body {
     height: 80%;
     border: none;
     border-radius: 5px;
-    background-color: var(--purple);
+    background-color: var(--color);
     color: #fff;
     font-size: 16px;
     outline: none;
@@ -67,7 +68,7 @@ body {
 }
 
 .search-bar button:hover {
-    background-color: var(--purple);
+    background-color: var(--color);
     opacity: .5;
 }
 
@@ -80,7 +81,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: var(--dark);
+    /* background: var(--dark); */
 }
 
 .main-div-intership {
@@ -100,7 +101,7 @@ body {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    background: var(--purple);
+    background: var(--color);
     padding: 3% 5%;
     margin: 2% 0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,

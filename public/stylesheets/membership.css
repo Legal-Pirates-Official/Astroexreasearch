@@ -10,8 +10,8 @@
 }
 
 body {
-    background: var(--dark);
-    color: var(--font);
+    background: var(--white);
+    color: var(--dark);
 }
 
 .membership-section {
@@ -30,7 +30,7 @@ body {
 
 .membership-main-div {
     font-size: 1rem;
-    color: var(--font);
+    color: var(--dark);
 }
 
 .membership-main-div h1 {
@@ -38,7 +38,7 @@ body {
     font-size: 2rem;
     padding: 1% 0;
     margin-bottom: 1rem;
-    color: var(--aqua);
+    color: var(--color);
 }
 
 .membership-table-top {
@@ -58,20 +58,20 @@ body {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    border: 1px solid #ddd;
+    border: 1px solid #1e1e1e;
 }
 
 .membership-table-top table th {
     width: 20%;
     padding: 30px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #1e1e1e;
     text-align: center;
 }
 
 .membership-table-top table td {
     /* width: 20%; */
     padding: 30px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #1e1e1e;
     text-align: center;
 }
 
@@ -92,20 +92,20 @@ body {
     width: 100%;
     border-collapse: collapse;
     border-spacing: 0;
-    border: 1px solid #ddd;
+    border: 1px solid #1e1e1e;
 }
 
 .membership-table-next table th {
     width: 20%;
     padding: 30px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #1e1e1e;
     text-align: center;
 }
 
 .membership-table-next table td {
     /* width: 20%; */
     padding: 30px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #1e1e1e;
     text-align: center;
 }
 
@@ -125,13 +125,13 @@ body {
     font-size: 1.2rem;
     padding: 10px;
     text-align: center;
-    background: var(--purple);
+    background: var(--color);
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .membership-button a:hover {
-    background: var(--purple);
+    background: var(--color);
     opacity: .5;
 }
 
