@@ -11,7 +11,7 @@
     --black: #000;
     --white: #fff;
     --text: #333333;
-    --button: var(--purple);
+    --button: #f3a32b;
     --font: #fefefe;
 }
 
@@ -49,6 +49,7 @@ body {
 .quote h1 {
     font-family: Georgia, "Times New Roman", Times, serif;
     font-size: 2rem;
+    color: var(--aqua);
     /* text-align: center; */
 }
 .Marqueetext {
