@@ -17,7 +17,7 @@
 
     <style>
         .team-nav {
-            background: #fa8c43;
+            background: var(--purple);
             color: white !important;
         }
     </style>
@@ -72,19 +72,19 @@
                             <a href="<%= teams.instagram_url %>">
                                 <img
                                     class="social_icons_img"
-                                    src="https://img.icons8.com/ios/40/ffffff/instagram-new--v1.png"
+                                    src="https://img.icons8.com/ios/40/000000/instagram-new--v1.png"
                                 />
                             </a>
                             <a href="<%= teams.linkedIn_url %>">
                                 <img
                                     class="social_icons_img"
-                                    src="https://img.icons8.com/ios/40/ffffff/linkedin.png"
+                                    src="https://img.icons8.com/ios/40/000000/linkedin.png"
                                 />
                             </a>
                             <a href="mailto:<%= teams.email_team %>">
                                 <img
                                     class="social_icons_img"
-                                    src="https://img.icons8.com/ios/50/ffffff/new-post.png"
+                                    src="https://img.icons8.com/ios/50/000000/new-post.png"
                                 />
                             </a>
                         </div>
@@ -93,8 +93,8 @@
                 <% } %> <% }) %>
                 <% if(teamArray.length == 0 || count == 0) { %> 
                     <div class="zerocontent"
-                    style="background-color: #1e1e1e; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: #fa8c43;">
-                    <img src="https://img.icons8.com/ios/50/fa8c43/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext" style="">Nothing to
+                    style="background-color: #1e1e1e; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--purple);">
+                    <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
                         see here...</h2>
                 </div>
                 <% } %>

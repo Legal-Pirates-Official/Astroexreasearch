@@ -14,6 +14,10 @@ body {
 	--white: #fff;
 	--text: #333333;
 	--button: #fa8c43;
+	--purple: #512efe;
+    --aqua: #22ddd5;
+    --grey: #6e6d73;
+    --orange : #fa8c43;
 }
 .nav {
 	height: 5rem;
@@ -71,7 +75,8 @@ body {
 }
 
 .nav > .nav-links > a:hover {
-	background: #fa8c43;
+	background: var(--purple);
+	color: #efefef;
 }
 
 .nav > #nav-check {

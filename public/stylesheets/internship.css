@@ -59,7 +59,7 @@ body {
     height: 80%;
     border: none;
     border-radius: 5px;
-    background-color: #F3A32B;
+    background-color: var(--purple);
     color: #fff;
     font-size: 16px;
     outline: none;
@@ -67,7 +67,8 @@ body {
 }
 
 .search-bar button:hover {
-    background-color: #f3a32baf;
+    background-color: var(--purple);
+    opacity: .5;
 }
 
 .main-section {
@@ -99,7 +100,7 @@ body {
     flex-direction: column;
     /* align-items: center; */
     justify-content: center;
-    background: #F3A32B;
+    background: var(--purple);
     padding: 3% 5%;
     margin: 2% 0;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,

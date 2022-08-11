@@ -38,6 +38,7 @@ body {
     font-size: 2rem;
     padding: 1% 0;
     margin-bottom: 1rem;
+    color: var(--aqua);
 }
 
 .membership-table-top {
@@ -124,12 +125,13 @@ body {
     font-size: 1.2rem;
     padding: 10px;
     text-align: center;
-    background: rgb(250, 140, 67);
+    background: var(--purple);
     border-radius: 10px;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .membership-button a:hover {
-    background: rgba(250, 140, 67, 0.8);
+    background: var(--purple);
+    opacity: .5;
 }
 

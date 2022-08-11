@@ -16,8 +16,7 @@ footer {
     font-family: "Poppins", sans-serif;
 }
 
-.heading-tags
-{
+.heading-tags {
     display: flex;
     flex-direction: row;
 }
@@ -37,7 +36,6 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 .form-footer label {
     color: #fff;
@@ -46,7 +44,7 @@ footer {
 .form-footer input {
     border-radius: 10px;
     border: none;
-    padding: 0rem .5rem;
+    padding: 0rem 0.5rem;
     outline: none;
     height: 30px;
     margin: 0 1rem;
@@ -67,8 +65,7 @@ footer {
     align-items: flex-start;
 }
 
-.contact-image-partners
-{
+.contact-image-partners {
     position: relative;
     /* bottom: -15%; */
     /* left: 8%; */
@@ -80,8 +77,7 @@ footer {
     align-items: center;
 }
 
-.contact-image-partners div
-{
+.contact-image-partners div {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -92,14 +88,11 @@ footer {
     font-size: 1rem;
 }
 
-.contact-image-partners img
-{
+.contact-image-partners img {
     width: 5rem;
     height: 4rem;
     object-fit: contain;
 }
-
-
 
 .about_footer {
     margin: 2rem;
@@ -114,7 +107,7 @@ footer {
     transform: rotate(180deg);
 }
 .social_title {
-    color: #fa8c43 !important;
+    color: var(--aqua) !important;
     font-size: 1.5rem;
 }
 .pages {
@@ -189,7 +182,7 @@ footer {
     margin: 2% 0%;
     padding: 2%;
     border: none;
-    background-color: #fa8c43;
+    background-color: var(--purple);
     color: white;
     border-radius: 5px;
 }
@@ -336,21 +329,18 @@ footer {
     .footer-second-div {
         text-align: center;
     }
-    .contact-image-partners
-    {
+    .contact-image-partners {
         position: relative;
         bottom: auto;
         width: fit-content;
         align-self: center;
         left: auto;
     }
-    .heading-tags
-    {
+    .heading-tags {
         flex-direction: column;
         align-self: center;
     }
-    .title-footer
-    {
+    .title-footer {
         width: 90%;
         text-align: center;
         align-self: center;

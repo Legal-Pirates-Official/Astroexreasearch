@@ -2,7 +2,7 @@
     --black: #000;
     --white: #fff;
     --text: #333333;
-    --button: #fa8c43;
+    --button: var(--purple);
 }
 
 /* Swiper */
@@ -106,7 +106,7 @@
 }
 
 .btnforslider:hover {
-    background: #fa8c43af;
+    background: var(--purple)af;
     color: var(--white);
 }
 

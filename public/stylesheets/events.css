@@ -137,7 +137,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #fefefe;
+    color: var(--aqua);
     margin: 1%;
 }
 
