@@ -59,6 +59,7 @@ footer {
 .content-footer {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     flex-direction: row;
     justify-content: space-evenly;
