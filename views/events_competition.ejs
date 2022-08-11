@@ -49,15 +49,12 @@
             <h1 class="heading_events">Competitions</h1>
             <section>
                 <div class="main-div">
-                    <% if(eventsArray.length == 0) { %> 
-                        <div class="zerocontent"
-                        style="background-color: #ffffff; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
-                        <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
-                            see here...</h2>
-                    </div>
-                    <% } %>
+                    <% var count=0; %> 
+                    
                     <% eventsArray.forEach(events => { %> 
+
                     <% if (events.category_events == "competitions_events") { %>
+                        <% count = count+1 %>
                     <div class="all-div">
                         `
                         <div class="content-div">
@@ -74,7 +71,16 @@
                             >
                         </div>
                     </div>
-                    <% } %> <% }) %>
+                    <% }  %> 
+                    
+                        <% }) %>
+                        <% if(count == 0) { %> 
+                            <div class="zerocontent"
+                            style="background-color: #ffffff; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
+                            <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
+                                see here...</h2>
+                        </div>
+                        <% } %>
                 </div>
             </section>
         </div>
