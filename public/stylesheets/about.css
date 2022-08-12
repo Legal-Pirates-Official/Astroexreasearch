@@ -72,7 +72,7 @@ body {
     /* font-family: "Kaushan Script", cursive; */
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.3rem;
-    color: var(--aqua);
+    color: var(--white);
     margin-bottom: 1rem;
 }
 
@@ -279,7 +279,7 @@ body {
     padding: 2% 0;
     /* background-color: #f3a32b; */
     /* background: var(--aqua); */
-    border: 2px solid var(--aqua);
+    border: 2px solid var(--dark);
     margin-bottom: 2rem;
     display: flex;
     flex-direction: row;
@@ -303,13 +303,13 @@ body {
     padding: 2% 0;
     /* background-color: #f3a32b; */
     /* background: var(--aqua); */
-    border: 2px solid var(--aqua);
+    border: 2px solid var(--dark);
     margin-bottom: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--dark);
 }
 
 .quotes-author-section h1 {

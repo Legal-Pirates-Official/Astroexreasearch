@@ -22,7 +22,11 @@ body {
     font-family: "segoe ui";
 }
 
-nav {
+.mobile_nav {
+    display: none;
+}
+
+.nav {
     display: block;
 }
 
@@ -129,7 +133,9 @@ nav {
 }
 
 .nav-logo-links {
+    position: absolute;
     width: 25%;
+    left: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -381,5 +387,15 @@ nav {
     }
     .dropdown-navbar a {
         padding: 0px 10px 13px 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .nav2
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }
