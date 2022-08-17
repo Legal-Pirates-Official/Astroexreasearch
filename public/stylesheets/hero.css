@@ -43,6 +43,7 @@
     margin-top: 2%;
     width: 70%;
 }
+
 .hero-container a {
     background: var(--color);
     width: 15%;
@@ -57,4 +58,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    .hero-container a
+    {
+        width: 100%;
+    }
+    .hero-container
+    {
+        padding: 2rem;
+    }
+    .hero-container h1
+    {
+        font-size: 2rem;
+    }
 }

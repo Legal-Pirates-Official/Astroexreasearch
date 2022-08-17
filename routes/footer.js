@@ -20,7 +20,7 @@ router.get("/admin/footer_contact", isloggedin, (req, res) => {
     });
 });
 
-router.post("/admin/footer_contact/insert", isloggedin, (req, res) => {
+router.post("/admin/footer_contact/insert", (req, res) => {
     db.query(
         `INSERT INTO footer_contact (email_footer) VALUES (?)`,
         [req.body.email_footer],

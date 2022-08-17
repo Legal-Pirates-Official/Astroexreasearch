@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="stylesheets/publications.css" />
-        <link rel="stylesheet" href="stylesheets/footer.css" />
-        <link
-            rel="shortcut icon"
-            href="images/favicon.ico"
-            type="image/x-icon"
-        />
-        <link rel="stylesheet" href="stylesheets/navbar.css" />
-        <title>Books</title>
-    </head>
 
-    <style>
-        .service-nav {
-            background: var(--color);
-            color: white !important;
-        }
-    </style>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="stylesheets/publications.css" />
+    <link rel="stylesheet" href="stylesheets/footer.css" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="stylesheets/navbar.css" />
+    <title>Books</title>
+</head>
 
-    <body>
-        <%- include("./partials/navbar.ejs") %>
+<style>
+    .service-nav {
+        background: var(--color);
+        color: white !important;
+    }
+</style>
+
+<body>
+    <%- include("./partials/navbar.ejs") %>
 
         <div class="main-section">
             <h1 class="main-section-h1">Books</h1>
-            <% if(projectsArray.length == 0) { %> 
+            <% projectsArray.length>0 && projectsArray.forEach(projects => { %>
+                <% if (projects.type_projects=="books" ) { %>
+            <% if(projectsArray.length==0) { %>
+                <% console.log(projectsArray) %>
                 <div class="zerocontent"
-                style="background-color: #ffffff; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
-                <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
-                    see here...</h2>
-            </div>
-            <% } %>
-            <section class="publications-section">
-                <div class="main-div">
-                    <% projectsArray.length>0 && projectsArray.forEach(projects => { %>
-                        <% if (projects.type_projects == "books") { %>
-                    <div class="all-div">
-                        <div class="content-div">
-                            <h1><%= projects.title_projects %></h1>
-                            <p>
-                                <%= projects.description_projects %>
-                            </p>
-                        </div>
-                        <div class="download-div">
-                            <a href="<%= projects.file_projects %>" target="_blank" download="<%= projects.title_projects %>">Download</a>
-                        </div>
-                    </div>
-                    <% } %>
-                    <% }) %>
+                    style="background-color: #ffffff; position: absolute; height: 100%;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
+                    <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;" />
+                    <h2 class="zerocontenttext">Nothing to
+                        see here...</h2>
                 </div>
-            </div>
+                <% } %>
+                <% } %>
+                                        <% }) %>
+                    <section class="publications-section">
+                        <div class="main-div">
+                            <% projectsArray.length>0 && projectsArray.forEach(projects => { %>
+                                <% if (projects.type_projects=="books" ) { %>
+                                    <div class="all-div">
+                                        <div class="content-div">
+                                            <h1>
+                                                <%= projects.title_projects %>
+                                            </h1>
+                                            <p>
+                                                <%= projects.description_projects %>
+                                            </p>
+                                        </div>
+                                        <div class="download-div">
+                                            <a href="<%= projects.file_projects %>" target="_blank"
+                                                download="<%= projects.title_projects %>">Download</a>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                        <% }) %>
+                        </div>
+        </div>
         </section>
 
         <%- include("./partials/footer.ejs") %>
 
-        <script src="javascripts/navbar.js"></script>
-    </body>
+            <script src="javascripts/navbar.js"></script>
+</body>
+
 </html>

@@ -97,6 +97,7 @@ body {
 .Marqueetext ul li a:hover {
     color: var(--color);
 }
+
 .container {
     width: 50%;
     height: 100%;
