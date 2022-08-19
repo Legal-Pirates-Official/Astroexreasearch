@@ -12,6 +12,10 @@
             crossorigin="anonymous"
         />
         <link
+            href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+            rel="stylesheet"
+        />
+        <link
             rel="shortcut icon"
             href="../../../images/favicon.ico"
             type="image/x-icon"
@@ -59,14 +63,15 @@
                         </div>
                         <div class="form-group">
                             <label for="paragraph_training">Description</label>
-                            <input
+                            <!-- <input
                                 type="text"
                                 style="width: 50%"
                                 class="form-control mb-3"
                                 id="paragraph_training"
                                 name="paragraph_training"
-                                value="<%- training.paragraph_training %>"
-                            />
+                                value="<%#- training.paragraph_training %>"
+                            /> -->
+                            <div id="editor"></div>
                         </div>
                         <div>
                             <button
@@ -82,5 +87,37 @@
             </div>
         </div>
         <%- include("../../partials/admin_footer.ejs") %>
+
+        <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        <script>
+            var quill = new Quill("#editor", {
+                theme: "snow",
+            });
+
+            const services_form = document.querySelector("#services_form");
+
+            services_form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const title_training = e.target[0].value;
+                const batch_training = e.target[1].value;
+                const paragraph_training =
+                    document.querySelector("#editor .ql-editor").innerHTML;
+                await fetch("/admin/training/update/:id", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        title_training,
+                        batch_training,
+                        paragraph_training,
+                    }),
+                }).then((res) => {
+                    if (res.status === 200) {
+                        window.location.href = "/admin/training";
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
