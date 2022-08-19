@@ -173,8 +173,21 @@ router.get("/admin/services/update/:id", isloggedin, async (req, res) => {
         [req.params.id],
         async (err, rows) => {
             if (!err) {
+                let servicesArray = [];
+
+                rows.forEach((re) => {
+                    var converter = new QuillDeltaToHtmlConverter(
+                        re.price_services
+                            ? JSON.parse(re.price_services).ops
+                            : [],
+                        {}
+                    );
+                    var html = converter.convert();
+                    servicesArray.push({ ...re, price_services: html });
+                });
+                console.log(servicesArray);
                 res.render("./admin/services/services_update", {
-                    servicesArray: rows[0],
+                    servicesArray: servicesArray[0],
                 });
             } else {
                 console.log(err);
@@ -183,8 +196,24 @@ router.get("/admin/services/update/:id", isloggedin, async (req, res) => {
     );
 });
 
-router.post("/admin/services/update/:id", isloggedin, async (req, res) => {
+router.get("/admin/services/update/para/:id", isloggedin, async (req, res) => {
     db.query(
+        `SELECT * FROM services WHERE services_id = ?`,
+        [req.params.id],
+        async (err, rows) => {
+            if (!err) {
+               
+                res.json(rows[0].price_services);
+            } else {
+                console.log(err);
+            }
+        }
+    );
+});
+
+router.post("/admin/services/update/:id", isloggedin, async (req, res) => {
+    console.log(req.body);
+    await db.query(
         `UPDATE services SET name_services = ?,  textarea_services = ?, price_services =? WHERE services_id = ?`,
         [
             req.body.name_services,
@@ -194,6 +223,7 @@ router.post("/admin/services/update/:id", isloggedin, async (req, res) => {
         ],
         async (err, rows) => {
             if (!err) {
+                console.log(rows);
                 res.redirect("/admin/services");
             } else {
                 console.log(err);

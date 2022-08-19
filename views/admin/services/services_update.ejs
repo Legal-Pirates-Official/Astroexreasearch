@@ -98,15 +98,14 @@
 			fetch('/admin/services/update/para/<%= servicesArray.services_id %>')
 				.then((res) => res.json())
 				.then((data) => {
-                    console.log(data);
-					quill.setContents(JSON.parse(data.price_services));
+					quill.setContents(JSON.parse(data));
 				});
 
 			services_form.addEventListener('submit', async (e) => {
 				e.preventDefault();
 				const name_services = e.target[0].value;
 				const textarea_services = e.target[1].value;
-				await fetch('/admin/services/update/:id', {
+				await fetch('/admin/services/update/<%= servicesArray.services_id %>', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json'
