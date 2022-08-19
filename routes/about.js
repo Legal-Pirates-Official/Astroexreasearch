@@ -6,6 +6,8 @@ const path = require("path");
 const { storage, cloudinary } = require("../cloudinary");
 const upload = multer({ storage });
 const { isloggedin } = require("../middleware");
+var QuillDeltaToHtmlConverter =
+    require("quill-delta-to-html").QuillDeltaToHtmlConverter;
 
 const router = express.Router();
 
@@ -52,13 +54,18 @@ router.get("/admin/services", isloggedin, (req, res) => {
         "SELECT * FROM services ORDER BY order_services desc",
         (err, rows) => {
             if (!err) {
-                let servicesArray = []
+                let servicesArray = [];
 
-                result2.forEach(re => {
-                    var converter = new QuillDeltaToHtmlConverter(re.price_services ? JSON.parse(re.price_services).ops : [], {});
+                rows.forEach((re) => {
+                    var converter = new QuillDeltaToHtmlConverter(
+                        re.price_services
+                            ? JSON.parse(re.price_services).ops
+                            : [],
+                        {}
+                    );
                     var html = converter.convert();
-                    services.push({ ...re, price_services: html })
-                })
+                    servicesArray.push({ ...re, price_services: html });
+                });
                 res.render("./admin/services/services_show", {
                     servicesArray,
                 });
@@ -136,8 +143,21 @@ router.get("/admin/services/:id", isloggedin, (req, res) => {
         [req.params.id],
         (err, rows) => {
             if (!err) {
+                let servicesArray = [];
+
+                rows.forEach((re) => {
+                    var converter = new QuillDeltaToHtmlConverter(
+                        re.price_services
+                            ? JSON.parse(re.price_services).ops
+                            : [],
+                        {}
+                    );
+                    var html = converter.convert();
+                    servicesArray.push({ ...re, price_services: html });
+                });
+
                 res.render("./admin/services/services_view", {
-                    servicesArray: rows[0],
+                    servicesArray: servicesArray[0],
                 });
             } else {
                 res.status(500).send("Internal server error");
@@ -170,7 +190,7 @@ router.post("/admin/services/update/:id", isloggedin, async (req, res) => {
             req.body.name_services,
             req.body.textarea_services,
             req.body.price_services,
-            req.params.id,
+            req.params.services_id,
         ],
         async (err, rows) => {
             if (!err) {
