@@ -65,7 +65,7 @@ router.get("/admin/training", isloggedin, (req, res) => {
     db.query(
         "SELECT * FROM training ORDER BY order_training ASC",
         (err, rows) => {
-            console.log(rows);
+            // console.log(rows);
             if (!err) {
                 let trainingArray = [];
 

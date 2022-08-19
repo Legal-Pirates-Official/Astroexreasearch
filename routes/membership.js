@@ -163,7 +163,7 @@ router.get("/admin/membership/para", async (req, res) => {
 });
 
 router.post("/admin/membership/para", async (req, res) => {
-    console.log(req.body.para);
+    // console.log(req.body.para);
     try {
         await db.query(
             "UPDATE membership SET paragraph = ? where membership_id = ?",
@@ -244,7 +244,7 @@ router.get("/admin/membership/table2", async (req, res) => {
             if (err) throw err;
             res.redirect("/admin/membership/insert");
         });
-        console.log(data);
+        // console.log(data);
     } catch (err) {
         console.log(err);
     }

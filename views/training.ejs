@@ -84,7 +84,6 @@
                 <section class="price-section">
                     <div class="price-div">
                         <% services.forEach(element=> { %>
-                            <% console.log(element.price_services); %> 
                             <% if (element.price_services.trim().length != 12 && element.price_services.trim().length > 0) { %>
                                 <div class="price_para_div">
                                     <p><%- element.price_services %></p>

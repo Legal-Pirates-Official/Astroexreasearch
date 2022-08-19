@@ -185,7 +185,7 @@ router.get("/admin/services/update/:id", isloggedin, async (req, res) => {
                     var html = converter.convert();
                     servicesArray.push({ ...re, price_services: html });
                 });
-                console.log(servicesArray);
+                // console.log(servicesArray);
                 res.render("./admin/services/services_update", {
                     servicesArray: servicesArray[0],
                 });
