@@ -18,7 +18,7 @@ router.get("/services", (req, res) => {
                 if (!err) {
                     db.query("SELECT * FROM services", (err, result2) => {
                         if (!err) {
-                            let services=[]
+                            let services = []
 
                             result2.forEach(re => {
                                 var converter = new QuillDeltaToHtmlConverter(re.price_services ? JSON.parse(re.price_services).ops : [], {});
@@ -51,8 +51,16 @@ router.get("/admin/training", isloggedin, (req, res) => {
     db.query("SELECT * FROM training ORDER BY order_training ASC", (err, rows) => {
         console.log(rows);
         if (!err) {
+
+            let trainingArray = []
+
+            rows.forEach(re => {
+                var converter = new QuillDeltaToHtmlConverter(re.paragraph_training ? JSON.parse(re.paragraph_training).ops : [], {});
+                var html = converter.convert();
+                trainingArray.push({ ...re, paragraph_training: html })
+            })
             res.render("./admin/training/training_show", {
-                trainingArray: rows,
+                trainingArray,
             });
         } else {
             res.status(500).send("Internal server error");

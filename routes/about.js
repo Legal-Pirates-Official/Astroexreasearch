@@ -52,8 +52,15 @@ router.get("/admin/services", isloggedin, (req, res) => {
         "SELECT * FROM services ORDER BY order_services desc",
         (err, rows) => {
             if (!err) {
+                let servicesArray = []
+
+                result2.forEach(re => {
+                    var converter = new QuillDeltaToHtmlConverter(re.price_services ? JSON.parse(re.price_services).ops : [], {});
+                    var html = converter.convert();
+                    services.push({ ...re, price_services: html })
+                })
                 res.render("./admin/services/services_show", {
-                    servicesArray: rows,
+                    servicesArray,
                 });
             } else {
                 res.status(500).send("Internal server error");
