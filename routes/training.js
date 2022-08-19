@@ -9,7 +9,7 @@ const { isloggedin } = require("../middleware");
 
 const router = express.Router();
 
-router.get("/training", (req, res) => {
+router.get("/services", (req, res) => {
     db.query("SELECT * FROM training ORDER BY order_training ASC", (err, rows) => {
         if (!err) {
             db.query("SELECT * FROM internship", (err, results) => {

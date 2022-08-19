@@ -10,14 +10,29 @@ const { isloggedin } = require("../middleware");
 const router = express.Router();
 
 router.get("/internship", (req, res) => {
-    db.query("SELECT * FROM internship ORDER BY order_internship", (err, rows) => {
-        if (!err) {
-            res.render("internship", { internshipArray: rows });
-        } else {
-            res.status(500).send("Internal server error");
-            console.log(err);
+    db.query(
+        "SELECT * FROM internship ORDER BY order_internship",
+        (err, rows) => {
+            if (!err) {
+                db.query(
+                    "SELECT * FROM training ORDER BY order_training",
+                    (err, row) => {
+                        if (!err) {
+                            res.render("internship", {
+                                training: row,
+                                internshipArray: rows,
+                            });
+                        } else {
+                            res.send(err);
+                        }
+                    }
+                );
+            } else {
+                res.status(500).send("Internal server error");
+                console.log(err);
+            }
         }
-    });
+    );
 });
 
 router.get("/internship/:search", isloggedin, (req, res) => {
@@ -44,16 +59,19 @@ router.get("/internship/:search", isloggedin, (req, res) => {
 });
 
 router.get("/admin/internship", isloggedin, (req, res) => {
-    db.query("SELECT * FROM internship ORDER BY order_internship", (err, rows) => {
-        if (!err) {
-            res.render("./admin/internship/internship_show", {
-                internshipArray: rows,
-            });
-        } else {
-            res.status(500).send("Internal server error");
-            console.log(err);
+    db.query(
+        "SELECT * FROM internship ORDER BY order_internship",
+        (err, rows) => {
+            if (!err) {
+                res.render("./admin/internship/internship_show", {
+                    internshipArray: rows,
+                });
+            } else {
+                res.status(500).send("Internal server error");
+                console.log(err);
+            }
         }
-    });
+    );
 });
 
 router.get("/admin/internship/insert", isloggedin, async (req, res) => {
@@ -162,8 +180,8 @@ router.post(
                 data = !data
                     ? `${key}=${req.body[key]},`
                     : Object.keys(req.body).length - 1 == index
-                        ? data + `${key}=${req.body[key]}`
-                        : data + `${key}=${req.body[key]},`;
+                    ? data + `${key}=${req.body[key]}`
+                    : data + `${key}=${req.body[key]},`;
             }
         });
 

@@ -4,24 +4,27 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./stylesheets/internship.css" />
-        <link rel="stylesheet" href="./stylesheets/internship_animation.css" />
-        <link rel="stylesheet" href="./stylesheets/footer.css" />
         <link
-            rel="shortcut icon"
-            href="images/favicon.ico"
-            type="image/x-icon"
+        rel="shortcut icon"
+        href="images/favicon.ico"
+        type="image/x-icon"
         />
-        <link rel="stylesheet" href="./stylesheets/loading.css" />
-        <link rel="stylesheet" href="./stylesheets/navbar.css" />
+        <link rel="stylesheet" href="stylesheets/training.css" />
+        <link rel="stylesheet" href="stylesheets/about.css" />
+        <link rel="stylesheet" href="stylesheets/about-swiper.css" />
+        <link rel="stylesheet" href="stylesheets/internship.css" />
+        <link rel="stylesheet" href="stylesheets/internship_animation.css" />
+        <link rel="stylesheet" href="stylesheets/footer.css" />
+        <link rel="stylesheet" href="stylesheets/loading.css" />
+        <link rel="stylesheet" href="stylesheets/navbar.css" />
         <title>Internship</title>
     </head>
     <body>
         <%- include("./partials/navbar.ejs") %>
 
-        <div class="loader"></div>
+        <!-- <div class="loader"></div>
         <section class="main-section">
-            <!-- <section class="internship-section">
+            <section class="internship-section">
                 <div class="search-bar">
                     <form action="/internship/search" method="get">
                         <input
@@ -34,15 +37,15 @@
                         <button type="submit">Search</button>
                     </form>
                 </div>
-            </section> -->
+            </section>
             <div class="main-div-intership">
-                <% internshipArray.forEach(internship => { %>
+                <%# internshipArray.forEach(internship => { %>
                 <div class="div-internship">
-                    <h1><%= internship.heading_internship %></h1>
+                    <h1><%#= internship.heading_internship %></h1>
                     <h2 style="font-weight: 400">
-                        <%= internship.subheading_internship %>
+                        <%#= internship.subheading_internship %>
                     </h2>
-                    <!-- <div class="tags-internship-div">
+                    <div class="tags-internship-div">
                         <%#
                         internship.tag_internship.split(",").forEach((element,
                         index) => { %>
@@ -50,13 +53,13 @@
                             <%#= element.split("=")[1] %>
                         </p>
                         <%# }); %>
-                    </div> -->
+                    </div>
                     <div class="tags-internship-div">
                         <p class="tags-internship">
-                            <%= internship.phone_internship %>
+                            <%#= internship.phone_internship %>
                         </p>
                         <p class="tags-internship">
-                            <%= internship.email_internship %>
+                            <%#= internship.email_internship %>
                         </p>
                     </div>
                     <div class="poster_image_div">
@@ -64,21 +67,21 @@
                         <a
                             class="form_link"
                             target="_blank"
-                            href="<%= internship.form_internship %>"
+                            href="<%#= internship.form_internship %>"
                             >Forms
                         </a>
                     </div>
-                    <p><%= internship.description_internship %></p>
+                    <p><%#= internship.description_internship %></p>
                 </div>
                 <div id="myModal" class="modal myModal">
                     <span class="close">&times;</span>
                     <img
                         class="modal-content img01"
                         id="img01"
-                        src="<%= internship.image_internship %>"
+                        src="<%#= internship.image_internship %>"
                     />
                 </div>
-                <% }) %>
+                <%# }) %>
             </div>
         </section>
 
@@ -95,7 +98,139 @@
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("img01").style.display = "block";
             }
-        </script>
+        </script> -->
+
+
+        <section class="toggler">
+            <div class="toggler-div">
+                <div class="toggler-button toggler-button-training">
+                    <h1 class="toggler_button_h1">Training</h1>
+                </div>
+                <div class="toggler-button toggler-button-internship">
+                    <h1>Internship</h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="training-section">
+            <h1 class="heading_page">Training</h1>
+            <% if(training.length == 0) { %> 
+                <div class="zerocontent"
+                style="background-color: #ffffff; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
+                <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
+                    see here...</h2>
+            </div>
+            <% } %>
+            <% training.forEach(element=> { %>
+                <div class="training-main-div">
+                    <div class="heading-section">
+                        <h1>
+                            <%- element.batch_training %>
+                        </h1>
+                    </div>
+                    <div class="box-div box-div1">
+                        <div class="floating-content">
+                            <p>
+                                <%- element.title_training %>
+                            </p>
+                        </div>
+                        <div class="standard-content">
+                            <p style="color: #ffffff;">
+                                <%- element.paragraph_training %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </section>
+
+        <section class="main-section">
+            <h1 class="heading_page">Internship</h1>
+            <div class="main-div-intership">
+                <% if(internshipArray.length == 0) { %> 
+                    <div class="zerocontent"
+                    style="background-color: #ffffff; position: relative; height: 200px;width: 100%; display:flex;align-items: center;justify-content: center; flex-direction: column; color: var(--color);">
+                    <img src="https://img.icons8.com/ios/50/512efe/sad.png" style="margin-bottom: 2rem;"/><h2 class="zerocontenttext">Nothing to
+                        see here...</h2>
+                </div>
+                <% } %>
+                <% internshipArray.forEach(internship=> { %>
+                    <div class="div-internship">
+                        <h1>
+                            <%= internship.heading_internship %>
+                        </h1>
+                        <h2 style="font-weight: 400">
+                            <%= internship.subheading_internship %>
+                        </h2>
+                        <!-- <div class="tags-internship-div">
+                        <%#
+                        internship.tag_internship.split(",").forEach((element,
+                        index) => { %>
+                        <p class="tags-internship">
+                            <%#= element.split("=")[1] %>
+                        </p>
+                        <%# }); %>
+                    </div> -->
+                        <div class="tags-internship-div">
+                            <p class="tags-internship">
+                                <%= internship.phone_internship %>
+                            </p>
+                            <p class="tags-internship">
+                                <%= internship.email_internship %>
+                            </p>
+                        </div>
+                        <div class="poster_image_div">
+                            <p id="myImg" class="myImg form_link">Poster</p>
+                            <a class="form_link" target="_blank" href="<%= internship.form_internship %>">Forms
+                            </a>
+                        </div>
+                        <p>
+                            <%= internship.description_internship %>
+                        </p>
+                    </div>
+                    <div id="myModal" class="modal myModal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content img01" id="img01" src="<%= internship.image_internship %>" />
+                    </div>
+                    <% }) %>
+            </div>
+        </section>
+
+        <%- include("./partials/footer.ejs") %>
+
+            <script src="javascripts/navbar.js"></script>
+
+            <script>
+                const trainingSection = document.querySelector(".training-section");
+                const mainSection = document.querySelector(".main-section");
+
+                const togglerTraining = document.querySelector(
+                    ".toggler-button-training"
+                );
+                const togglerInternship = document.querySelector(
+                    ".toggler-button-internship"
+                );
+
+                togglerTraining.addEventListener("click", () => {
+                    trainingSection.style.display = "flex";
+                    mainSection.style.display = "none";
+                    togglerTraining.style.backgroundColor = "var(--color)";
+                    togglerTraining.style.color = "var(--white)";
+                    togglerInternship.style.backgroundColor = "#ffffff";
+                    togglerInternship.style.color = "#1e1e1e" ;
+                });
+
+                togglerInternship.addEventListener("click", () => {
+                    trainingSection.style.display = "none";
+                    mainSection.style.display = "flex";
+                    togglerInternship.style.backgroundColor = "var(--color)";
+                    togglerInternship.style.color = "var(--white)";
+                    togglerTraining.style.backgroundColor = "#ffffff";
+                    togglerTraining.style.color = "#1e1e1e";
+
+                });
+            </script>
+
 
         <script src="../javascripts/internship.js"></script>
         <script src="../javascripts/navbar.js"></script>
