@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+var QuillDeltaToHtmlConverter = require('quill-delta-to-html').QuillDeltaToHtmlConverter;
+
 const db = require("../database");
 const multer = require("multer");
 const path = require("path");
@@ -16,10 +18,18 @@ router.get("/services", (req, res) => {
                 if (!err) {
                     db.query("SELECT * FROM services", (err, result2) => {
                         if (!err) {
+                            let services=[]
+
+                            result2.forEach(re => {
+                                var converter = new QuillDeltaToHtmlConverter(re.price_services ? JSON.parse(re.price_services).ops : [], {});
+                                var html = converter.convert();
+                                services.push({ ...re, price_services: html })
+                            })
+
                             res.render("training", {
                                 training: rows,
                                 internshipArray: results,
-                                services: result2,
+                                services,
                             });
                         } else {
                             res.send(err);
@@ -105,6 +115,22 @@ router.get("/admin/training/update/:id", isloggedin, async (req, res) => {
                 res.render("./admin/training/training_update", {
                     training: rows[0],
                 });
+            } else {
+                console.log(err);
+            }
+        }
+    );
+});
+
+router.get("/admin/training/update/para/:id", isloggedin, async (req, res) => {
+    db.query(
+        `SELECT paragraph_training FROM training WHERE id_training = ?`,
+        [req.params.id],
+        async (err, rows) => {
+            if (!err) {
+                res.json(
+                    rows[0]
+                );
             } else {
                 console.log(err);
             }

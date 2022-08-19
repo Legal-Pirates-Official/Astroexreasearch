@@ -37,12 +37,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<form
-						id="training-insert-form"
-						action="/admin/training/insert"
-						method="POST"
-						enctype="multipart/form-data"
-					>
+					<form id="training-insert-form" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="title_training">Title</label>
 							<input
@@ -94,7 +89,7 @@
 				</div>
 			</div>
 		</div>
-        <%- include("../../partials/admin_footer.ejs") %>
+		<%- include("../../partials/admin_footer.ejs") %>
 
 		<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
 		<script>
@@ -120,7 +115,7 @@
 					body: JSON.stringify({
 						title_training,
 						batch_training,
-						paragraph_training
+						paragraph_training: JSON.stringify(quill.getContents())
 					})
 				}).then((res) => {
 					if (res.status === 200) {

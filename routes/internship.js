@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const db = require("../database");
 const multer = require("multer");
+var QuillDeltaToHtmlConverter = require('quill-delta-to-html').QuillDeltaToHtmlConverter;
+
 const path = require("path");
 const { storage, cloudinary } = require("../cloudinary");
 const upload = multer({ storage });
@@ -18,8 +20,17 @@ router.get("/internship", (req, res) => {
                     "SELECT * FROM training ORDER BY order_training",
                     (err, row) => {
                         if (!err) {
+                            let training = []
+
+                            row.forEach(r => {
+                                var converter = new QuillDeltaToHtmlConverter(r.paragraph_training ? JSON.parse(r.paragraph_training).ops : [], {});
+                                var html = converter.convert();
+                                training.push({ ...r, paragraph_training: html })
+                            })
+
+
                             res.render("internship", {
-                                training: row,
+                                training,
                                 internshipArray: rows,
                             });
                         } else {
@@ -180,8 +191,8 @@ router.post(
                 data = !data
                     ? `${key}=${req.body[key]},`
                     : Object.keys(req.body).length - 1 == index
-                    ? data + `${key}=${req.body[key]}`
-                    : data + `${key}=${req.body[key]},`;
+                        ? data + `${key}=${req.body[key]}`
+                        : data + `${key}=${req.body[key]},`;
             }
         });
 
