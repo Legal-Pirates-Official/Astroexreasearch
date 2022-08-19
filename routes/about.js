@@ -202,7 +202,7 @@ router.get("/admin/services/update/para/:id", isloggedin, async (req, res) => {
         [req.params.id],
         async (err, rows) => {
             if (!err) {
-               
+            
                 res.json(rows[0].price_services);
             } else {
                 console.log(err);
@@ -212,14 +212,13 @@ router.get("/admin/services/update/para/:id", isloggedin, async (req, res) => {
 });
 
 router.post("/admin/services/update/:id", isloggedin, async (req, res) => {
-    console.log(req.body);
     await db.query(
         `UPDATE services SET name_services = ?,  textarea_services = ?, price_services =? WHERE services_id = ?`,
         [
             req.body.name_services,
             req.body.textarea_services,
             req.body.price_services,
-            req.params.services_id,
+            req.params.id,
         ],
         async (err, rows) => {
             if (!err) {
