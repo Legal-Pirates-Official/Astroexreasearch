@@ -38,16 +38,16 @@
                         <h3>Form Link:</h3>
                         <p><%= internship.form_internship%></p>
                     </div>
-                    <div>
+                    <!-- <div>
                         <h3>Tag Line:</h3>
                         <p>
                             <ul>
-                                <%internship.tag_internship.split(",").forEach((element, index) => { %>
-                                    <li><%= element.split("=")[1] %></li>
-                                    <% }); %>
+                                <%#internship.tag_internship.split(",").forEach((element, index) => { %>
+                                    <li><%#= element.split("=")[1] %></li>
+                                    <%# }); %>
                                 </ul>
                             </p>
-                        </div>
+                        </div> -->
                     <div>
                         <h3>Image:</h3>
                         <img class="img-fluid" style="width: 30%;" src="<%= internship.image_internship%>" alt="">
