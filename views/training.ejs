@@ -84,14 +84,16 @@
                 <section class="price-section">
                     <div class="price-div">
                         <% services.forEach(element=> { %>
-                            <div class="price_para_div">
-                                <p><%- element.price_services %></p>
-                            </div>
+                            <% console.log(element.price_services); %> 
+                            <% if (element.price_services.trim().length != 12 && element.price_services.trim().length > 0) { %>
+                                <div class="price_para_div">
+                                    <p><%- element.price_services %></p>
+                                </div>
+                            <% } %>
                             <% }) %>
                     </div>
                 </section>
                 <% } %>
-
 
                     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
